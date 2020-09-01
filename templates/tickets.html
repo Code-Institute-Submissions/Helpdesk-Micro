@@ -8,18 +8,12 @@
     {% endfor %}
 
   <ul class="collapsible popout">
+  {% for ticket in tickets %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.name}} - {{ticket.call_subject}}</div>
+      <div class="collapsible-body"><span>{{ticket.call_details}}</span></div>
     </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
-    <li>
-      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-    </li>
+    {% endfor %}
   </ul>
 
 {% endblock %}
