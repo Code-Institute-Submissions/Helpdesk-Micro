@@ -20,5 +20,9 @@ def get_tickets():
     tickets = list(mongo.db.tickets.find())
     return render_template('tickets.html', tickets=tickets)
 
+@app.route('/add_ticket')
+def add_ticket():
+    return render_template('add_ticket.html')
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
