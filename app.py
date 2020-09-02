@@ -22,7 +22,13 @@ def get_tickets():
 
 @app.route('/add_ticket')
 def add_ticket():
-    return render_template('add_ticket.html', call_types=mongo.db.call_type.find())
+    return render_template('add_ticket.html', call_types=mongo.db.call_type.find(), end_users=mongo.db.end_user.find())
+
+@app.route('/insert_ticket', methods=['POST'])
+def insert_ticket():
+    tickets = mongo.db.tickets
+    tickets.insert_one(request.form.to_dict())
+    return redirect(url_for('get_tickets'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
