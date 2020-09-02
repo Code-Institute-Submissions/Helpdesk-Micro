@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Sidenav.init(elems, {edge:'right'});
   });
 
-// jQuery to enable accordion
+// jQuery
 $(document).ready(function(){
-    $('.collapsible').collapsible();
+    $('.collapsible').collapsible(); /* accordion */
+    $('select').formSelect(); /* select dropdowns */
   });
