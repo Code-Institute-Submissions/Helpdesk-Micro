@@ -22,7 +22,7 @@ def get_tickets():
 
 @app.route('/add_ticket')
 def add_ticket():
-    return render_template('add_ticket.html')
+    return render_template('add_ticket.html', call_types=mongo.db.call_type.find())
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
