@@ -30,5 +30,15 @@ def insert_ticket():
     tickets.insert_one(request.form.to_dict())
     return redirect(url_for('get_tickets'))
 
+@app.route('/add_end_user')
+def add_end_user():
+    return render_template('add_end_user.html')
+
+# @app.route('/insert_end_user', methods=['POST'])
+# def insert_end_user():
+#     tickets = mongo.db.tickets
+#     tickets.insert_one(request.form.to_dict())
+#     return redirect(url_for('get_tickets'))
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
