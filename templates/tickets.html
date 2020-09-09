@@ -1,20 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    {% for ticket in tickets %}
-        {{ticket.name}}
-        {{ticket.call_subject}}
-        {{ticket.call_details}}
-    {% endfor %}
 
   <ul class="collapsible popout">
   {% for ticket in tickets %}
     <li>
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.name}} - {{ticket.call_subject}}</div>
+    <div class="row">
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.call_subject}}</div>
+    </div>
       <div class="collapsible-body"><span>{{ticket.call_details}}</span></div>
     </li>
     {% endfor %}
   </ul>
-  <a class="waves-effect waves-light btn" href="">Add ticket</a>
+  <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
 
 {% endblock %}
