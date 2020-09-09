@@ -17,7 +17,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tickets')
 def get_tickets():
-    tickets = list(mongo.db.tickets.find())
+    tickets = mongo.db.tickets.find()
+    # end_user = list(mongo.db.end_user.find_one())
     return render_template('tickets.html', tickets=tickets)
 
 @app.route('/add_ticket')
