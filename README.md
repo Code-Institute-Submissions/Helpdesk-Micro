@@ -1,6 +1,6 @@
-<h1 align="center">HEEEY YOOOU GUUUYS</h1>
+<h1 align="center">Project Title</h1>
 
-[View the live project here.](https://pengols.github.io/HeeeyYooouGuuuys/index.html)
+[View the live project here.](https://##)
 
 This is the website for my third Code Institute project focusing Python and MongoDB.  The site is designed to be responsive and contains an IT Helpdesk ticketing system. Users will be able to create, edit, read and delete Helpdesk tickets. It is styled to provide end users with ease of readability.
 
@@ -12,17 +12,17 @@ This is the website for my third Code Institute project focusing Python and Mong
 
     -   #### First Time Visitor Goals
 
-        1. As a First Time Visitor, I want to play a game that tests my memory.
-        2. As a First Time Visitor, I want to reminisce about the 80's.
+        1. As a First Time Visitor, I want.
+        2. As a First Time Visitor, I want.
 
     -   #### Returning Visitor Goals
 
-        1. As a Returning Visitor, I want to see if I can better my previous score.
-        2. As a Returning Visitor, I want to find social links to the creator.
+        1. As a Returning Visitor, I want.
+        2. As a Returning Visitor, I want.
 
     -   #### Frequent User Goals
-        1. As a Frequent User, I want to check to see if there are any newly added difficulty levels.
-        2. As a Frequent User, I want to check to see if there are any new images, music or graphics.
+        1. As a Frequent User, I want.
+        2. As a Frequent User, I want.
 
 -   ### Design
     -   #### Colour Scheme
@@ -34,11 +34,11 @@ This is the website for my third Code Institute project focusing Python and Mong
 
    ### Wireframes
 
-    -   Home Page Wireframe for Desktop & Mobile - [View](https://raw.githubusercontent.com/pengols/HeeeyYooouGuuuys/master/mockups/indexhtmlDT&Mob.pdf)
+    -   Home Page Wireframe for Desktop & Mobile - [View](https://##)
 
-    -   Game page Wireframe for Desktop - [View](https://raw.githubusercontent.com/pengols/HeeeyYooouGuuuys/master/mockups/Playhtmloverlay&gameDT.pdf)
+    -   Game page Wireframe for Desktop - [View](https://##)
 
-    -   Game page Wireframe for Mobile - [View](https://raw.githubusercontent.com/pengols/HeeeyYooouGuuuys/master/mockups/Playhtmloverlay&gamemob.pdf)
+    -   Game page Wireframe for Mobile - [View](https://##)
 
 ## Features
 
