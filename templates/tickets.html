@@ -11,12 +11,6 @@
       <div class="collapsible-body"><span>{{ticket.call_details}}</span>
       <div class="row">
         <span>Raised by:{{ticket.end_user}}</span>
-        {% for e_user in end_user %}
-        <span>{{end_user.tel_no}}</span>
-        <!-- <span>Tel:{{ticket.end_user}}</span>
-        <span>Dept.:{{ticket.end_user}}</span> -->
-      </div>
-      {% endfor %}
       </div>
     </li>
     {% endfor %}
