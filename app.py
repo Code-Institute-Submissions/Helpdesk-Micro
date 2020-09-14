@@ -23,13 +23,19 @@ def get_tickets():
 
 @app.route('/add_ticket')
 def add_ticket():
-    return render_template('add_ticket.html', call_types=mongo.db.call_type.find(), end_users=mongo.db.end_user.find())
+    return render_template('add_ticket.html', call_type=mongo.db.call_type.find(), end_users=mongo.db.end_user.find())
 
 @app.route('/insert_ticket', methods=['POST'])
 def insert_ticket():
     tickets = mongo.db.tickets
     tickets.insert_one(request.form.to_dict())
     return redirect(url_for('get_tickets'))
+
+@app.route('/edit_ticket/<ticket_id>')
+def edit_ticket(ticket_id):
+    edit_ticket = mongo.db.tickets.find_one({"_id": ObjectId(ticket_id)})
+    all_end_users = mongo.db.end_user.find()
+    return render_template('edit_ticket.html')
 
 @app.route('/add_end_user')
 def add_end_user():
