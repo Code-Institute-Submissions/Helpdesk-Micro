@@ -44,6 +44,21 @@
     <label>Call priority</label>
   </div>
     </div>
+        <div class="row">
+      <div class="input-field col s12">
+    <select id="call_status" name="call_status">
+      <option value="" disabled selected>Choose call priority</option>
+      {% for status in call_status %}
+          {% if status.call_status == ticket.call_status %}
+      <option value="{{status.call_status}}" selected > {{status.call_status}}</option>
+          {% else %}
+        <option value="{{status.call_status}}"> {{status.call_status}}</option>
+          {% endif %}
+      {% endfor %}
+    </select>
+    <label>Call status</label>
+  </div>
+    </div>
     <div class="row">
       <div class="input-field col s12">
     <select id="end_user" name="end_user">
