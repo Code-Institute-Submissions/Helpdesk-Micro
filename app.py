@@ -25,7 +25,8 @@ def get_tickets():
 def add_ticket():
     return render_template('add_ticket.html',   call_type=mongo.db.call_type.find(), 
                                                 end_users=mongo.db.end_user.find(),
-                                                call_priority=mongo.db.call_priority.find())
+                                                call_priority=mongo.db.call_priority.find(),
+                                                call_status=mongo.db.call_status.find())
 
 @app.route('/insert_ticket', methods=['POST'])
 def insert_ticket():
