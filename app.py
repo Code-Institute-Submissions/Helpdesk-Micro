@@ -34,8 +34,11 @@ def insert_ticket():
 @app.route('/edit_ticket/<ticket_id>')
 def edit_ticket(ticket_id):
     edit_ticket = mongo.db.tickets.find_one({"_id": ObjectId(ticket_id)})
-    all_end_users = mongo.db.end_user.find()
-    return render_template('edit_ticket.html')
+    end_user = mongo.db.end_user.find()
+    call_type = mongo.db.call_type.find()
+    return render_template('edit_ticket.html',  ticket=edit_ticket, 
+                                                end_user=end_user, 
+                                                call_type=call_type)
 
 @app.route('/add_end_user')
 def add_end_user():

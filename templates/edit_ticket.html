@@ -4,12 +4,12 @@
   <form action="{{ url_for('insert_ticket') }}" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <input id="call_subject" name="call_subject" type="text" />
+        <input id="call_subject" name="call_subject" type="text" value="{{ticket.call_subject}}"/>
         <label for="call_subject">Call Subject</label>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="call_details" name="call_details" class="materialize-textarea"></textarea>
+          <textarea id="call_details" name="call_details" class="materialize-textarea">{{ticket.call_details}}</textarea>
           <label for="call_details">Call Details</label>
         </div>
       </div>
@@ -33,8 +33,12 @@
       <div class="input-field col s12">
     <select id="end_user" name="end_user">
       <option value="" disabled selected>End user</option>
-      {% for user in end_users %}
-      <option value="{{user.end_user}}">{{user.end_user}}</option>
+      {% for user in end_user %}
+          {% if user.end_user == ticket.end_user %}
+      <option value="{{user.end_user}}" selected > {{user.end_user}}</option>
+          {% else %}
+          <option value="{{user.end_user}}"> {{user.end_user}}</option>
+          {% endif %}
       {% endfor %}
     </select>
     <label>End user</label>
