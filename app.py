@@ -39,9 +39,13 @@ def edit_ticket(ticket_id):
     edit_ticket = mongo.db.tickets.find_one({"_id": ObjectId(ticket_id)})
     end_user = mongo.db.end_user.find()
     call_type = mongo.db.call_type.find()
-    return render_template('edit_ticket.html',  ticket=edit_ticket, 
-                                                end_user=end_user, 
-                                                call_type=call_type)
+    call_priority = mongo.db.call_priority.find()
+    call_status = mongo.db.call_status.find()
+    return render_template('edit_ticket.html', ticket=edit_ticket,
+                                               end_user=end_user,
+                                               call_type=call_type,
+                                               call_priority=call_priority,
+                                               call_status=call_status,)
 
 @app.route('/add_end_user')
 def add_end_user():

@@ -31,6 +31,21 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
+    <select id="call_priority" name="call_priority">
+      <option value="" disabled selected>Choose call priority</option>
+      {% for priority in call_priority %}
+          {% if priority.call_priority == ticket.call_priority %}
+      <option value="{{priority.call_priority}}" selected > {{priority.call_priority}}</option>
+          {% else %}
+        <option value="{{priority.call_priority}}"> {{priority.call_priority}}</option>
+          {% endif %}
+      {% endfor %}
+    </select>
+    <label>Call priority</label>
+  </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
     <select id="end_user" name="end_user">
       <option value="" disabled selected>End user</option>
       {% for user in end_user %}
