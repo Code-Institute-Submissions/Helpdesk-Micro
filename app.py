@@ -47,6 +47,20 @@ def edit_ticket(ticket_id):
                                                call_priority=call_priority,
                                                call_status=call_status,)
 
+@app.route('/update_ticket/<ticket_id>', methods=["POST"])
+def update_ticket(ticket_id):
+    tickets = mongo.db.tickets
+    tickets.update( {'_id': ObjectId(ticket_id)},
+    {
+        'call_subject':request.form.get('call_subject'),
+        'call_details':request.form.get('call_details'),
+        'call_type':request.form.get('call_type'),
+        'call_priority':request.form.get('call_priority'),
+        'call_status':request.form.get('call_status'),
+        'end_user':request.form.get('end_user')
+    })
+    return redirect(url_for('get_tickets'))
+
 @app.route('/add_end_user')
 def add_end_user():
     return render_template('add_end_user.html')
