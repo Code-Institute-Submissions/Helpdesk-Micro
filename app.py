@@ -2,6 +2,7 @@ import os
 from flask import Flask, render_template, redirect, request, url_for
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from datetime import datetime
 
 from os import path
 if path.exists("env.py"):
@@ -31,7 +32,15 @@ def add_ticket():
 @app.route('/insert_ticket', methods=['POST'])
 def insert_ticket():
     tickets = mongo.db.tickets
-    tickets.insert_one(request.form.to_dict())
+    new_ticket =    {'date_posted': datetime.utcnow(),
+                    'call_subject': request.form.get('call_subject'),
+                    'call_details': request.form.get('call_details'),
+                    'call_type': request.form.get('call_type'),
+                    'call_priority': request.form.get('call_priority'),
+                    'call_status': request.form.get('call_status'),
+                    'end_user': request.form.get('end_user')}
+                    
+    tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))
 
 @app.route('/edit_ticket/<ticket_id>')
