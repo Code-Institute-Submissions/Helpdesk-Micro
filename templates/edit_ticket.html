@@ -72,6 +72,16 @@
       {% endfor %}
     </select>
     <label>End user</label>
+    <select id="eu_email" name="eu_email" >
+      <option value="" disabled selected>Email</option>
+      {% for user in eu_email %}
+      {% if user.eu_email == ticket.eu_email %}
+      <option value="{{user.eu_email}}" selected > {{user.eu_email}}</option>
+      {% else %}
+      <option value="{{user.eu_email}}"> {{user.eu_email}}</option>
+      {% endif %}
+      {% endfor %}
+    </select>
   </div>
     </div>
     <div class="row">

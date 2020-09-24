@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Sidenav.init(elems, {edge:'right'});
   });
 
-
-
 // jQuery
 $(document).ready(function(){
     $('.collapsible').collapsible(); /* accordion */
     $('select').formSelect(); /* select dropdowns */
+    
   });
+

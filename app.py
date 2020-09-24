@@ -19,15 +19,18 @@ mongo = PyMongo(app)
 @app.route('/get_tickets')
 def get_tickets():
     tickets = mongo.db.tickets.find()
-
     return render_template('tickets.html', tickets=tickets)
 
 @app.route('/add_ticket')
 def add_ticket():
+    eu_email = mongo.db.end_user.find()
     return render_template('add_ticket.html',   call_type=mongo.db.call_type.find(), 
                                                 end_users=mongo.db.end_user.find(),
                                                 call_priority=mongo.db.call_priority.find(),
-                                                call_status=mongo.db.call_status.find())
+                                                call_status=mongo.db.call_status.find(),
+                                                eu_email=eu_email)
+                                                
+
 
 @app.route('/insert_ticket', methods=['POST'])
 def insert_ticket():
@@ -38,7 +41,8 @@ def insert_ticket():
                     'call_type': request.form.get('call_type'),
                     'call_priority': request.form.get('call_priority'),
                     'call_status': request.form.get('call_status'),
-                    'end_user': request.form.get('end_user')}
+                    'end_user': request.form.get('end_user'),
+                    'eu_email': request.form.get('eu_email')}
                     
     tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))

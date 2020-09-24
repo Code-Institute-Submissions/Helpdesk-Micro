@@ -49,7 +49,7 @@
     </div>
     <div class="row">
       <div class="input-field col s12">
-    <select id="end_user" name="end_user">
+    <select id="end_user" name="end_user" >
       <option value="" disabled selected>End user</option>
       {% for user in end_users %}
       <option value="{{user.end_user}}">{{user.end_user}}</option>
@@ -57,13 +57,16 @@
     </select>
     <label>End user</label>
   </div>
-  <div class="row">
-        <div class="input-field col s12">
-          <textarea id="eu_email" name="eu_email" class="materialize-textarea"></textarea>
-          <label for="eu_email">End user email</label>
-        </div>
-      </div>
-    </div>
+    <div class="row">
+      <div class="input-field col s12">
+    <select id="eu_email" name="eu_email" >
+      <option value="" disabled selected>Email</option>
+      {% for user in eu_email %}
+      <option value="{{user.eu_email}}">{{user.parent_id}}</option>
+      {% endfor %}
+    </select>
+    <label>Email</label>
+  </div>
     <div class="row">
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
