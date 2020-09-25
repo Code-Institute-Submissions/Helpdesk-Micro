@@ -74,6 +74,11 @@ def update_ticket(ticket_id):
     })
     return redirect(url_for('get_tickets'))
 
+@app.route('/end_users')
+def get_users():
+    end_users = mongo.db.end_user.find()
+    return render_template('end_users.html', end_users=end_users)
+
 @app.route('/add_end_user')
 def add_end_user():
     return render_template('add_end_user.html')
@@ -83,6 +88,11 @@ def insert_end_user():
     end_user = mongo.db.end_user
     end_user.insert_one(request.form.to_dict())
     return redirect(url_for('get_tickets'))
+
+@app.route('/edit_end_user/<end_user_id>')
+def edit_end_user(end_user_id):
+    edit_end_user = mongo.db.end_user.find_one({"_id": ObjectId(end_user_id)})
+    return render_template('edit_end_user.html', edit_end_user=edit_end_user)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)

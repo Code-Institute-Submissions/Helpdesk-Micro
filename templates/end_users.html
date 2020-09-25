@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+  <ul class="collapsible popout">
+  {% for end_user in end_users %}
+    <li>
+    <div class="row">
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{end_user.end_user}}</div>
+        </div>
+      <div class="collapsible-body">
+      <div class="row">
+      <div class="col s8">
+      <span>{{end_user.end_user}}</span>
+      </div>
+      <div class="col s4 right">
+      
+      </div>
+      </div>
+      <div class="row">
+
+      <div class="col 6">
+        <a class="waves-effect waves-light btn" href="">Close</a>
+      </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+
+{% endblock %}
+
