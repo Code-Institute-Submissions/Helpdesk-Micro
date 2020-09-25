@@ -2,30 +2,24 @@
 
 {% block content %}
 
-  <ul class="collapsible popout">
+  <div class="row">
   {% for end_user in end_users %}
-    <li>
-    <div class="row">
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{end_user.end_user}}</div>
+    <div class="col s4">
+      <div class="card blue-grey darken-1">
+        <div class="card-content white-text">
+          <span class="card-title">{{end_user.end_user}}</span>
+          <p>I am a very simple card. I am good at containing small bits of information.
+          I am convenient because I require little markup to use effectively.</p>
         </div>
-      <div class="collapsible-body">
-      <div class="row">
-      <div class="col s8">
-      <span>{{end_user.end_user}}</span>
+        <div class="card-action">
+          <a href="#">This is a link</a>
+          <a href="#">This is a link</a>
+        </div>
       </div>
-      <div class="col s4 right">
-      
-      </div>
-      </div>
-      <div class="row">
-
-      <div class="col 6">
-        <a class="waves-effect waves-light btn" href="">Close</a>
-      </div>
-      </div>
-    </li>
+    </div>
     {% endfor %}
-  </ul>
+  </div>
+  
 
 
 {% endblock %}
