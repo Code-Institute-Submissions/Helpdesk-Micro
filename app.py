@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tickets')
 def get_tickets():
-    tickets = mongo.db.tickets.find()
+    tickets = mongo.db.tickets.find().sort('date_posted', 1)
     return render_template('tickets.html', tickets=tickets)
 
 @app.route('/add_ticket')
@@ -76,7 +76,7 @@ def update_ticket(ticket_id):
 
 @app.route('/end_users')
 def get_users():
-    end_users = mongo.db.end_user.find()
+    end_users = mongo.db.end_user.find().sort('end_user', 1)
     return render_template('end_users.html', end_users=end_users)
 
 @app.route('/add_end_user')
