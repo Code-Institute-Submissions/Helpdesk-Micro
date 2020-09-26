@@ -83,16 +83,28 @@ def get_users():
 def add_end_user():
     return render_template('add_end_user.html')
 
+@app.route('/edit_end_user/<end_user_id>')
+def edit_end_user(end_user_id):
+    edit_end_user = mongo.db.end_user.find_one({"_id": ObjectId(end_user_id)})
+    return render_template('edit_end_user.html', end_user=edit_end_user)
+
+@app.route('/update_end_user/<end_user_id>', methods=["POST"])
+def update_end_user(end_user_id):
+    end_user = mongo.db.end_user
+    end_user.update( {'_id': ObjectId(end_user_id)},
+    {
+        'end_user':request.form.get('end_user'),
+        'tel_no':request.form.get('tel_no'),
+        'eu_email':request.form.get('eu_email'),
+        'eu_department':request.form.get('eu_department'),
+    })
+    return redirect(url_for('get_users'))
+
 @app.route('/insert_end_user', methods=['POST'])
 def insert_end_user():
     end_user = mongo.db.end_user
     end_user.insert_one(request.form.to_dict())
-    return redirect(url_for('get_tickets'))
-
-@app.route('/edit_end_user/<end_user_id>')
-def edit_end_user(end_user_id):
-    edit_end_user = mongo.db.end_user.find_one({"_id": ObjectId(end_user_id)})
-    return render_template('edit_end_user.html', edit_end_user=edit_end_user)
+    return redirect(url_for('get_users'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
