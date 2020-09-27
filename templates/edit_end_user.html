@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h2>Add End User</h2>
+<h2>Edit End User</h2>
   <div class="row">
     <form action="{{ url_for('update_end_user', end_user_id=end_user._id) }}" method="POST" class="col s12">
       <div class="row">
@@ -31,6 +31,7 @@
   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">send</i>
   </button>
+  <a class="waves-effect waves-light btn" href="{{ url_for('get_users') }}">Cancel</a>
     </div>
     </form>
   </div>

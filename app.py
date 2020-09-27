@@ -42,10 +42,18 @@ def insert_ticket():
                     'call_priority': request.form.get('call_priority'),
                     'call_status': request.form.get('call_status'),
                     'end_user': request.form.get('end_user'),
-                    'eu_email': request.form.get('eu_email')}
+                    'eu_email': request.form.get('eu_email'),
+                    "_ticketid": get_sequence("messages"),
+                    }
                     
     tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))
+
+def get_sequence(name):
+    collection = mongo.db.sequences
+    document = collection.find_one_and_update({"_id": name}, {"$inc": {"value": 1}}, return_document=True)
+
+    return document["value"]
 
 @app.route('/edit_ticket/<ticket_id>')
 def edit_ticket(ticket_id):
@@ -104,6 +112,11 @@ def update_end_user(end_user_id):
 def insert_end_user():
     end_user = mongo.db.end_user
     end_user.insert_one(request.form.to_dict())
+    return redirect(url_for('get_users'))
+
+@app.route('/delete_end_user/<end_user_id>')
+def delete_end_user(end_user_id):
+    mongo.db.end_user.remove({'_id': ObjectId(end_user_id)})
     return redirect(url_for('get_users'))
 
 if __name__ == '__main__':

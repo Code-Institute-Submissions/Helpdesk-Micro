@@ -1,3 +1,13 @@
+<script type="text/javascript">
+function getNextSequenceValue(sequenceName){
+   var sequenceDocument = mongo.db.counters.findAndModify({
+      query:{_id: sequenceName },
+      update: {$inc:{sequence_value:1}},
+      new:true
+   });
+   return sequenceDocument.sequence_value;
+}
+</script>
 {% extends 'base.html' %} {% block content %}
 <h3>Add Ticket</h3>
 <div class="row">
@@ -76,3 +86,13 @@
 </div>
 
 {% endblock %}
+<script>
+function getNextSequenceValue(sequenceName){
+   var sequenceDocument = mongo.db.counters.findAndModify({
+      query:{_id: sequenceName },
+      update: {$inc:{sequence_value:1}},
+      new:true
+   });
+   return sequenceDocument.sequence_value;
+}
+</script>

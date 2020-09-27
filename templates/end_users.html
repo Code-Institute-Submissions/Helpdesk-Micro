@@ -14,7 +14,18 @@
         </div>
         <div class="card-action">
           <a class="waves-effect waves-light btn" href="{{ url_for('edit_end_user', end_user_id=end_user._id) }}">Edit</a>
-          <a href="#">This is a link</a>
+          <a data-target="modal1" class="btn modal-trigger">Delete</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Are you sure?</h4>
+    </div>
+    <div class="modal-footer">
+    <a href="{{ url_for('delete_end_user', end_user_id=end_user._id) }}" class="modal-close waves-effect waves-light btn">Delete</a>
+      <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+    </div>
+  </div>
         </div>
       </div>
     </div>
