@@ -43,12 +43,13 @@ def insert_ticket():
                     'call_status': request.form.get('call_status'),
                     'end_user': request.form.get('end_user'),
                     'eu_email': request.form.get('eu_email'),
-                    "_ticketid": get_sequence("messages"),
+                    "_ticketid": get_sequence("messages"), # inserts the incremented _ticketid from get_sequence function
                     }
                     
     tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))
 
+# increments the sequences mongoDB collection by one 
 def get_sequence(name):
     collection = mongo.db.sequences
     document = collection.find_one_and_update({"_id": name}, {"$inc": {"value": 1}}, return_document=True)
