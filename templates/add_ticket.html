@@ -2,7 +2,7 @@
 
 <h3>Add New Ticket</h3>
 <div class="row">
-  <form action="{{ url_for('insert_ticket') }}" method="POST" class="col s12">
+  <form action="{{ url_for('insert_ticket') }}" method="POST">
     <div class="row">
       <div class="input-field col s6">
         <input
@@ -53,15 +53,15 @@
       </div>
     </div>
     <div class="row">
-    <div class="input-field col s4">
-          <select id="end_user" name="end_user">
-            <option value="" disabled selected>Raised by</option>
-            {% for user in end_users %}
-            <option value="{{user.end_user}}">{{user.end_user}}</option>
-            {% endfor %}
-          </select>
-          <label>Raised by</label>
-        </div>
+      <div class="input-field col s4">
+        <select id="end_user" name="end_user">
+          <option value="" disabled selected>Raised by</option>
+          {% for user in end_users %}
+          <option value="{{user.end_user}}">{{user.end_user}}</option>
+          {% endfor %}
+        </select>
+        <label>Raised by</label>
+      </div>
       <div class="input-field col s4">
         <select id="eu_email" name="eu_email">
           <option value="" disabled selected>Contact Email</option>
@@ -71,25 +71,29 @@
         </select>
         <label>Contact email</label>
       </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <textarea
+          id="call_details"
+          name="call_details"
+          class="materialize-textarea validate"
+          required=""
+          aria-required="true"
+        ></textarea>
+        <label for="call_details">Ticket details</label>
       </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea
-            id="call_details"
-            name="call_details"
-            class="materialize-textarea validate"
-            required=""
-            aria-required="true"
-          ></textarea>
-          <label for="call_details">Ticket details</label>
-        </div>
-      </div>
+    </div>
     <div class="row">
       <button class="btn waves-effect waves-light" type="submit" name="action">
         Add ticket
         <i class="material-icons right">send</i>
       </button>
-      <a class="waves-effect waves-light btn" href="{{ url_for('get_tickets') }}">Cancel</a>
+      <a
+        class="waves-effect waves-light btn"
+        href="{{ url_for('get_tickets') }}"
+        >Cancel</a
+      >
     </div>
   </form>
 </div>
