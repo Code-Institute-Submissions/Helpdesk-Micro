@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+<h3>All Tickets</h3>
+<a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
+<a class="waves-effect waves-light btn" href="/add_comment">Add comment</a>
   <ul class="collapsible popout">
   {% for ticket in tickets %}
     <li>
@@ -32,6 +34,5 @@
     </li>
     {% endfor %}
   </ul>
-  <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
 
 {% endblock %}

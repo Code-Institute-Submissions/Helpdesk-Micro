@@ -14,19 +14,19 @@ function getNextSequenceValue(sequenceName){
   <form action="{{ url_for('insert_ticket') }}" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <input id="call_subject" name="call_subject" type="text" />
+        <input id="call_subject" name="call_subject" type="text" class="validate" required="" aria-required="true"/>
         <label for="call_subject">Call Subject</label>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="call_details" name="call_details" class="materialize-textarea"></textarea>
+          <textarea id="call_details" name="call_details" class="materialize-textarea validate" required="" aria-required="true"></textarea>
           <label for="call_details">Call Details</label>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="input-field col s12">
-    <select id="call_type" name="call_type">
+    <select id="call_type" name="call_type" required="" aria-required="true">
       <option value="" disabled selected>Choose call type</option>
       {% for type in call_type %}
       <option value="{{type.call_type}}">{{type.call_type}}</option>

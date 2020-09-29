@@ -49,7 +49,7 @@ def insert_ticket():
     tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))
 
-# increments the sequences mongoDB collection by one 
+# increments the sequences mongoDB collection by one
 def get_sequence(name):
     collection = mongo.db.sequences
     document = collection.find_one_and_update({"_id": name}, {"$inc": {"value": 1}}, return_document=True)
