@@ -15,9 +15,9 @@
       <a href="/" class="brand-logo left">Logo</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-    <li><a href="add_ticket">add ticket</a></li>
-    <li><a href="add_end_user">add end user</a></li>
-    <li><a href="end_users">end users</a></li>
+    <li><a href="{{ url_for('add_ticket') }}">add ticket</a></li>
+    <li><a href="{{ url_for('add_end_user') }}">add end user</a></li>
+    <li><a href="{{ url_for('get_users') }}">end users</a></li>
       </ul>
     </div>
   </nav>
