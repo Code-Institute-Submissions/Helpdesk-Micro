@@ -5,85 +5,93 @@
   <form action="{{ url_for('insert_ticket') }}" method="POST" class="col s12">
     <div class="row">
       <div class="input-field col s6">
-        <input id="call_subject" name="call_subject" type="text" class="validate" required="" aria-required="true"/>
-        <label for="call_subject">Call Subject</label>
+        <input
+          id="call_subject"
+          name="call_subject"
+          type="text"
+          class="validate"
+          required=""
+          aria-required="true"
+        />
+        <label for="call_subject">Ticket Subject</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s4">
+        <select
+          id="call_type"
+          name="call_type"
+          required=""
+          aria-required="true"
+        >
+          <option value="" disabled selected>Choose ticket type</option>
+          {% for type in call_type %}
+          <option value="{{type.call_type}}">{{type.call_type}}</option>
+          {% endfor %}
+        </select>
+        <label>Ticket type</label>
+      </div>
+      <div class="input-field col s4">
+        <select id="call_priority" name="call_priority">
+          <option value="" disabled selected>Choose ticket priority</option>
+          {% for priority in call_priority %}
+          <option value="{{priority.call_priority}}"
+            >{{priority.call_priority}}</option
+          >
+          {% endfor %}
+        </select>
+        <label>Call priority</label>
+      </div>
+      <div class="input-field col s4">
+        <select id="call_status" name="call_status">
+          <option value="" disabled selected>Choose ticket status</option>
+          {% for status in call_status %}
+          <option value="{{status.call_status}}">{{status.call_status}}</option>
+          {% endfor %}
+        </select>
+        <label>Call status</label>
+      </div>
+    </div>
+    <div class="row">
+    <div class="input-field col s4">
+          <select id="end_user" name="end_user">
+            <option value="" disabled selected>Raised by</option>
+            {% for user in end_users %}
+            <option value="{{user.end_user}}">{{user.end_user}}</option>
+            {% endfor %}
+          </select>
+          <label>Raised by</label>
+        </div>
+      <div class="input-field col s4">
+        <select id="eu_email" name="eu_email">
+          <option value="" disabled selected>Contact Email</option>
+          {% for user in eu_email %}
+          <option value="{{user.eu_email}}">{{user.parent_id}}</option>
+          {% endfor %}
+        </select>
+        <label>Contact email</label>
+      </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <textarea id="call_details" name="call_details" class="materialize-textarea validate" required="" aria-required="true"></textarea>
-          <label for="call_details">Call Details</label>
+          <textarea
+            id="call_details"
+            name="call_details"
+            class="materialize-textarea validate"
+            required=""
+            aria-required="true"
+          ></textarea>
+          <label for="call_details">Ticket details</label>
         </div>
       </div>
-    </div>
     <div class="row">
-      <div class="input-field col s12">
-    <select id="call_type" name="call_type" required="" aria-required="true">
-      <option value="" disabled selected>Choose call type</option>
-      {% for type in call_type %}
-      <option value="{{type.call_type}}">{{type.call_type}}</option>
-      {% endfor %}
-    </select>
-    <label>Call type</label>
-  </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-    <select id="call_priority" name="call_priority">
-      <option value="" disabled selected>Choose call priority</option>
-      {% for priority in call_priority %}
-      <option value="{{priority.call_priority}}">{{priority.call_priority}}</option>
-      {% endfor %}
-    </select>
-    <label>Call priority</label>
-  </div>
-    </div>
-        <div class="row">
-      <div class="input-field col s12">
-    <select id="call_status" name="call_status">
-      <option value="" disabled selected>Choose call status</option>
-      {% for status in call_status %}
-      <option value="{{status.call_status}}">{{status.call_status}}</option>
-      {% endfor %}
-    </select>
-    <label>Call status</label>
-  </div>
-    </div>
-    <div class="row">
-      <div class="input-field col s12">
-    <select id="end_user" name="end_user" >
-      <option value="" disabled selected>End user</option>
-      {% for user in end_users %}
-      <option value="{{user.end_user}}">{{user.end_user}}</option>
-      {% endfor %}
-    </select>
-    <label>End user</label>
-  </div>
-    <div class="row">
-      <div class="input-field col s12">
-    <select id="eu_email" name="eu_email" >
-      <option value="" disabled selected>Email</option>
-      {% for user in eu_email %}
-      <option value="{{user.eu_email}}">{{user.parent_id}}</option>
-      {% endfor %}
-    </select>
-    <label>Email</label>
-  </div>
-    <div class="row">
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Add ticket
+        <i class="material-icons right">send</i>
+      </button>
+      <a class="waves-effect waves-light btn" href="{{ url_for('get_tickets') }}">Cancel</a>
     </div>
   </form>
 </div>
 
 {% endblock %}
-<script>
-function getNextSequenceValue(sequenceName){
-   var sequenceDocument = mongo.db.counters.findAndModify({
-      query:{_id: sequenceName },
-      update: {$inc:{sequence_value:1}},
-      new:true
-   });
-   return sequenceDocument.sequence_value;
-}
-</script>
