@@ -21,6 +21,21 @@ def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', 1)
     return render_template('tickets.html', tickets=tickets)
 
+@app.route('/open_tickets')
+def open_tickets():
+    tickets = mongo.db.tickets.find({'call_status': 'Open'})
+    return render_template('open_tickets.html', tickets=tickets)
+
+@app.route('/held_tickets')
+def held_tickets():
+    tickets = mongo.db.tickets.find({'call_status': 'On Hold'})
+    return render_template('held_tickets.html', tickets=tickets)
+
+@app.route('/closed_tickets')
+def closed_tickets():
+    tickets = mongo.db.tickets.find({'call_status': 'Closed'})
+    return render_template('closed_tickets.html', tickets=tickets)
+
 @app.route('/add_ticket')
 def add_ticket():
     eu_email = mongo.db.end_user.find()
@@ -43,7 +58,7 @@ def insert_ticket():
                     'call_status': request.form.get('call_status'),
                     'end_user': request.form.get('end_user'),
                     'eu_email': request.form.get('eu_email'),
-                    "_ticketid": get_sequence("messages"), # inserts the incremented _ticketid from get_sequence function
+                    "_ticketid": get_sequence("messages"), # inserts the incremented ticketid from get_sequence function
                     }
                     
     tickets.insert_one((new_ticket))

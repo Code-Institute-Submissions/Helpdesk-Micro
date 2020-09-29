@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Open Tickets</h3>
+<a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
+<a class="waves-effect waves-light btn" href="/add_comment">Add comment</a>
+  <ul class="collapsible popout">
+  {% for ticket in tickets %}
+    <li>
+    <div class="row">
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>{{ticket.call_subject}}</div>
+        </div>
+      <div class="collapsible-body">
+      <div class="row">
+      <div class="col s8">
+      <span>{{ticket.call_details}}</span>
+      </div>
+      <div class="col s4 right">
+        <p>{{ticket.date_posted}}</p>
+        <p>Raised by: {{ticket.end_user}}</p>
+        <p>Priority: {{ticket.call_priority}}</p>
+        <p>Status: {{ticket.call_status}}</p>
+        <p>Email: {{ticket.eu_email}}</p>
+      </div>
+      </div>
+      <div class="row">
+      <div class="col 6">
+        <a class="waves-effect waves-light btn" href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}">Edit</a>
+      </div>
+      <div class="col 6">
+        <a class="waves-effect waves-light btn" href="">Close</a>
+      </div>
+      </div>
+    </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}
