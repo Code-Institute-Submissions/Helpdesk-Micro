@@ -4,24 +4,24 @@
   <div class="row">
     <form action="{{ url_for('update_end_user', end_user_id=end_user._id) }}" method="POST" class="col s12">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field input-box col s6">
           <i class="material-icons prefix">account_circle</i>
           <input id="end_user" name="end_user" type="text" class="validate" value="{{end_user.end_user}}">
           <label for="icon_prefix">Name</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field input-box col s6">
           <i class="material-icons prefix">phone</i>
           <input id="tel_no" name="tel_no" type="tel" class="validate" value="{{end_user.tel_no}}">
           <label for="icon_telephone">Telephone</label>
         </div>
       </div>
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field input-box col s6">
           <i class="material-icons prefix">account_circle</i>
           <input id="eu_email" name="eu_email" type="email" class="validate" value="{{end_user.eu_email}}">
           <label for="icon_prefix">Email Address</label>
         </div>
-        <div class="input-field col s6">
+        <div class="input-field input-box col s6">
           <i class="material-icons prefix">phone</i>
           <input id="eu_department" name="eu_department" type="text" class="validate" value="{{end_user.eu_department}}">
           <label for="icon_telephone">Department</label>
