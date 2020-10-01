@@ -7,7 +7,7 @@
     method="POST"
   >
     <div class="row">
-      <div class="input-field col s6">
+      <div class="input-field input-box col s6">
         <input
           id="call_subject"
           name="call_subject"
@@ -22,7 +22,8 @@
       
     </div>
     <div class="row">
-      <div class="input-field col s4">
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="call_type" name="call_type">
           <option value="" disabled selected>Choose call type</option>
           {% for type in call_type %} {% if type.call_type == ticket.call_type
@@ -36,7 +37,9 @@
         </select>
         <label>Call type</label>
       </div>
-      <div class="input-field col s4">
+    </div>
+      <div class="col s4">
+      <div class="input-field input-box">
         <select id="call_priority" name="call_priority">
           <option value="" disabled selected>Choose call priority</option>
           {% for priority in call_priority %} {% if priority.call_priority ==
@@ -52,7 +55,9 @@
         </select>
         <label>Call priority</label>
       </div>
-      <div class="input-field col s4">
+      </div>
+      <div class="col s4">
+      <div class="input-field input-box">
         <select id="call_status" name="call_status">
           <option value="" disabled selected>Choose call status</option>
           {% for status in call_status %} {% if status.call_status ==
@@ -68,9 +73,10 @@
         </select>
         <label>Call status</label>
       </div>
+      </div>
     </div>
     <div class="row">
-      <div class="input-field col s4">
+      <div class="input-field input-box col s4">
         <select id="end_user" name="end_user">
           <option value="" disabled selected>End user</option>
           {% for user in end_user %} {% if user.end_user == ticket.end_user %}
@@ -81,7 +87,7 @@
         </select>
         <label>End user</label>
       </div>
-        <div class="input-field col s4">
+        <div class="input-field input-box col s4">
         <select id="eu_email" name="eu_email">
           <option value="" disabled selected>Email</option>
           {% for user in eu_email %} {% if user.eu_email == ticket.eu_email %}
@@ -93,7 +99,7 @@
       </div>
     </div>
     <div class="row">
-        <div class="input-field col s12">
+        <div class="input-field input-box col s12">
           <textarea
             id="call_details"
             name="call_details"
