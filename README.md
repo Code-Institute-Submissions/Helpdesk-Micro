@@ -2,7 +2,7 @@
 
 [View the live project here.](https://##)
 
-This is the website for my third Code Institute project focusing Python and MongoDB.  The site is designed to be responsive and contains an IT Helpdesk ticketing system. Users will be able to create, edit, read and delete Helpdesk tickets. It is styled to provide end users with ease of readability.
+This is the website for my third Code Institute project focusing on Python, Flask and MongoDB.  The site is designed to be responsive and contains an IT Helpdesk ticketing system. Users will be able to create, edit, read and delete Helpdesk tickets. It is styled to provide end users with ease of readability.
 
 <h2 align="center"><img src="https://##"></h2>
 
@@ -12,7 +12,7 @@ This is the website for my third Code Institute project focusing Python and Mong
 
     -   #### First Time Visitor Goals
 
-        1. As a First Time Visitor, I want.
+        1. As a First Time Visitor, I want easily manage, create and complete IT Helpdesk calls for my organisation.
         2. As a First Time Visitor, I want.
 
     -   #### Returning Visitor Goals
@@ -44,6 +44,8 @@ This is the website for my third Code Institute project focusing Python and Mong
 
 -   Responsive on all device sizes.
 
+
+
 -   Interactive JavaScript elements including modals, overlays and a gameboard.
 
 ## Technologies Used
@@ -56,14 +58,16 @@ This is the website for my third Code Institute project focusing Python and Mong
 
 ### Frameworks, Libraries & Programs Used
 
-1. [Bootstrap 4.5.0:](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
-    - Bootstrap was used to assist with the responsiveness and styling of the website.
+1. [Flask:](https://flask.palletsprojects.com/en/1.1.x/)
+    - Flask is a micro web framework written in Python.
+1. [MongoDB Atlas:](https://www.mongodb.com/cloud/atlas)
+    - MongoDB Atlas is a cloud database service.
+1. [Materialize 1.0.0:](https://materializecss.com/getting-started.html)
+    - Materialize was used to assist with the responsiveness and styling of the website.
 1. [Google Fonts:](https://fonts.google.com/)
     - Google fonts were used to import the 'Press Start P2' and 'VT323' fonts into the style.css file which is used on all pages throughout the project.
-1. [Font Awesome:](https://fontawesome.com/)
-    - Font Awesome was used for the GitHub logo in page footers.
 1. [jQuery:](https://jquery.com/)
-    - jQuery came with Bootstrap to make the navbar responsive.
+    - jQuery came with Materialize to make the navbar responsive.
 1. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and push to GitHub.
 1. [GitHub:](https://github.com/)
@@ -87,9 +91,9 @@ The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaS
 
 -   #### First Time Visitor Goals
 
-    1. As a First Time Visitor, I want to play a game that tests my memory.
+    1. As a First Time Visitor, I want easily manage, create and complete IT Helpdesk calls for my organisation.
 
-        1. Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the play page that contains the game. There is also an easily visible PLAY button in the intro text that will also lead the user to the game.
+        1. Upon entering the site, after login, users are greeted with a clean and easily readable navigation bar and a list of all existing helpdesk tickets.
 
     2. As a First Time Visitor, I want to reminisce about the 80's.
 
