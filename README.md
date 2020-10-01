@@ -211,15 +211,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ### Media
 
 -   [Background Image](https://pixabay.com/users/iywbr-11282422/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3941721) by iywbr.
--   [CRT TV](https://www.pexels.com/photo/black-crt-tv-showing-gray-screen-704555/) by Burak K.
--   [Polaroid Camera](https://www.pexels.com/photo/camera-photography-vintage-technology-191160/) by Markus Spiske.
--   [Telephone](https://www.pexels.com/photo/vintage-technology-calling-numbers-105003/) by Markus Spiske.
--   [Star GIF](https://www.pinterest.co.uk/pin/824721750497754424/) from Pinterest.
--   [Background Music](https://patrickdearteaga.com) by Patrick de Arteaga.
--   [Card match error audio](https://freesound.org/people/Breviceps/) by Breviceps.
--   [Victory fanfare audio](https://freesound.org/people/MattiaGiovanetti/) by MattiaGiovanetti.
--   [Coin pickup audio](https://freesound.org/people/n_audioman/) by n_audioman.
--   [Card flip audio](https://freesound.org/people/f4ngy/) by f4ngy.
+
 
 ### Acknowledgements
 
