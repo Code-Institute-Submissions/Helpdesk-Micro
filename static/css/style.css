@@ -36,6 +36,22 @@ body {
     }
 }
 
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
 .collapsible-body {
     background-color: #ffffff;
 }
