@@ -9,6 +9,7 @@
 </head>
 
 <body>
+<div class="bg-img"><div>
     <header>
          <nav>
     <div class="nav-wrapper">
@@ -27,13 +28,15 @@
     <li><a href="add end user.html">add end user</a></li>
   </ul>
     </header>
+    
     <div class="container">
+    
         {% block content %} {% endblock %}
     </div>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-    
 </body>
 
 </html>

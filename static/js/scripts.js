@@ -11,7 +11,8 @@ $(document).ready(function () {
   $(".modal").modal(); /* delete user confirmation */
 });
 
+// random background image on page refresh
 $(function() {
     var images = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg'];
-    $('body').css({'background': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+    $('.bg-img').css({'background': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
    });
