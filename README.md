@@ -132,11 +132,8 @@ The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaS
 
 ### Known Bugs & Resolutions if Applicable
 
--   iOS Safari - does not support .ogg media files.  Resolved by converting any affected audio files to .mp3.
--   iOS Safari - Apple has blocked the control of HTML5 audio using JavaScript.  Volume can only be controlled through hardware interaction by the user. [Apple Developer documentation](https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/Using_HTML5_Audio_Video/Device-SpecificConsiderations/Device-SpecificConsiderations.html). No fix implemented at this point.
--   iOS Safari - Cards showing a blank front after flip animation.  Card front image was visible during the flip animation. Resolved by adding `background-color: rgba(0, 0, 0, 0.01);` to .card and .card.flipped CSS classes.
--   Google Chrome - Card flip animation not visible. Resolved by adding `-webkit-transform-style: preserve-3d;` and `-webkit-transform: rotateY(-180deg);` to .card, .card.flipped, and .card-back and .card-front classes.
--   Internet Explorer 11 - Flexbox and ES6 JavaScript issues.  Overlays are not interactive and card grid does not build correctly, instead a column of 16 cards is visible.  These issues remain unresolved.
+-   Incrementing ticketid was not repopulating from edit ticket submit.  Resolved by a disabled hidden text input in edit_ticket.html with _ticketid fields.
+
 
 ## Deployment
 
