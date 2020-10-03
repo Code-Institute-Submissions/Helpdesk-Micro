@@ -7,7 +7,8 @@
     method="POST"
   >
     <div class="row">
-      <div class="input-field input-box col s6">
+    <div col s6>
+      <div class="input-field input-box">
         <input
           id="call_subject"
           name="call_subject"
@@ -19,7 +20,7 @@
         />
         <label for="call_subject">Ticket Subject</label>
       </div>
-      
+    </div>
     </div>
     <div class="row">
     <div class="col s4">
@@ -76,7 +77,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field input-box col s4">
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="end_user" name="end_user">
           <option value="" disabled selected>End user</option>
           {% for user in end_user %} {% if user.end_user == ticket.end_user %}
@@ -87,7 +89,9 @@
         </select>
         <label>End user</label>
       </div>
-        <div class="input-field input-box col s4">
+    </div>
+    <div class="col s4">
+        <div class="input-field input-box">
         <select id="eu_email" name="eu_email">
           <option value="" disabled selected>Email</option>
           {% for user in eu_email %} {% if user.eu_email == ticket.eu_email %}
@@ -97,6 +101,7 @@
           {% endif %} {% endfor %}
         </select>
       </div>
+    </div>
     </div>
     <div class="row">
         <div class="input-field input-box col s12">
