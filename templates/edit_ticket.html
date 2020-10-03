@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<h3>Edit Ticket</h3>
+<h3>Edit Ticket - #{{ticket._ticketid}}</h3>
 <div class="row">
   <form
     action="{{ url_for('update_ticket', ticket_id=ticket._id) }}"
