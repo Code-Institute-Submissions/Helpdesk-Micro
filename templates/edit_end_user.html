@@ -1,39 +1,78 @@
 {% extends 'base.html' %} {% block content %}
 
 <h2>Edit End User</h2>
-  <div class="row">
-    <form action="{{ url_for('update_end_user', end_user_id=end_user._id) }}" method="POST" class="col s12">
-      <div class="row">
-        <div class="input-field input-box col s6">
+<div class="row">
+  <form
+    action="{{ url_for('update_end_user', end_user_id=end_user._id) }}"
+    method="POST"
+    class="col s12"
+  >
+    <div class="row">
+      <div class="col s6">
+        <div class="input-field input-box">
           <i class="material-icons prefix">account_circle</i>
-          <input id="end_user" name="end_user" type="text" class="validate" value="{{end_user.end_user}}">
+          <input
+            id="end_user"
+            name="end_user"
+            type="text"
+            class="validate"
+            value="{{end_user.end_user}}"
+          />
           <label for="icon_prefix">Name</label>
         </div>
-        <div class="input-field input-box col s6">
+      </div>
+      <div class="col s6">
+        <div class="input-field input-box">
           <i class="material-icons prefix">phone</i>
-          <input id="tel_no" name="tel_no" type="tel" class="validate" value="{{end_user.tel_no}}">
+          <input
+            id="tel_no"
+            name="tel_no"
+            type="tel"
+            class="validate"
+            value="{{end_user.tel_no}}"
+          />
           <label for="icon_telephone">Telephone</label>
         </div>
       </div>
-      <div class="row">
-        <div class="input-field input-box col s6">
+    </div>
+    <div class="row">
+      <div class="col s6">
+        <div class="input-field input-box">
           <i class="material-icons prefix">account_circle</i>
-          <input id="eu_email" name="eu_email" type="email" class="validate" value="{{end_user.eu_email}}">
+          <input
+            id="eu_email"
+            name="eu_email"
+            type="email"
+            class="validate"
+            value="{{end_user.eu_email}}"
+          />
           <label for="icon_prefix">Email Address</label>
         </div>
-        <div class="input-field input-box col s6">
+      </div>
+      <div class="col s6">
+        <div class="input-field input-box">
           <i class="material-icons prefix">phone</i>
-          <input id="eu_department" name="eu_department" type="text" class="validate" value="{{end_user.eu_department}}">
+          <input
+            id="eu_department"
+            name="eu_department"
+            type="text"
+            class="validate"
+            value="{{end_user.eu_department}}"
+          />
           <label for="icon_telephone">Department</label>
         </div>
       </div>
-          <div class="row">
-  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
-  <a class="waves-effect waves-light btn" href="{{ url_for('get_users') }}">Cancel</a>
     </div>
-    </form>
-  </div>
+    <div class="row">
+      <button class="btn waves-effect waves-light" type="submit" name="action">
+        Submit
+        <i class="material-icons right">send</i>
+      </button>
+      <a class="waves-effect waves-light btn" href="{{ url_for('get_users') }}"
+        >Cancel</a
+      >
+    </div>
+  </form>
+</div>
 
 {% endblock %}

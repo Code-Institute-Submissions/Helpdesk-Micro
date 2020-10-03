@@ -17,7 +17,8 @@
       </div>
     </div>
     <div class="row">
-      <div class="input-field input-box col s4">
+    <div class="col s4">
+      <div class="input-field input-box">
         <select
           id="call_type"
           name="call_type"
@@ -31,7 +32,9 @@
         </select>
         <label>Ticket type</label>
       </div>
-      <div class="input-field input-box col s4">
+    </div>
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="call_priority" name="call_priority">
           <option value="" disabled selected>Choose ticket priority</option>
           {% for priority in call_priority %}
@@ -42,7 +45,9 @@
         </select>
         <label>Call priority</label>
       </div>
-      <div class="input-field input-box col s4">
+    </div>
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="call_status" name="call_status">
           <option value="" disabled selected>Choose ticket status</option>
           {% for status in call_status %}
@@ -52,8 +57,10 @@
         <label>Call status</label>
       </div>
     </div>
+    </div>
     <div class="row">
-      <div class="input-field input-box col s4">
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="end_user" name="end_user">
           <option value="" disabled selected>Raised by</option>
           {% for user in end_users %}
@@ -62,7 +69,9 @@
         </select>
         <label>Raised by</label>
       </div>
-      <div class="input-field input-box col s4">
+    </div>
+    <div class="col s4">
+      <div class="input-field input-box">
         <select id="eu_email" name="eu_email">
           <option value="" disabled selected>Contact Email</option>
           {% for user in eu_email %}

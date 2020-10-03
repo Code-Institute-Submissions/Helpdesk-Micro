@@ -47,7 +47,7 @@ def add_ticket():
                                                 
 
 
-@app.route('/insert_ticket', methods=['POST'])
+@app.route('/insert_ticket', methods=['POST', 'GET'])
 def insert_ticket():
     tickets = mongo.db.tickets
     new_ticket =    {'date_posted': datetime.utcnow().strftime('%d %B %Y - %H:%M:%S'),
@@ -78,23 +78,27 @@ def edit_ticket(ticket_id):
     call_type = mongo.db.call_type.find()
     call_priority = mongo.db.call_priority.find()
     call_status = mongo.db.call_status.find()
+    eu_email = mongo.db.eu_email.find()
     return render_template('edit_ticket.html', ticket=edit_ticket,
                                                end_user=end_user,
                                                call_type=call_type,
                                                call_priority=call_priority,
-                                               call_status=call_status,)
+                                               call_status=call_status,
+                                               eu_email=eu_email)
 
-@app.route('/update_ticket/<ticket_id>', methods=["POST"])
+@app.route('/update_ticket/<ticket_id>', methods=['POST', 'GET'])
 def update_ticket(ticket_id):
     tickets = mongo.db.tickets
-    tickets.update( {'_id': ObjectId(ticket_id)},
+    tickets.update({'_id': ObjectId(ticket_id)},
     {
         'call_subject':request.form.get('call_subject'),
         'call_details':request.form.get('call_details'),
         'call_type':request.form.get('call_type'),
         'call_priority':request.form.get('call_priority'),
         'call_status':request.form.get('call_status'),
-        'end_user':request.form.get('end_user')
+        'end_user':request.form.get('end_user'),
+        'eu_email':request.form.get('eu_email'),
+        '_ticketid':request.form.get('_ticketid')
     })
     return redirect(url_for('get_tickets'))
 
