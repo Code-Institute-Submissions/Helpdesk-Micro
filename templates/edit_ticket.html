@@ -8,9 +8,12 @@
     <div class="row">
       <h3>Edit Ticket - #{{ticket._ticketid}}</h3>
     </div>
-    <!-- Hidden disabled input to allow ticket int to repopulate on edit ticket submit -->
+    <!-- Hidden disabled inputs to allow ticketno & posted_time to repopulate on edit ticket submit -->
     <div class="input-field hide">
       <input id="disabled" name="_ticketid" value="{{ticket._ticketid}}" />
+    </div>
+    <div class="input-field hide">
+    <input id="disabled_time" name="date_posted" value="{{ticket.date_posted}}" />
     </div>
     <div class="row">
       <div class="col s6">

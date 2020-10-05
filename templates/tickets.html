@@ -2,12 +2,26 @@
 
 {% block content %}
 <h3>All Tickets</h3>
+<div class="row center-align">
+<div class="col s3">
 <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/open_tickets">Open tickets</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/held_tickets">Tickets on hold</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/closed_tickets">Closed tickets</a>
+</div>
+</div>
   <ul class="collapsible popout">
   {% for ticket in tickets %}
     <li>
     <div class="row">
-      <div class="collapsible-header"><i class="material-icons left">filter_drama</i><span class="left collapsible-ticketno">#{{ticket._ticketid}} | </span><span class="collapsible-subject">{{ticket.call_subject}}</span><span class="collapsible-priority right"> | {{ticket.call_priority}}</span></div>
+      <div class="collapsible-header">
+      <span class="left collapsible-ticketno">#{{ticket._ticketid}} | </span><span class="collapsible-subject">{{ticket.call_subject}}</span><span class="collapsible-priority right"> | {{ticket.call_priority}}</span></div>
         </div>
       <div class="collapsible-body">
       <div class="row">

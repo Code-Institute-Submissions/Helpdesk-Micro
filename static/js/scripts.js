@@ -9,10 +9,10 @@ $(document).ready(function () {
   $(".collapsible").collapsible(); /* accordion */
   $("select").formSelect(); /* select dropdowns */
   $(".modal").modal(); /* delete user confirmation */
-  $(".collapsible-header:contains('High')").addClass('red'); /* adds class to collapsible header */
-  $(".collapsible-header:contains('Medium')").addClass('blue');
-  $(".collapsible-header:contains('Low')").addClass('green');
-  $(".collapsible-header:contains('Information')").addClass('yellow');
+  $(".collapsible-header:contains('High')").addClass('priority-high'); /* adds class to collapsible header */
+  $(".collapsible-header:contains('Medium')").addClass('priority-med');
+  $(".collapsible-header:contains('Low')").addClass('priority-low');
+  $(".collapsible-header:contains('Information')").addClass('priority-info');
 });
 
 

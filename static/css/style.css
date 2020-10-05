@@ -37,27 +37,28 @@ body {
     }
 }
 
-.red {
+.priority-high {
     background-color: red;
 }
 
-.blue {
+.priority-med {
     background-color: blue;
 }
 
-.green {
+.priority-low {
     background-color: green;
 }
 
-.yellow {
+.priority-info {
     background-color: yellow;
 }
 
 .collapsible-header {
     display: block;
     font-weight: 700;
-    border-radius: 5px;
+    border-radius: 3px;
     outline-offset: 3px;
+    border: 1px solid;
 }
 
 .collapsible-subject {
