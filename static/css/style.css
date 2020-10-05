@@ -38,19 +38,19 @@ body {
 }
 
 .priority-high {
-    background-color: red;
+    background-color: rgb(240, 66, 66);
 }
 
 .priority-med {
-    background-color: blue;
+    background-color: rgb(83, 83, 250);
 }
 
 .priority-low {
-    background-color: green;
+    background-color: rgb(95, 216, 95);
 }
 
 .priority-info {
-    background-color: yellow;
+    background-color: rgb(238, 238, 142);
 }
 
 .collapsible-header {
