@@ -4,7 +4,7 @@
 <div class="row">
   <form action="{{ url_for('insert_ticket') }}" method="POST">
     <div class="row">
-      <div class="input-field input-box col s6">
+      <div class="input-field input-box col s11">
         <input
           id="call_subject"
           name="call_subject"
@@ -12,6 +12,7 @@
           class="validate"
           required=""
           aria-required="true"
+          maxlength="70"
         />
         <label for="call_subject">Ticket Subject</label>
       </div>

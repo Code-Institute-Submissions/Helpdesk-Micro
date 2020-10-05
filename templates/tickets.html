@@ -7,7 +7,7 @@
   {% for ticket in tickets %}
     <li>
     <div class="row">
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i><span>#{{ticket._ticketid}}</span>|<span>{{ticket.call_subject}}</span> | <span>{{ticket.call_priority}}</span></div>
+      <div class="collapsible-header"><i class="material-icons left">filter_drama</i><span class="left collapsible-ticketno">#{{ticket._ticketid}} | </span><span class="collapsible-subject">{{ticket.call_subject}}</span><span class="collapsible-priority right"> | {{ticket.call_priority}}</span></div>
         </div>
       <div class="collapsible-body">
       <div class="row">

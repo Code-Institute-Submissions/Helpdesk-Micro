@@ -53,6 +53,25 @@ body {
     background-color: yellow;
 }
 
+.collapsible-header {
+    display: block;
+    font-weight: 700;
+    border-radius: 5px;
+    outline-offset: 3px;
+}
+
+.collapsible-subject {
+    margin-left: 0.3rem;
+}
+
+.collapsible-subject {
+    max-width: 10rem;
+}
+
+.collapsible-priority {
+    margin-left: 0.3rem;
+}
+
 .collapsible-body {
     background-color: #ffffff;
 }
