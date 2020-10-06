@@ -71,6 +71,20 @@ background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rg
   background-color: #ffffff;
 }
 
+.c-body-details {
+    
+}
+
+.c-body-info {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(173, 216, 230);
+}
+
+.c-body-info p {
+    margin: 5px;
+}
+
 .input-box {
   background-color: #ffffff;
   border-radius: 5px;
