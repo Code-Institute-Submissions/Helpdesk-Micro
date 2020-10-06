@@ -18,7 +18,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_tickets')
 def get_tickets():
-    tickets = mongo.db.tickets.find().sort('date_posted', 1)
+    tickets = mongo.db.tickets.find().sort('date_posted', -1)
     return render_template('tickets.html', tickets=tickets)
 
 @app.route('/open_tickets')

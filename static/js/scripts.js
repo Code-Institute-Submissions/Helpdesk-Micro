@@ -10,9 +10,9 @@ $(document).ready(function () {
   $("select").formSelect(); /* select dropdowns */
   $(".modal").modal(); /* delete user confirmation */
   $(".collapsible-header:contains('High')").addClass('priority-high'); /* adds class to collapsible header */
-  $(".collapsible-header:contains('Medium')").addClass('priority-med');
+  $(".collapsible-header:contains('Med')").addClass('priority-med');
   $(".collapsible-header:contains('Low')").addClass('priority-low');
-  $(".collapsible-header:contains('Information')").addClass('priority-info');
+  $(".collapsible-header:contains('Info')").addClass('priority-info');
 });
 
 
