@@ -1,88 +1,91 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;700&display=swap");
 
-
-html, body {
-    height: 100%;
-    width: 100%;
+html,
+body {
+  height: 100%;
+  width: 100%;
 }
 
 body {
-    position: relative;
-    background-image: url('/static/images/bg2.jpg');
+  position: relative;
+  background-image: url("/static/images/bg2.jpg");
 }
 
 .bg-img {
-    opacity: 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: url('/static/images/bg1.jpg') no-repeat center center fixed;
-    background-size: cover;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("/static/images/bg1.jpg") no-repeat center center fixed;
+  background-size: cover;
 
-    animation-name: fadeIn;
-    animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
-    animation-duration: 0.9s;
-    animation-fill-mode:forwards;
+  animation-name: fadeIn;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.9s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .priority-high {
-    background-color: rgb(240, 66, 66);
+  background-color: rgb(240, 66, 66);
 }
 
 .priority-med {
-    background-color: rgb(83, 83, 250);
+  background-color: rgb(83, 83, 250);
 }
 
 .priority-low {
-    background-color: rgb(95, 216, 95);
+  background-color: rgb(95, 216, 95);
 }
 
 .priority-info {
-    background-color: rgb(238, 238, 142);
+  background-color: rgb(238, 238, 142);
 }
 
 .collapsible-header {
-    display: block;
-    font-weight: 700;
-    border-radius: 3px;
-    outline-offset: 3px;
-    border: 1px solid;
+  display: block;
+  font-weight: 700;
+  border-radius: 3px;
+  border: 2px solid;
+  width: auto;
+  margin: 10px auto;
+  padding-top: 10px;
+  padding-bottom: 0px;
+}
+
+.collapsible-ticketno {
+  width: 15%;
 }
 
 .collapsible-subject {
-    margin-left: 0.3rem;
-}
-
-.collapsible-subject {
-    max-width: 10rem;
+  width: 75%;
 }
 
 .collapsible-priority {
-    margin-left: 0.3rem;
+  width: 10%;
 }
 
 .collapsible-body {
-    background-color: #ffffff;
+  background-color: #ffffff;
 }
 
 .input-box {
-    background-color: #ffffff;
-    border-radius: 5px;
-    padding: 5px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .dropdown-content li > span {
-    color: blue;
+  color: blue;
 }

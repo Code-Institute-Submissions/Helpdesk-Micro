@@ -1,14 +1,37 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>Held Tickets</h3>
+<h3>All Tickets</h3>
+<div class="row center-align">
+<div class="col s3">
 <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/open_tickets">Open tickets</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/held_tickets">Tickets on hold</a>
+</div>
+<div class="col s3">
+<a class="waves-effect waves-light btn" href="/closed_tickets">Closed tickets</a>
+</div>
+</div>
   <ul class="collapsible popout">
   {% for ticket in tickets %}
     <li>
-    <div class="row">
-      <div class="collapsible-header"><i class="material-icons">filter_drama</i><span>#{{ticket._ticketid}}</span>|<span>{{ticket.call_subject}}</span> | <span>{{ticket.call_priority}}</span></div>
-        </div>
+      <div class="collapsible-header">
+      <div class="row">
+      <div class="collapsible-ticketno col s2">
+      <span>#{{ticket._ticketid}} | </span>
+      </div>
+      <div class="collapsible-subject col s8">
+      <span>{{ticket.call_subject}}</span>
+      </div>
+      <div class="collapsible-priority col s2">
+      <span> | {{ticket.call_priority}}</span>
+      </div>
+      </div>
+      </div>
       <div class="collapsible-body">
       <div class="row">
       <div class="col s8">
