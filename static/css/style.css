@@ -38,42 +38,33 @@ body {
 }
 
 .priority-high {
-  background-color: rgb(240, 66, 66);
+ background: rgb(2,0,36);
+background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(249,218,218,1) 80%, rgba(255,101,109,1) 100%);
 }
 
 .priority-med {
-  background-color: rgb(83, 83, 250);
+background: rgb(2,0,36);
+background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(246,249,218,1) 80%, rgba(241,255,101,1) 100%);
 }
 
 .priority-low {
-  background-color: rgb(95, 216, 95);
+background: rgb(2,0,36);
+background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(218,249,222,1) 80%, rgba(50,255,122,1) 100%);
 }
 
 .priority-info {
-  background-color: rgb(238, 238, 142);
+  background: rgb(2,0,36);
+background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(218,243,249,1) 80%, rgba(101,226,255,1) 100%);
 }
 
 .collapsible-header {
   display: block;
   font-weight: 700;
   border-radius: 3px;
-  border: 2px solid;
-  width: auto;
+  border: 1px solid;
   margin: 10px auto;
   padding-top: 10px;
   padding-bottom: 0px;
-}
-
-.collapsible-ticketno {
-  width: 15%;
-}
-
-.collapsible-subject {
-  width: 75%;
-}
-
-.collapsible-priority {
-  width: 10%;
 }
 
 .collapsible-body {
