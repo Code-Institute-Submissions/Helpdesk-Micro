@@ -37,24 +37,48 @@ body {
   }
 }
 
+.nav-wrapper {
+    background-color: #93C0D9;
+}
+
 .priority-high {
- background: rgb(2,0,36);
-background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(249,218,218,1) 80%, rgba(255,101,109,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(209, 145, 143, 1) 100%
+  );
 }
 
 .priority-med {
-background: rgb(2,0,36);
-background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(246,249,218,1) 80%, rgba(241,255,101,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(141, 194, 188, 1) 100%
+  );
 }
 
 .priority-low {
-background: rgb(2,0,36);
-background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(218,249,222,1) 80%, rgba(50,255,122,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(147, 217, 173, 1) 100%
+  );
 }
 
 .priority-info {
-  background: rgb(2,0,36);
-background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rgba(218,243,249,1) 80%, rgba(101,226,255,1) 100%);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 80%,
+    rgba(151, 207, 140, 1) 100%
+  );
 }
 
 .collapsible-header {
@@ -71,18 +95,18 @@ background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rg
   background-color: #ffffff;
 }
 
-.c-body-details {
+/* .c-body-details {
     
-}
+} */
 
 .c-body-info {
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rgb(173, 216, 230);
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #93C0D9;
 }
 
 .c-body-info p {
-    margin: 5px;
+  margin: 5px;
 }
 
 .input-box {
@@ -92,5 +116,13 @@ background: linear-gradient(86deg, rgba(2,0,36,1) 0%, rgba(255,255,255,1) 0%, rg
 }
 
 .dropdown-content li > span {
-  color: blue;
+  color: rgb(89, 94, 119);
+}
+
+.btn {
+    background-color: #9DA6D1;
+}
+
+.btn:hover {
+    background-color: rgb(106, 119, 185);
 }
