@@ -11,6 +11,10 @@ body {
   background-image: url("/static/images/bg2.jpg");
 }
 
+.bold {
+    font-weight: 700;
+}
+
 .bg-img {
   opacity: 0;
   position: fixed;
@@ -125,4 +129,8 @@ body {
 
 .btn:hover {
     background-color: rgb(106, 119, 185);
+}
+
+.eu-card-title {
+    font-size: 2rem;
 }
