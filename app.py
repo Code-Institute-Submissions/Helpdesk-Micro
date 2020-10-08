@@ -50,7 +50,7 @@ def add_ticket():
 @app.route('/insert_ticket', methods=['POST', 'GET'])
 def insert_ticket():
     tickets = mongo.db.tickets
-    new_ticket =    {'date_posted': datetime.utcnow().strftime('%d %b %Y - %H:%M:%S'),
+    new_ticket =    {'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
                     'call_subject': request.form.get('call_subject'),
                     'call_details': request.form.get('call_details'),
                     'call_type': request.form.get('call_type'),
