@@ -29,26 +29,31 @@ def login_required(f):
     return wrap
 
 @app.route('/')
-@login_required
+# @login_required
 def home():
     return redirect(url_for('get_tickets'))
 
 @app.route('/get_tickets')
-@login_required
+# @login_required
 def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
     return render_template('tickets.html', tickets=tickets)
 
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['admin_username'] != 'admin' or request.form['admin_password'] != 'admin':
-            error = 'invalid credentials'
-        else:
-            session['logged_in'] = True
-            return redirect(url_for('get_tickets'))
-    return render_template('login.html', error=error)
+# @app.route('/login', methods=['GET', 'POST'])
+# def login():
+#     error = None
+#     if request.method == 'POST':
+#         admin_users = mongo.db.admin_users
+#         admin_user = admin_users.find_one({'name' : request.form['admin_username']})
+
+#         if admin_user:
+#             if 
+#         # if request.form['admin_username'] != 'admin' or request.form['admin_password'] != 'admin':
+#         #     error = 'invalid credentials'
+#         else:
+#             session['logged_in'] = True
+#             return redirect(url_for('get_tickets'))
+#     return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
@@ -56,25 +61,25 @@ def logout():
     return redirect(url_for('login'))
 
 @app.route('/open_tickets')
-@login_required
+# @login_required
 def open_tickets():
     tickets = mongo.db.tickets.find({'call_status': 'Open'})
     return render_template('open_tickets.html', tickets=tickets)
 
 @app.route('/held_tickets')
-@login_required
+# @login_required
 def held_tickets():
     tickets = mongo.db.tickets.find({'call_status': 'On Hold'})
     return render_template('held_tickets.html', tickets=tickets)
 
 @app.route('/closed_tickets')
-@login_required
+# @login_required
 def closed_tickets():
     tickets = mongo.db.tickets.find({'call_status': 'Closed'})
     return render_template('closed_tickets.html', tickets=tickets)
 
 @app.route('/add_ticket')
-@login_required
+# @login_required
 def add_ticket():
     eu_email = mongo.db.end_user.find()
     return render_template('add_ticket.html',   call_type=mongo.db.call_type.find(), 
@@ -86,7 +91,7 @@ def add_ticket():
 
 
 @app.route('/insert_ticket', methods=['POST', 'GET'])
-@login_required
+# @login_required
 def insert_ticket():
     tickets = mongo.db.tickets
     new_ticket =    {'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
@@ -111,7 +116,7 @@ def get_sequence(name):
     return document["value"]
 
 @app.route('/edit_ticket/<ticket_id>')
-@login_required
+# @login_required
 def edit_ticket(ticket_id):
     edit_ticket = mongo.db.tickets.find_one({"_id": ObjectId(ticket_id)})
     end_user = mongo.db.end_user.find()
@@ -127,7 +132,7 @@ def edit_ticket(ticket_id):
                                                eu_email=eu_email)
 
 @app.route('/update_ticket/<ticket_id>', methods=['POST', 'GET'])
-@login_required
+# @login_required
 def update_ticket(ticket_id):
     tickets = mongo.db.tickets
     tickets.update({'_id': ObjectId(ticket_id)},
@@ -145,24 +150,24 @@ def update_ticket(ticket_id):
     return redirect(url_for('get_tickets'))
 
 @app.route('/end_users')
-@login_required
+# @login_required
 def get_users():
     end_users = mongo.db.end_user.find().sort('end_user', 1)
     return render_template('end_users.html', end_users=end_users)
 
 @app.route('/add_end_user')
-@login_required
+# @login_required
 def add_end_user():
     return render_template('add_end_user.html')
 
 @app.route('/edit_end_user/<end_user_id>')
-@login_required
+# @login_required
 def edit_end_user(end_user_id):
     edit_end_user = mongo.db.end_user.find_one({"_id": ObjectId(end_user_id)})
     return render_template('edit_end_user.html', end_user=edit_end_user)
 
 @app.route('/update_end_user/<end_user_id>', methods=["POST"])
-@login_required
+# @login_required
 def update_end_user(end_user_id):
     end_user = mongo.db.end_user
     end_user.update( {'_id': ObjectId(end_user_id)},
@@ -175,17 +180,28 @@ def update_end_user(end_user_id):
     return redirect(url_for('get_users'))
 
 @app.route('/insert_end_user', methods=['POST'])
-@login_required
+# @login_required
 def insert_end_user():
     end_user = mongo.db.end_user
     end_user.insert_one(request.form.to_dict())
     return redirect(url_for('get_users'))
 
 @app.route('/delete_end_user/<end_user_id>')
-@login_required
+# @login_required
 def delete_end_user(end_user_id):
     mongo.db.end_user.remove({'_id': ObjectId(end_user_id)})
     return redirect(url_for('get_users'))
+
+@app.route('/admin_users')
+# @login_required
+def get_admin_users():
+    admin_users = mongo.db.admin_users.find().sort('admin_username', 1)
+    return render_template('admin_users.html', admin_users=admin_users)
+
+@app.route('/edit_admin_user/<admin_user_id>')
+def edit_admin_user(admin_user_id):
+    edit_admin_user = mongo.db.admin_users.find_one({'_id': ObjectId(admin_user_id)})
+    return render_template('edit_admin_user.html', admin_user=edit_admin_user)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
