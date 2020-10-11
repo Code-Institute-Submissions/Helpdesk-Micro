@@ -23,6 +23,7 @@ $(function() {
     $('.bg-img').css({'background': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
    });
 
+// disables submit button on submit & stops multiple clicks and duplicate forms being created 
 $("body").on("submit", "form", function() {
     $(this).submit(function() {
         return false;
