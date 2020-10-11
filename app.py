@@ -4,6 +4,8 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
 from functools import wraps
+from werkzeug.security import generate_password_hash, check_password_hash
+import bcrypt
 
 from os import path
 if path.exists("env.py"):
@@ -39,21 +41,20 @@ def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
     return render_template('tickets.html', tickets=tickets)
 
-# @app.route('/login', methods=['GET', 'POST'])
-# def login():
-#     error = None
-#     if request.method == 'POST':
-#         admin_users = mongo.db.admin_users
-#         admin_user = admin_users.find_one({'name' : request.form['admin_username']})
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    error = None
+    if request.method == 'POST':
+        admin_user = mongo.db.admin_users.find_one(
+            {"admin_username": request.form.get("admin_username").lower()})
 
-#         if admin_user:
-#             if 
-#         # if request.form['admin_username'] != 'admin' or request.form['admin_password'] != 'admin':
-#         #     error = 'invalid credentials'
-#         else:
-#             session['logged_in'] = True
-#             return redirect(url_for('get_tickets'))
-#     return render_template('login.html', error=error)
+        if admin_user:
+            if check_password_hash(admin_user["admin_password"], request.form.get("admin_password")):
+                session['logged_in'] = True
+                return redirect(url_for('get_tickets'))
+        else:
+            error = 'invalid credentials'
+    return render_template('login.html', error=error)
 
 @app.route('/logout')
 def logout():
@@ -198,10 +199,36 @@ def get_admin_users():
     admin_users = mongo.db.admin_users.find().sort('admin_username', 1)
     return render_template('admin_users.html', admin_users=admin_users)
 
+@app.route('/add_admin_user')
+# @login_required
+def add_admin_user():
+    return render_template('add_admin_user.html')
+
 @app.route('/edit_admin_user/<admin_user_id>')
 def edit_admin_user(admin_user_id):
     edit_admin_user = mongo.db.admin_users.find_one({'_id': ObjectId(admin_user_id)})
     return render_template('edit_admin_user.html', admin_user=edit_admin_user)
+
+@app.route('/update_admin_user/<admin_user_id>', methods=["POST", "GET"])
+# @login_required
+def update_admin_user(admin_user_id):
+    admin_user = mongo.db.admin_users
+    hashpass = bcrypt.hashpw(request.form['admin_password'], bcrypt.gensalt())
+    admin_user.update({'_id': ObjectId(admin_user_id)},
+    {
+        'admin_username':request.form.get('admin_username'),
+        'admin_password':request.form.get(hashpass)
+    })
+    return redirect(url_for('get_admin_users'))
+
+@app.route('/insert_admin_user', methods=['POST'])
+# @login_required
+def insert_admin_user():
+    new_admin = {
+            "admin_username": request.form.get("admin_username"),
+            "admin_password": generate_password_hash(request.form.get("admin_password"))}
+    mongo.db.admin_users.insert_one(new_admin)
+    return redirect(url_for('get_admin_users'))
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'), port=int(os.environ.get('PORT')), debug=True)
