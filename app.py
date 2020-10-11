@@ -31,12 +31,12 @@ def login_required(f):
     return wrap
 
 @app.route('/')
-# @login_required
+@login_required
 def home():
     return redirect(url_for('get_tickets'))
 
 @app.route('/get_tickets')
-# @login_required
+@login_required
 def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
     return render_template('tickets.html', tickets=tickets)
@@ -228,6 +228,12 @@ def insert_admin_user():
             "admin_username": request.form.get("admin_username"),
             "admin_password": generate_password_hash(request.form.get("admin_password"))}
     mongo.db.admin_users.insert_one(new_admin)
+    return redirect(url_for('get_admin_users'))
+
+@app.route('/delete_admin_user/<admin_user_id>')
+# @login_required
+def delete_admin_user(admin_user_id):
+    mongo.db.admin_users.remove({'_id': ObjectId(admin_user_id)})
     return redirect(url_for('get_admin_users'))
 
 if __name__ == '__main__':

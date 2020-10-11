@@ -19,7 +19,7 @@
       <h4>Are you sure?</h4>
     </div>
     <div class="modal-footer">
-    <a href="" class="modal-close waves-effect waves-light btn">Delete</a>
+    <a href="{{ url_for('delete_admin_user', admin_user_id=admin_user._id) }}" class="modal-close waves-effect waves-light btn">Delete</a>
       <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
     </div>
   </div>
