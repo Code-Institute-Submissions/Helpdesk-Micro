@@ -5,7 +5,6 @@ from bson.objectid import ObjectId
 from datetime import datetime
 from functools import wraps
 from werkzeug.security import generate_password_hash, check_password_hash
-import bcrypt
 
 from os import path
 if path.exists("env.py"):
@@ -19,6 +18,7 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 mongo = PyMongo(app)
 
+comments = mongo.db.comments
 
 def login_required(f):
     @wraps(f)
@@ -149,6 +149,11 @@ def update_ticket(ticket_id):
         'date_posted':request.form.get('date_posted')
     })
     return redirect(url_for('get_tickets'))
+
+@app.route('/get_tickets/add_comment', methods=['POST'])
+def new_comment():
+
+    redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
 
 @app.route('/end_users')
 @login_required
