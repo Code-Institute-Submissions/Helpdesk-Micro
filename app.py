@@ -150,10 +150,16 @@ def update_ticket(ticket_id):
     })
     return redirect(url_for('get_tickets'))
 
-@app.route('/get_tickets/add_comment', methods=['POST'])
+@app.route('/get_tickets/add_comment', methods=['GET', 'POST'])
 def new_comment():
-
-    redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
+    comment = mongo.db.comments
+    comment = {
+        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+        'add_comment': request.form.get('add_comment'),
+        'ticket_id': request.form.get('ticket_id'),
+    }
+    comments.insert_one(comment)
+    return redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
 
 @app.route('/end_users')
 @login_required
