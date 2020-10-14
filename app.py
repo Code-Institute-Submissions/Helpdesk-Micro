@@ -214,11 +214,10 @@ def edit_admin_user(admin_user_id):
 @login_required
 def update_admin_user(admin_user_id):
     admin_user = mongo.db.admin_users
-    hashpass = bcrypt.hashpw(request.form['admin_password'], bcrypt.gensalt())
     admin_user.update({'_id': ObjectId(admin_user_id)},
     {
         'admin_username':request.form.get('admin_username'),
-        'admin_password':request.form.get(hashpass)
+        "admin_password": generate_password_hash(request.form.get("admin_password"))
     })
     return redirect(url_for('get_admin_users'))
 

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>All Tickets</h3>
+<h3>Open Tickets</h3>
 <div class="row center-align">
 <div class="col s3">
 <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
@@ -28,21 +28,24 @@
       <span>{{ticket.call_subject}}</span>
       </div>
       <div class="collapsible-priority col s2">
-      <span> | {{ticket.call_priority}}</span>
+      <span> | {{ticket.call_priority}}</span><br>
+      {{ticket.date_posted}}
       </div>
       </div>
       </div>
       <div class="collapsible-body">
       <div class="row">
-      <div class="col s8">
+      <div class="col s8 c-body-details">
       <span>{{ticket.call_details}}</span>
       </div>
-      <div class="col s4 right">
-        <p>{{ticket.date_posted}}</p>
-        <p>Raised by: {{ticket.end_user}}</p>
-        <p>Priority: {{ticket.call_priority}}</p>
-        <p>Status: {{ticket.call_status}}</p>
-        <p>Email: {{ticket.eu_email}}</p>
+      <div class="col s4 right c-body-info">
+        <p><span class="bold">Created:</span> {{ticket.date_posted}}</p>
+        <p><span class="bold">Raised by:</span> {{ticket.end_user}}</p>
+        <p><span class="bold">Priority:</span> {{ticket.call_priority}}</p>
+        <p><span class="bold">Status:</span> {{ticket.call_status}}</p>
+        <p><span class="bold">Call type:</span> {{ticket.call_type}}</p>
+        <p><span class="bold">Email:</span><a href="mailto:{{ticket.eu_email}}"> {{ticket.eu_email}}</a></p>
+        <a class="waves-effect waves-light btn call-edit-btn" href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}">Edit</a>
       </div>
       </div>
       <div class="row">
