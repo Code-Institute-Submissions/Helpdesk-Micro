@@ -39,7 +39,8 @@ def home():
 @login_required
 def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
-    return render_template('tickets.html', tickets=tickets)
+    # ticket_comments = mongo.db.comments.find({'ticket_id': ObjectId(ticket_id)})
+    return render_template('tickets.html', tickets=tickets, )
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -150,7 +151,7 @@ def update_ticket(ticket_id):
     })
     return redirect(url_for('get_tickets'))
 
-@app.route('/get_tickets/add_comment', methods=['GET', 'POST'])
+@app.route('/get_tickets/add_quick_comment', methods=['GET', 'POST'])
 def new_comment():
     comment = mongo.db.comments
     comment = {
