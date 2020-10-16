@@ -30,3 +30,13 @@ $("body").on("submit", "form", function() {
     });
     return true;
 });
+
+// unhides quick comment box in tickets views
+$(".quick-comment").click(function() {
+    $(".quick-comment-form").prop('hidden', false)
+});
+
+$(".quick-comment-cancel").click(function() {
+    $(".quick-comment-form").prop('hidden', true)
+});
+

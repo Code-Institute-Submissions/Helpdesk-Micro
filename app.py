@@ -39,7 +39,6 @@ def home():
 @login_required
 def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
-    # ticket_comments = mongo.db.comments.find({'ticket_id': ObjectId(ticket_id)})
     return render_template('tickets.html', tickets=tickets, )
 
 @app.route('/login', methods=['GET', 'POST'])

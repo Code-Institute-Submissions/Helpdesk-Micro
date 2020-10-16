@@ -1,4 +1,4 @@
-<form action="{{ url_for('new_comment') }}" method="POST">
+<form hidden class="quick-comment-form" action="{{ url_for('new_comment') }}" method="POST">
   <input type="hidden" value="{{ ticket._id }}" name="ticket_id" />
   <div class="row">
     <div class="input-field input-box col s12">
@@ -18,5 +18,11 @@
         Add comment
         <i class="material-icons right">send</i>
       </button>
+    <button class="btn waves-effect waves-light quick-comment-cancel" type="" name="">
+        Cancel
+        <i class="material-icons right">send</i>
+      </button>
   </div>
 </form>
+
+
