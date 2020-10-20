@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>Tickets on Hold</h3>
+<h3>Tickets on hold</h3>
 <div class="row center-align">
 <div class="col s3">
 <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
@@ -19,6 +19,7 @@
   <ul class="collapsible popout">
   {% for ticket in tickets %}
     <li>
+    <div hidden>{{ticket._id}}</div>
       <div class="collapsible-header">
       <div class="row">
       <div class="collapsible-ticketno col s2">
@@ -56,9 +57,10 @@
         <a class="waves-effect waves-light btn" href="">Close</a>
       </div>
       <div class="col s3">
-      <a class="waves-effect waves-light btn" href="/add_comment">Add comment</a>
+      <button class="waves-effect waves-light btn quick-comment" href="">Quick comment</button>
       </div>
       </div>
+      {% include 'add_quick_comment_hold.html' %}
       </div>
     </li>
     {% endfor %}

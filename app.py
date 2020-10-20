@@ -109,7 +109,7 @@ def insert_ticket():
     tickets.insert_one((new_ticket))
     return redirect(url_for('get_tickets'))
 
-# increments the sequences mongoDB collection by one
+# increments the sequences mongoDB collection by one on each add_ticket call
 def get_sequence(name):
     collection = mongo.db.sequences
     document = collection.find_one_and_update({"_id": name}, {"$inc": {"value": 1}}, return_document=True)
@@ -160,6 +160,39 @@ def new_comment():
     }
     comments.insert_one(comment)
     return redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
+
+@app.route('/open_tickets/add_quick_comment_open', methods=['GET', 'POST'])
+def new_comment_open():
+    comment = mongo.db.comments
+    comment = {
+        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+        'add_comment': request.form.get('add_comment'),
+        'ticket_id': request.form.get('ticket_id'),
+    }
+    comments.insert_one(comment)
+    return redirect(url_for('open_tickets', ticket_id=request.form.get('ticket_id')))
+
+@app.route('/held_tickets/add_quick_comment_hold', methods=['GET', 'POST'])
+def new_comment_hold():
+    comment = mongo.db.comments
+    comment = {
+        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+        'add_comment': request.form.get('add_comment'),
+        'ticket_id': request.form.get('ticket_id'),
+    }
+    comments.insert_one(comment)
+    return redirect(url_for('held_tickets', ticket_id=request.form.get('ticket_id')))
+
+@app.route('/closed_tickets/add_quick_comment_closed', methods=['GET', 'POST'])
+def new_comment_closed():
+    comment = mongo.db.comments
+    comment = {
+        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+        'add_comment': request.form.get('add_comment'),
+        'ticket_id': request.form.get('ticket_id'),
+    }
+    comments.insert_one(comment)
+    return redirect(url_for('closed_tickets', ticket_id=request.form.get('ticket_id')))
 
 @app.route('/end_users')
 @login_required

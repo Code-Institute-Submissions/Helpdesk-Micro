@@ -1,0 +1,25 @@
+<form hidden class="quick-comment-form" action="{{ url_for('new_comment_closed') }}" method="POST">
+  <input type="hidden" value="{{ ticket._id }}" name="ticket_id" />
+  <div class="row">
+    <div class="input-field input-box col s12">
+      <input
+        id="add_comment"
+        name="add_comment"
+        type="text"
+        class="validate"
+        required=""
+        aria-required="true"
+      />
+      <label for="add_comment">add comment</label>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn waves-effect waves-light" type="submit" name="action">
+        Add comment
+        <i class="material-icons right">send</i>
+      </button>
+    <button class="btn waves-effect waves-light quick-comment-cancel">
+        Cancel
+      </button>
+  </div>
+</form>
