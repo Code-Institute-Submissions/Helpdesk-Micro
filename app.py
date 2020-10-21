@@ -18,8 +18,6 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 mongo = PyMongo(app)
 
-comments = mongo.db.comments
-
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -39,7 +37,7 @@ def home():
 @login_required
 def get_tickets():
     tickets = mongo.db.tickets.find().sort('date_posted', -1)
-    return render_template('tickets.html', tickets=tickets, )
+    return render_template('tickets.html', tickets=tickets)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -78,6 +76,12 @@ def held_tickets():
 def closed_tickets():
     tickets = mongo.db.tickets.find({'call_status': 'Closed'})
     return render_template('closed_tickets.html', tickets=tickets)
+
+@app.route('/tickets/<ticket_id>')
+def ticket_full_detail(ticket_id):
+    ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
+    updates = mongo.db.ticket_updates.find({'ticket_id': str(ticket_id)})
+    return render_template('full_ticket.html', ticket=ticket, updates=updates)
 
 @app.route('/add_ticket')
 @login_required
@@ -150,48 +154,48 @@ def update_ticket(ticket_id):
     })
     return redirect(url_for('get_tickets'))
 
-@app.route('/get_tickets/add_quick_comment', methods=['GET', 'POST'])
-def new_comment():
-    comment = mongo.db.comments
-    comment = {
+@app.route('/get_tickets/add_quick_update', methods=['GET', 'POST'])
+def new_update():
+    updates = mongo.db.ticket_updates
+    update = {
         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
-        'add_comment': request.form.get('add_comment'),
+        'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
     }
-    comments.insert_one(comment)
+    updates.insert_one(update)
     return redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
 
-@app.route('/open_tickets/add_quick_comment_open', methods=['GET', 'POST'])
-def new_comment_open():
-    comment = mongo.db.comments
-    comment = {
+@app.route('/open_tickets/add_quick_update_open', methods=['GET', 'POST'])
+def new_update_open():
+    updates = mongo.db.ticket_updates
+    update = {
         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
-        'add_comment': request.form.get('add_comment'),
+        'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
     }
-    comments.insert_one(comment)
+    updates.insert_one(update)
     return redirect(url_for('open_tickets', ticket_id=request.form.get('ticket_id')))
 
-@app.route('/held_tickets/add_quick_comment_hold', methods=['GET', 'POST'])
-def new_comment_hold():
-    comment = mongo.db.comments
-    comment = {
+@app.route('/held_tickets/add_quick_update_hold', methods=['GET', 'POST'])
+def new_update_hold():
+    updates = mongo.db.ticket_updates
+    update = {
         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
-        'add_comment': request.form.get('add_comment'),
+        'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
     }
-    comments.insert_one(comment)
+    updates.insert_one(update)
     return redirect(url_for('held_tickets', ticket_id=request.form.get('ticket_id')))
 
-@app.route('/closed_tickets/add_quick_comment_closed', methods=['GET', 'POST'])
-def new_comment_closed():
-    comment = mongo.db.comments
-    comment = {
+@app.route('/closed_tickets/add_quick_update_closed', methods=['GET', 'POST'])
+def new_update_closed():
+    updates = mongo.db.ticket_updates
+    update = {
         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
-        'add_comment': request.form.get('add_comment'),
+        'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
     }
-    comments.insert_one(comment)
+    updates.insert_one(update)
     return redirect(url_for('closed_tickets', ticket_id=request.form.get('ticket_id')))
 
 @app.route('/end_users')
