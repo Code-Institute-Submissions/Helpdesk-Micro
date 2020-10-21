@@ -90,7 +90,7 @@ The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaS
 The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaScript of the project.
 
 -   [ExtendsClass Python Syntax Checker](https://extendsclass.com/python-tester.html)
--   [JSHint](https://jshint.com/)
+-   [PEP8 online](http://pep8online.com/)
 
 ### Testing User Stories from User Experience (UX) Section
 

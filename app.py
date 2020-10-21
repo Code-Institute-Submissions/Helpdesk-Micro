@@ -20,6 +20,7 @@ mongo = PyMongo(app)
 
 # LOGIN
 
+
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -90,6 +91,7 @@ def closed_tickets():
 
 # FULL TICKET VIEW INC COMMENTS
 
+
 @app.route('/tickets/<ticket_id>')
 def ticket_full_detail(ticket_id):
     ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
@@ -97,6 +99,7 @@ def ticket_full_detail(ticket_id):
     return render_template('full_ticket.html', ticket=ticket, updates=updates)
 
 # ADD NEW TICKET
+
 
 @app.route('/add_ticket')
 @login_required
@@ -235,6 +238,7 @@ def delete_update(update_id):
 
 # END USERS
 
+
 @app.route('/end_users')
 @login_required
 def get_users():
@@ -284,6 +288,7 @@ def delete_end_user(end_user_id):
     return redirect(url_for('get_users'))
 
 # ADMIN USERS
+
 
 @app.route('/admin_users')
 @login_required
