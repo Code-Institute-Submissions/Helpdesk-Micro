@@ -28,17 +28,6 @@ def login_required(f):
             return redirect(url_for('login'))
     return wrap
 
-@app.route('/')
-@login_required
-def home():
-    return redirect(url_for('get_tickets'))
-
-@app.route('/get_tickets')
-@login_required
-def get_tickets():
-    tickets = mongo.db.tickets.find().sort('date_posted', -1)
-    return render_template('tickets.html', tickets=tickets)
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     error = None
@@ -58,6 +47,17 @@ def login():
 def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
+
+@app.route('/')
+@login_required
+def home():
+    return redirect(url_for('get_tickets'))
+
+@app.route('/get_tickets')
+@login_required
+def get_tickets():
+    tickets = mongo.db.tickets.find().sort('date_posted', -1)
+    return render_template('tickets.html', tickets=tickets)
 
 @app.route('/open_tickets')
 @login_required
