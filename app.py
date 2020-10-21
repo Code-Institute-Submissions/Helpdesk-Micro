@@ -18,6 +18,8 @@ app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 
 mongo = PyMongo(app)
 
+######## LOGIN #########
+
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -48,6 +50,8 @@ def logout():
     session.pop('logged_in', None)
     return redirect(url_for('login'))
 
+####### PRIMARY VIEWS ########
+
 @app.route('/')
 @login_required
 def home():
@@ -77,11 +81,15 @@ def closed_tickets():
     tickets = mongo.db.tickets.find({'call_status': 'Closed'})
     return render_template('closed_tickets.html', tickets=tickets)
 
+####### FULL TICKET VIEW INC COMMENTS #######
+
 @app.route('/tickets/<ticket_id>')
 def ticket_full_detail(ticket_id):
     ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
     updates = mongo.db.ticket_updates.find({'ticket_id': str(ticket_id)})
     return render_template('full_ticket.html', ticket=ticket, updates=updates)
+
+####### ADD NEW TICKET #######
 
 @app.route('/add_ticket')
 @login_required
@@ -120,6 +128,8 @@ def get_sequence(name):
 
     return document["value"]
 
+###### EDIT TICKET DETAILS #######
+
 @app.route('/edit_ticket/<ticket_id>')
 @login_required
 def edit_ticket(ticket_id):
@@ -153,6 +163,8 @@ def update_ticket(ticket_id):
         'date_posted':request.form.get('date_posted')
     })
     return redirect(url_for('get_tickets'))
+
+####### QUICK UPDATE ROUTES #######
 
 @app.route('/get_tickets/add_quick_update', methods=['GET', 'POST'])
 def new_update():
@@ -198,6 +210,8 @@ def new_update_closed():
     updates.insert_one(update)
     return redirect(url_for('closed_tickets', ticket_id=request.form.get('ticket_id')))
 
+####### END USERS #######
+
 @app.route('/end_users')
 @login_required
 def get_users():
@@ -240,6 +254,8 @@ def insert_end_user():
 def delete_end_user(end_user_id):
     mongo.db.end_user.remove({'_id': ObjectId(end_user_id)})
     return redirect(url_for('get_users'))
+
+####### ADMIN USERS #######
 
 @app.route('/admin_users')
 @login_required
