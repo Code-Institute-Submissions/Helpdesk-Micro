@@ -1,38 +1,52 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h3>full Tickets</h3>
 
-    <div hidden>{{ticket._id}}</div>
-      <div class=>
-      <span>#{{ticket._ticketid}} | </span>
-      </div>
-      <div>
-      <span>{{ticket.call_subject}}</span>
-      </div>
-      <div>
-      <span> | {{ticket.call_priority}}</span><br>
-      {{ticket.date_posted}}
-      </div>
-      
-
+<div hidden>{{ticket._id}}</div>
+<div class="collapsible-header">
   <div class="row">
-  {% for update in updates %}
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">{{update.ticket_id}}</span>
-          <p>{{update.add_update}}</p>
-        </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-          <a href="#">This is a link</a>
-        </div>
+    <div class="col s2">
+      <span>#{{ticket._ticketid}} | </span>
+    </div>
+    <div class="col s8">
+      <span>{{ticket.call_subject}}</span>
+    </div>
+    <div class="col s2">
+      <span> | {{ticket.call_priority}}</span><br />
+      {{ticket.date_posted}}
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col s8 c-body-details">
+    <span>{{ticket.call_details}}</span>
+  </div>
+  <div class="col s4 right c-body-info">
+    <p><span class="bold">Created:</span> {{ticket.date_posted}}</p>
+    <p><span class="bold">Raised by:</span> {{ticket.end_user}}</p>
+    <p><span class="bold">Priority:</span> {{ticket.call_priority}}</p>
+    <p><span class="bold">Status:</span> {{ticket.call_status}}</p>
+    <p><span class="bold">Call type:</span> {{ticket.call_type}}</p>
+    <p>
+      <span class="bold">Email:</span
+      ><a href="mailto:{{ticket.eu_email}}"> {{ticket.eu_email}}</a>
+    </p>
+    <a
+      class="waves-effect waves-light btn call-edit-btn"
+      href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}"
+      >Edit</a
+    >
+  </div>
+</div>
+
+{% for update in updates %}
+<div class="row">
+  <div class="col s12 m6">
+    <div class="card blue-grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">{{update.ticket_id}}</span>
+        <p>{{update.add_update}}</p>
       </div>
     </div>
-    {% endfor %}
   </div>
-
-      
-
-{% endblock %}
+</div>
+{% endfor %} {% endblock %}
