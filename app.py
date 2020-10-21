@@ -210,6 +210,12 @@ def new_update_closed():
     updates.insert_one(update)
     return redirect(url_for('closed_tickets', ticket_id=request.form.get('ticket_id')))
 
+@app.route('/delete_update/<update_id>')
+@login_required
+def delete_update(update_id):
+    mongo.db.ticket_updates.remove({'_id': ObjectId(update_id)})
+    return redirect(request.referrer)
+
 ####### END USERS #######
 
 @app.route('/end_users')
