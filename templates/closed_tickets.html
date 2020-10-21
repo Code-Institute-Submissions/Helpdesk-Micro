@@ -22,13 +22,13 @@
     <div hidden>{{ticket._id}}</div>
       <div class="collapsible-header">
       <div class="row">
-      <div class="collapsible-ticketno col s2">
+      <div class="col s2">
       <span>#{{ticket._ticketid}} | </span>
       </div>
-      <div class="collapsible-subject col s8">
+      <div class="col s8">
       <span>{{ticket.call_subject}}</span>
       </div>
-      <div class="collapsible-priority col s2">
+      <div class="col s2">
       <span> | {{ticket.call_priority}}</span><br>
       {{ticket.date_posted}}
       </div>
@@ -51,7 +51,7 @@
       </div>
       <div class="row">
       <div class="col s3">
-        <a class="waves-effect waves-light btn" href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}">Edit</a>
+        <a class="waves-effect waves-light btn" href="{{ url_for('ticket_full_detail', ticket_id=ticket._id) }}">Edit</a>
       </div>
       <div class="col s3">
         <a class="waves-effect waves-light btn" href="">Close</a>
