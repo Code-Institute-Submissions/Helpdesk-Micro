@@ -4,7 +4,7 @@
 <div hidden>{{ticket._id}}</div>
 <div class="row full-body-row">
   <div class="col s8 c-body-details">
-  <p class="bold">{{ticket.call_subject}}</p>
+    <p class="bold">{{ticket.call_subject}}</p>
     <span>{{ticket.call_details}}</span>
   </div>
   <div class="col s4 right c-body-info">
@@ -23,29 +23,37 @@
       >Edit</a
     >
   </div>
-</div>
-  <div class="row full-body-buttons">
-      <div class="col s6">
-        <a class="waves-effect waves-light btn" href="">Close</a>
-      </div>
-      <div class="col s6">
-      <button class="waves-effect waves-light btn quick-comment" href="">Quick comment</button>
-      </div>
-      </div>
-      {% include 'add_quick_update.html' %}
+  
+    <div class="col s12 center-align">
+      <button class="waves-effect waves-light btn quick-comment" href="">
+      New Update
+    </button>
+    </div>
+  </div>
 
-{% for update in updates %}
+
+{% include 'add_quick_update.html' %} {% for update in updates %}
 <div class="row update-row">
   <div class="col s12">
-        <span class="bold" >{{update.date_posted}}</span>
-        <p>{{update.add_update}}</p>
-        <div class="row">
-        <div class="col s6">
-        <a right-align href="{{ url_for('delete_update', update_id=update._id) }}" class="modal-close waves-effect waves-light btn">Delete</a>
+    <span class="bold">{{update.date_posted}}</span>
+    <p>{{update.add_update}}</p>
+    <div class="row">
+      <div class="col s6">
+        <a
+          right-align
+          href="{{ url_for('delete_update', update_id=update._id) }}"
+          class="modal-close waves-effect waves-light btn"
+          >Delete</a
+        >
       </div>
       <div class="col s6">
-      <a right-align href="{{ url_for('delete_update', update_id=update._id) }}" class="modal-close waves-effect waves-light btn">Delete</a>
-        </div>
+        <a
+          right-align
+          href="{{ url_for('delete_update', update_id=update._id) }}"
+          class="modal-close waves-effect waves-light btn"
+          >Delete</a
+        >
+      </div>
     </div>
   </div>
 </div>
