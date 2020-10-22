@@ -17,8 +17,6 @@
       <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
     <li><a href="{{ url_for('add_ticket') }}">add ticket</a></li>
-    <li><a href="{{ url_for('add_end_user') }}">add end user</a></li>
-    <li><a href="{{ url_for('get_users') }}">end users</a></li>
       </ul>
     </div>
   </nav>
@@ -30,37 +28,34 @@
     </header>
     
     <div class="container">
-    
-     <div class="row">
-  <form class="col s12" action="" method="POST">
-    <div class="row">
-      <div class="col s6">
-        <div class="input-field input-box">
-          <i class="material-icons prefix">account_circle</i>
-          <input id="admin_username" name="admin_username" type="text" class="validate" value="{{request.form.admin_username}}" />
-          <label for="icon_prefix">Name</label>
+    <div class="valign-wrapper row login-box">
+  <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
+    <form class="col s12" action="" method="POST">
+      <div class="card-content">
+        <span class="card-title">Enter credentials</span>
+        <div class="row">
+          <div class="input-field col s12">
+            <label for="email">Login name</label>
+            <input type="text" class="validate" id="admin_username" name="admin_username" value="{{request.form.admin_username}}"/>
+          </div>
+          <div class="input-field col s12">
+            <label for="password">Password </label>
+            <input type="password" class="validate" id="admin_password" name="admin_password" value="{{request.form.admin_password}}"/>
+          </div>
         </div>
       </div>
-      <div class="col s6">
-        <div class="input-field input-box">
-          <i class="material-icons prefix">phone</i>
-          <input id="admin_password" name="admin_password" type="password" class="validate" value="{{request.form.admin_password}}"/>
-          <label for="icon_telephone">Telephone</label>
-        </div>
+      <div class="card-action right-align">
+        <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
+        <input type="submit" class="btn waves-effect waves-light" value="Login">
       </div>
-    </div>
-    <div class="row">
-      <button class="btn waves-effect waves-light" type="submit" name="action">
-        Login
-        <i class="material-icons right">send</i>
-      </button>
-    </div>
-  </form>
+    </form>
+  </div>
+</div>
   {% if error %}
   <p class="error"> error: {{error}}</p>
   {% endif %}
 </div>
-    </div>
+    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
