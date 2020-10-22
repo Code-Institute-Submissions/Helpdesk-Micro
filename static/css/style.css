@@ -12,11 +12,11 @@ body {
 }
 
 .bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .btn {
-    border-radius: 100px;
+  border-radius: 100px;
 }
 
 .bg-img {
@@ -46,7 +46,7 @@ body {
 }
 
 .nav-wrapper {
-    background-color: #93C0D9;
+  background-color: #93c0d9;
 }
 
 .priority-high {
@@ -103,14 +103,28 @@ body {
   background-color: #ffffff;
 }
 
+.full-body-row {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 3px;
+  border: 1px solid;
+}
+
+.update-row {
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 1px solid;
+  padding: 20px;
+}
+
 .c-body-details {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .c-body-info {
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #93C0D9;
+  background-color: #93c0d9;
 }
 
 .c-body-info p {
@@ -118,8 +132,8 @@ body {
 }
 
 .call-edit-btn {
-    margin-bottom: 12px;
-    margin-left: 5px;
+  margin-bottom: 12px;
+  margin-left: 5px;
 }
 
 .input-box {
@@ -131,8 +145,8 @@ body {
 }
 
 .select-wrapper input.select-dropdown {
-    margin-bottom: 2px;
-    text-align: left;
+  margin-bottom: 2px;
+  text-align: left;
 }
 
 .dropdown-content li > span {
@@ -140,13 +154,13 @@ body {
 }
 
 .btn {
-    background-color: #9DA6D1;
+  background-color: #9da6d1;
 }
 
 .btn:hover {
-    background-color: rgb(106, 119, 185);
+  background-color: rgb(106, 119, 185);
 }
 
 .eu-card-title {
-    font-size: 2rem;
+  font-size: 2rem;
 }
