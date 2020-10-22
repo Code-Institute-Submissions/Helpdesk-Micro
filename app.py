@@ -42,7 +42,7 @@ def login():
         if admin_user:
             if check_password_hash(admin_user["admin_password"], request.form.get("admin_password")):
                 session['logged_in'] = True
-                return redirect(url_for('get_tickets'))
+                return redirect(url_for('open_tickets'))
         else:
             error = 'invalid credentials'
     return render_template('login.html', error=error)
@@ -59,7 +59,7 @@ def logout():
 @app.route('/')
 @login_required
 def home():
-    return redirect(url_for('get_tickets'))
+    return redirect(url_for('open_tickets'))
 
 
 @app.route('/get_tickets')
@@ -129,7 +129,7 @@ def insert_ticket():
                   }
 
     tickets.insert_one((new_ticket))
-    return redirect(url_for('get_tickets'))
+    return redirect(url_for('open_tickets'))
 
 # increments the sequences mongoDB collection by one on each add_ticket insert
 
@@ -177,12 +177,12 @@ def update_ticket(ticket_id):
         '_ticketid': request.form.get('_ticketid'),
         'date_posted': request.form.get('date_posted')
     })
-    return redirect(url_for('get_tickets'))
+    return redirect(url_for('open_tickets'))
 
 # QUICK UPDATE ROUTES
 
 
-@app.route('/get_tickets/add_quick_update', methods=['GET', 'POST'])
+@app.route('/open_tickets/add_quick_update', methods=['GET', 'POST'])
 def new_update():
     updates = mongo.db.ticket_updates
     update = {
