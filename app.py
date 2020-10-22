@@ -72,21 +72,21 @@ def get_tickets():
 @app.route('/open_tickets')
 @login_required
 def open_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'Open'})
+    tickets = mongo.db.tickets.find({'call_status': 'Open'}).sort('date_posted', -1)
     return render_template('open_tickets.html', tickets=tickets)
 
 
 @app.route('/held_tickets')
 @login_required
 def held_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'On Hold'})
+    tickets = mongo.db.tickets.find({'call_status': 'On Hold'}).sort('date_posted', -1)
     return render_template('held_tickets.html', tickets=tickets)
 
 
 @app.route('/closed_tickets')
 @login_required
 def closed_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'Closed'})
+    tickets = mongo.db.tickets.find({'call_status': 'Closed'}).sort('date_posted', -1)
     return render_template('closed_tickets.html', tickets=tickets)
 
 # FULL TICKET VIEW INC COMMENTS
