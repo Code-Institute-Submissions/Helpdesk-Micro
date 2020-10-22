@@ -191,19 +191,19 @@ def new_update():
         'ticket_id': request.form.get('ticket_id'),
     }
     updates.insert_one(update)
-    return redirect(url_for('get_tickets', ticket_id=request.form.get('ticket_id')))
+    return redirect(request.referrer)
 
 
-@app.route('/open_tickets/add_quick_update_open', methods=['GET', 'POST'])
-def new_update_open():
-    updates = mongo.db.ticket_updates
-    update = {
-        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
-        'add_update': request.form.get('add_update'),
-        'ticket_id': request.form.get('ticket_id'),
-    }
-    updates.insert_one(update)
-    return redirect(url_for('open_tickets', ticket_id=request.form.get('ticket_id')))
+# @app.route('/open_tickets/add_quick_update_open', methods=['GET', 'POST'])
+# def new_update_open():
+#     updates = mongo.db.ticket_updates
+#     update = {
+#         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+#         'add_update': request.form.get('add_update'),
+#         'ticket_id': request.form.get('ticket_id'),
+#     }
+#     updates.insert_one(update)
+#     return redirect(url_for('open_tickets', ticket_id=request.form.get('ticket_id')))
 
 
 @app.route('/held_tickets/add_quick_update_hold', methods=['GET', 'POST'])
