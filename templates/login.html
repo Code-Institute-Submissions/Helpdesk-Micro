@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+      type="text/css"
+    />
+    <title>Helpdesk Micro</title>
+    <link rel="shortcut icon" type="image/png" href="./static/images/favicon.png">
+  </head>
 
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-    
-</head>
-
-<body>
-<!-- <div class="bg-img"><div> -->
+  <body>
+    <!-- <div class="bg-img"><div> -->
     <header>
-         <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo left"><img src="{{ url_for('static', filename='/images/logo.png') }}"></a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-    <li><a href="{{ url_for('add_ticket') }}">add ticket</a></li>
-      </ul>
-    </div>
-  </nav>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left"
+            ><img src="{{ url_for('static', filename='/images/logo.png') }}"
+          /></a>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{ url_for('add_ticket') }}">add ticket</a></li>
+          </ul>
+        </div>
+      </nav>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="add_ticket.html">add ticket</a></li>
-    <li><a href="add end user.html">add end user</a></li>
-  </ul>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="add_ticket.html">add ticket</a></li>
+        <li><a href="add end user.html">add end user</a></li>
+      </ul>
     </header>
-    
+
     <div class="container">
-    <div class="valign-wrapper row login-box">
-  <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
-    <form class="col s12" action="" method="POST">
-      <div class="card-content">
-        <span class="card-title">Enter credentials</span>
-        <div class="row">
-          <div class="input-field col s12">
-            <label for="email">Login name</label>
-            <input type="text" class="validate" id="admin_username" name="admin_username" value="{{request.form.admin_username}}"/>
-          </div>
-          <div class="input-field col s12">
-            <label for="password">Password </label>
-            <input type="password" class="validate" id="admin_password" name="admin_password" value="{{request.form.admin_password}}"/>
-          </div>
+      <div class="valign-wrapper row login-box">
+        <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4 login-card">
+          <form class="col s12" action="" method="POST">
+            <div class="card-content">
+              <span class="card-title">Enter credentials</span>
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="email">Login name</label>
+                  <input
+                    type="text"
+                    class="validate"
+                    id="admin_username"
+                    name="admin_username"
+                    value="{{request.form.admin_username}}"
+                  />
+                </div>
+                <div class="input-field col s12">
+                  <label for="password">Password </label>
+                  <input
+                    type="password"
+                    class="validate"
+                    id="admin_password"
+                    name="admin_password"
+                    value="{{request.form.admin_password}}"
+                  />
+                </div>
+                {% if error %}
+                <p class="error">error: {{error}}</p>
+                {% endif %}
+              </div>
+            </div>
+            <div class="card-action right-align">
+              <!-- <input type="reset" id="reset" class="btn-flat grey-text waves-effect"> -->
+              <input
+                type="submit"
+                class="btn waves-effect waves-light"
+                value="Login"
+              />
+            </div>
+          </form>
         </div>
       </div>
-      <div class="card-action right-align">
-        <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
-        <input type="submit" class="btn waves-effect waves-light" value="Login">
-      </div>
-    </form>
-  </div>
-</div>
-  {% if error %}
-  <p class="error"> error: {{error}}</p>
-  {% endif %}
-</div>
+    </div>
     
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-
+  </body>
 </html>

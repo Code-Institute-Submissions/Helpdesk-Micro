@@ -16,13 +16,11 @@ body {
 }
 
 .text-overflow {
-  white-space: nowrap; 
-  width: 150px; 
+  white-space: nowrap;
+  width: 150px;
   overflow: hidden;
-  text-overflow: ellipsis; 
-  
+  text-overflow: ellipsis;
 }
-
 
 .btn {
   border-radius: 100px;
@@ -54,8 +52,14 @@ body {
   }
 }
 
+.login-card {
+  margin-top: 8rem;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
 .nav-wrapper {
-  background-color: #93c0d9;
+  background-color: #3c3c3c;
 }
 
 .priority-high {
@@ -146,7 +150,7 @@ body {
 }
 
 .full-ticket-button-col {
-    margin-top: 15px;
+  margin-top: 15px;
 }
 
 .input-box {
@@ -167,7 +171,7 @@ body {
 }
 
 .btn {
-  background-color: #9da6d1;
+  background-color: #0068df;
 }
 
 .btn:hover {
