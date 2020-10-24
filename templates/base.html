@@ -21,16 +21,12 @@
   <li><a href="{{ url_for('get_tickets') }}">All tickets</a></li>
 </ul>
     <ul id="dropdown-eu" class="dropdown-content menu-dropdown">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="{{ url_for('get_users') }}">All End users</a></li>
+  <li><a href="{{ url_for('add_end_user') }}">Add end user</a></li>
 </ul>
     <ul id="dropdown-au" class="dropdown-content menu-dropdown">
-  <li><a href="#!">one</a></li>
-  <li><a href="#!">two</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">three</a></li>
+  <li><a href="{{ url_for('get_admin_users') }}">All admin users</a></li>
+  <li><a href="{{ url_for('add_admin_user') }}">Add admin user</a></li>
 </ul>
          <nav>
     <div class="nav-wrapper">
