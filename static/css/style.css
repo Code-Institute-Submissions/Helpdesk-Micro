@@ -188,6 +188,10 @@ body {
   font-size: 2rem;
 }
 
+.add-eu-buttons {
+    text-align: center;
+}
+
 .modal .modal-footer {
     text-align: center;
 
