@@ -59,8 +59,29 @@ body {
   border: 1px solid black;
 }
 
-.nav-wrapper {
+.nav-wrapper,
+.menu-dropdown {
   background-color: #3c3c3c;
+}
+
+/* navbar menu dropdowns */
+
+.dropdown-content li > a {
+  color: rgb(211, 211, 211);
+}
+
+.dropdown-content li > a:hover {
+  color: #0068df;
+}
+
+.nav-wrapper .menu-dropdown {
+  position: inherit;
+}
+
+/* input box dropdowns */
+
+.dropdown-content li > span {
+  color: rgb(89, 94, 119);
 }
 
 .brand-logo {
@@ -172,10 +193,6 @@ body {
   text-align: left;
 }
 
-.dropdown-content li > span {
-  color: rgb(89, 94, 119);
-}
-
 .btn {
   background-color: #0068df;
 }
@@ -189,10 +206,9 @@ body {
 }
 
 .add-eu-buttons {
-    text-align: center;
+  text-align: center;
 }
 
 .modal .modal-footer {
-    text-align: center;
-
+  text-align: center;
 }

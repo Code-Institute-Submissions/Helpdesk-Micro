@@ -15,6 +15,7 @@ $(document).ready(function () {
   $(".collapsible-header:contains('Medium')").addClass("priority-med");
   $(".collapsible-header:contains('Low')").addClass("priority-low");
   $(".collapsible-header:contains('Info')").addClass("priority-info");
+  $(".dropdown-trigger").dropdown(); /* navbar dropdowns */
 });
 
 // random background image on page refresh
