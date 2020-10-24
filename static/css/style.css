@@ -186,3 +186,8 @@ body {
 .eu-card-title {
   font-size: 2rem;
 }
+
+.modal .modal-footer {
+    text-align: center;
+
+}
