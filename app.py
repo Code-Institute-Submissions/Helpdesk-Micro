@@ -275,7 +275,7 @@ def edit_admin_user(admin_user_id):
     return render_template('edit_admin_user.html', admin_user=edit_admin_user)
 
 
-@app.route('/update_admin_user/<admin_user_id>', methods=["POST", "GET"])
+@app.route('/update_admin_user/<admin_user_id>', methods=["POST"])
 @login_required
 def update_admin_user(admin_user_id):
     admin_user = mongo.db.admin_users
@@ -287,7 +287,7 @@ def update_admin_user(admin_user_id):
     return redirect(url_for('get_admin_users'))
 
 
-@app.route('/insert_admin_user', methods=['POST'])
+@app.route('/insert_admin_user', methods=["POST", "GET"])
 @login_required
 def insert_admin_user():
     new_admin = {
