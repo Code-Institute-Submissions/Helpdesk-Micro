@@ -93,6 +93,7 @@ def closed_tickets():
 
 
 @app.route('/tickets/<ticket_id>')
+@login_required
 def ticket_full_detail(ticket_id):
     ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
     updates = mongo.db.ticket_updates.find({'ticket_id': str(ticket_id)}).sort('date_posted', -1)
@@ -183,6 +184,7 @@ def update_ticket(ticket_id):
 
 
 @app.route('/open_tickets/add_quick_update', methods=['GET', 'POST'])
+@login_required
 def new_update():
     updates = mongo.db.ticket_updates
     update = {
