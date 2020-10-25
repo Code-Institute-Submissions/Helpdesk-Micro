@@ -36,7 +36,7 @@
 {% include 'add_quick_update.html' %} {% for update in updates %}
 <div class="row update-row">
   <div class="col s12">
-    <span class="bold">{{update.admin_username}} | {{update.date_posted}}</span>
+    <span class="bold">{{update.admin_username}} updated {{update.date_posted}}:</span>
     <p>{{update.add_update}}</p>
     <div class="row">
       <div class="col s12 center-buttons">
