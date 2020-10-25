@@ -14,7 +14,7 @@
           aria-required="true"
           maxlength="70"
         />
-        <label for="call_subject">Ticket Subject</label>
+        <label for="call_subject">Ticket subject</label>
       </div>
     </div>
     <div class="row">
@@ -26,7 +26,7 @@
           required=""
           aria-required="true"
         >
-          <option value="" disabled selected>Choose ticket type</option>
+          <option value="" disabled selected>Ticket type</option>
           {% for type in call_type %}
           <option value="{{type.call_type}}">{{type.call_type}}</option>
           {% endfor %}
@@ -36,7 +36,7 @@
     <div class="col s4">
       <div class="input-field input-box">
         <select id="call_priority" name="call_priority">
-          <option value="" disabled selected>Choose ticket priority</option>
+          <option value="" disabled selected>Ticket priority</option>
           {% for priority in call_priority %}
           <option value="{{priority.call_priority}}"
             >{{priority.call_priority}}</option
@@ -48,7 +48,7 @@
     <div class="col s4">
       <div class="input-field input-box">
         <select id="call_status" name="call_status">
-          <option value="" disabled selected>Choose ticket status</option>
+          <option value="" disabled selected>Ticket status</option>
           {% for status in call_status %}
           <option value="{{status.call_status}}">{{status.call_status}}</option>
           {% endfor %}
@@ -70,7 +70,7 @@
     <div class="col s4">
       <div class="input-field input-box">
         <select id="eu_email" name="eu_email">
-          <option value="" disabled selected>Contact Email</option>
+          <option value="" disabled selected>Contact email</option>
           {% for user in eu_email %}
           <option value="{{user.eu_email}}">{{user.parent_id}}</option>
           {% endfor %}
@@ -99,6 +99,7 @@
         href="{{ url_for('get_tickets') }}"
         >Cancel</a
       >
+    </div>
     </div>
   </form>
 </div>
