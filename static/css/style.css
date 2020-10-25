@@ -60,17 +60,20 @@ body {
 }
 
 .nav-wrapper,
-.menu-dropdown {
+.menu-dropdown,
+.sidenav {
   background-color: #3c3c3c;
 }
 
 /* navbar menu dropdowns */
 
-.dropdown-content li > a {
+.dropdown-content li > a,
+.sidenav li > a {
   color: rgb(211, 211, 211);
 }
 
-.dropdown-content li > a:hover {
+.dropdown-content li > a:hover,
+.sidenav li > a:hover {
   color: #0068df;
 }
 

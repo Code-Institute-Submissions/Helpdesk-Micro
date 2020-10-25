@@ -1,61 +1,169 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
+  <head>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+      type="text/css"
+    />
     <title>Helpdesk Micro</title>
-    <link rel="shortcut icon" type="image/png" href="./static/images/favicon.png">
-</head>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./static/images/favicon.png"
+    />
+  </head>
 
-<body>
-<!-- <div class="bg-img"><div> -->
+  <body>
+    <!-- <div class="bg-img"><div> -->
     <header>
-    <div class="navbar-fixed">
-    <ul id="dropdown-tickets" class="dropdown-content menu-dropdown">
-  <li><a href="{{ url_for('add_ticket') }}">Add ticket</a></li>
-  <li><a href="{{ url_for('open_tickets') }}">Open tickets</a></li>
-  <li><a href="{{ url_for('held_tickets') }}">Tickets on hold</a></li>
-  <li><a href="{{ url_for('closed_tickets') }}">Closed tickets</a></li>
-  <li><a href="{{ url_for('get_tickets') }}">All tickets</a></li>
-</ul>
-    <ul id="dropdown-eu" class="dropdown-content menu-dropdown">
-  <li><a href="{{ url_for('get_users') }}">All End users</a></li>
-  <li><a href="{{ url_for('add_end_user') }}">Add end user</a></li>
-</ul>
-    <ul id="dropdown-au" class="dropdown-content menu-dropdown">
-  <li><a href="{{ url_for('get_admin_users') }}">All admin users</a></li>
-  <li><a href="{{ url_for('add_admin_user') }}">Add admin user</a></li>
-</ul>
-         <nav>
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo left"><img src="{{ url_for('static', filename='/images/logo_nav.png') }}" width="auto" height="auto" alt="Helpdesk Micro Logo"></a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-tickets">Tickets<i class="material-icons right">arrow_drop_down</i></a></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-eu">End Users<i class="material-icons right">arrow_drop_down</i></a></li>
-    <li><a class="dropdown-trigger" href="#!" data-target="dropdown-au">Admin Users<i class="material-icons right">arrow_drop_down</i></a></li>
-    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+      <div class="navbar-fixed">
+        <ul id="dropdown-tickets" class="dropdown-content menu-dropdown">
+          <li><a href="{{ url_for('add_ticket') }}">Add ticket</a></li>
+          <li><a href="{{ url_for('open_tickets') }}">Open tickets</a></li>
+          <li><a href="{{ url_for('held_tickets') }}">Tickets on hold</a></li>
+          <li><a href="{{ url_for('closed_tickets') }}">Closed tickets</a></li>
+          <li><a href="{{ url_for('get_tickets') }}">All tickets</a></li>
+        </ul>
+        <ul id="dropdown-eu" class="dropdown-content menu-dropdown">
+          <li><a href="{{ url_for('get_users') }}">All End users</a></li>
+          <li><a href="{{ url_for('add_end_user') }}">Add end user</a></li>
+        </ul>
+        <ul id="dropdown-au" class="dropdown-content menu-dropdown">
+          <li>
+            <a href="{{ url_for('get_admin_users') }}">All admin users</a>
+          </li>
+          <li><a href="{{ url_for('add_admin_user') }}">Add admin user</a></li>
+        </ul>
+        <nav>
+          <div class="nav-wrapper">
+            <a href="/" class="brand-logo left"
+              ><img
+                src="{{ url_for('static', filename='/images/logo_nav.png') }}"
+                width="auto"
+                height="auto"
+                alt="Helpdesk Micro Logo"
+            /></a>
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+              ><i class="material-icons">menu</i></a
+            >
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a
+                  class="dropdown-trigger"
+                  href="#!"
+                  data-target="dropdown-tickets"
+                  >Tickets<i class="material-icons right">arrow_drop_down</i></a
+                >
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-eu"
+                  >End Users<i class="material-icons right"
+                    >arrow_drop_down</i
+                  ></a
+                >
+              </li>
+              <li>
+                <a class="dropdown-trigger" href="#!" data-target="dropdown-au"
+                  >Admin Users<i class="material-icons right"
+                    >arrow_drop_down</i
+                  ></a
+                >
+              </li>
+              <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <ul class="sidenav" id="mobile-demo">
+        <li class="no-padding">
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header"
+                >Tickets<i class="material-icons">arrow_drop_down</i></a
+              >
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="{{ url_for('add_ticket') }}">Add ticket</a></li>
+                  <li>
+                    <a href="{{ url_for('open_tickets') }}">Open tickets</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('held_tickets') }}">Tickets on hold</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('closed_tickets') }}">Closed tickets</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('get_tickets') }}">All tickets</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header"
+                >End users<i class="material-icons">arrow_drop_down</i></a
+              >
+              <div class="collapsible-body">
+                <ul>
+                  <li><a href="{{ url_for('get_users') }}">All End users</a></li>
+          <li><a href="{{ url_for('add_end_user') }}">Add end user</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul class="collapsible collapsible-accordion">
+            <li>
+              <a class="collapsible-header"
+                >Admin users<i class="material-icons">arrow_drop_down</i></a
+              >
+              <div class="collapsible-body">
+                <ul>
+                  <li>
+            <a href="{{ url_for('get_admin_users') }}">All admin users</a>
+          </li>
+          <li><a href="{{ url_for('add_admin_user') }}">Add admin user</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <ul>
+                <li><a href="#!">About</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+              </ul>
+        </li>
       </ul>
-    </div>
-  </nav>
+      <!-- <ul class="right hide-on-med-and-down">
+      <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Tickets<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">First</a></li>
+        <li><a href="#!">Second</a></li>
+        <li><a href="#!">Third</a></li>
+        <li><a href="#!">Fourth</a></li>
+      </ul> -->
+      <!-- </ul> -->
+      <!-- <a href="#" data-target="slide-out" class="sidenav-trigger"
+        ><i class="material-icons">menu</i></a
+      > -->
+    </header>
+
+    <div class="container">
+      {% block content %} {% endblock %}
     </div>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="add_ticket.html">add ticket</a></li>
-    <li><a href="add end user.html">add end user</a></li>
-  </ul>
-    </header>
-    
-    <div class="container">
-    
-        {% block content %} {% endblock %}
-    </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-
+  </body>
 </html>
