@@ -30,8 +30,7 @@
           {% for type in call_type %}
           <option value="{{type.call_type}}">{{type.call_type}}</option>
           {% endfor %}
-        </select>
-        <label>Ticket type</label>
+        </select> 
       </div>
     </div>
     <div class="col s4">
@@ -44,7 +43,6 @@
           >
           {% endfor %}
         </select>
-        <label>Call priority</label>
       </div>
     </div>
     <div class="col s4">
@@ -55,7 +53,6 @@
           <option value="{{status.call_status}}">{{status.call_status}}</option>
           {% endfor %}
         </select>
-        <label>Call status</label>
       </div>
     </div>
     </div>
@@ -68,7 +65,6 @@
           <option value="{{user.end_user}}">{{user.end_user}}</option>
           {% endfor %}
         </select>
-        <label>Raised by</label>
       </div>
     </div>
     <div class="col s4">
@@ -79,7 +75,6 @@
           <option value="{{user.eu_email}}">{{user.parent_id}}</option>
           {% endfor %}
         </select>
-        <label>Contact email</label>
       </div>
     </div>
     <div class="row">
