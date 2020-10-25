@@ -29,7 +29,7 @@ $(function () {
   });
 });
 
-// disables submit button on submit & stops multiple clicks and duplicate forms being created
+// disables submit buttons on submit & stops multiple clicks and duplicate forms being created
 $("body").on("submit", "form", function () {
   $(this).submit(function () {
     return false;
@@ -41,7 +41,7 @@ $("body").on("submit", "form", function () {
 $(".quick-comment").click(function () {
   $(".quick-comment-form").prop("hidden", false);
 });
-
+// hides quick comment box on cancel click
 $(".quick-comment-cancel").click(function () {
   $(".quick-comment-form").prop("hidden", true);
 });
