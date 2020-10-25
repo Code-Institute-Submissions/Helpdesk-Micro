@@ -41,10 +41,11 @@
         </div>
         <div class="col s4 right c-body-info">
           <p><span class="bold">Created:</span> {{ticket.date_posted}}</p>
-          <p><span class="bold">Raised by:</span> {{ticket.end_user}}</p>
+          <p><span class="bold">Created by:</span> {{ticket.admin_username}}</p>
           <p><span class="bold">Priority:</span> {{ticket.call_priority}}</p>
           <p><span class="bold">Status:</span> {{ticket.call_status}}</p>
           <p><span class="bold">Call type:</span> {{ticket.call_type}}</p>
+          <p><span class="bold">End user:</span> {{ticket.end_user}}</p>
           <p>
             <span class="bold">Email:</span
             ><a href="mailto:{{ticket.eu_email}}"> {{ticket.eu_email}}</a>

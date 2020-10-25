@@ -42,6 +42,7 @@ def login():
         if admin_user:
             if check_password_hash(admin_user["admin_password"], request.form.get("admin_password")):
                 session['logged_in'] = True
+                session['admin_username'] = request.form["admin_username"]
                 return redirect(url_for('open_tickets'))
         else:
             error = 'invalid credentials'
@@ -126,7 +127,8 @@ def insert_ticket():
                   'end_user': request.form.get('end_user'),
                   'eu_email': request.form.get('eu_email'),
                   # inserts the incremented ticketid from get_sequence function
-                  "_ticketid": get_sequence("messages"),
+                  '_ticketid': get_sequence('messages'),
+                  'admin_username': request.form.get('admin_username'),
                   }
 
     tickets.insert_one((new_ticket))
@@ -176,7 +178,8 @@ def update_ticket(ticket_id):
         'end_user': request.form.get('end_user'),
         'eu_email': request.form.get('eu_email'),
         '_ticketid': request.form.get('_ticketid'),
-        'date_posted': request.form.get('date_posted')
+        'date_posted': request.form.get('date_posted'),
+        'admin_username': request.form.get('admin_username')
     })
     return redirect(url_for('open_tickets'))
 
@@ -191,6 +194,7 @@ def new_update():
         'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
         'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
+        'admin_username': request.form.get('admin_username')
     }
     updates.insert_one(update)
     return redirect(request.referrer)

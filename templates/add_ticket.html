@@ -3,6 +3,7 @@
 <h3 class="center-title">Add New Ticket</h3>
 <div class="row">
   <form action="{{ url_for('insert_ticket') }}" method="POST">
+  <input type="hidden" value="{{session.admin_username}}" name="admin_username" />
     <div class="row">
       <div class="input-field input-box col s12">
         <input
