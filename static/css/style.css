@@ -61,14 +61,16 @@ body {
 
 .nav-wrapper,
 .menu-dropdown,
-.sidenav {
+.sidenav,
+.sidenav .collapsible-body {
   background-color: #3c3c3c;
 }
 
 /* navbar menu dropdowns */
 
 .dropdown-content li > a,
-.sidenav li > a {
+.sidenav li > a,
+.sidenav li>a>i.material-icons {
   color: rgb(211, 211, 211);
 }
 
