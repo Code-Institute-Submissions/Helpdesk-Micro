@@ -53,10 +53,14 @@ body {
   }
 }
 
-.login-card {
-  margin-top: 8rem;
-  border-radius: 3px;
+.card {
+    border-radius: 3px;
   border: 1px solid black;
+}
+
+.login-card {
+  margin-top: 5rem;
+  
 }
 
 .nav-wrapper,
