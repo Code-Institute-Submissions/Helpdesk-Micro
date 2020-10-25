@@ -212,7 +212,8 @@ body {
 }
 
 .center-buttons,
-.modal .modal-footer {
+.modal .modal-footer,
+.center-title {
     text-align: center;
 }
 
