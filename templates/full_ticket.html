@@ -38,17 +38,8 @@
     <span class="bold">{{update.date_posted}}</span>
     <p>{{update.add_update}}</p>
     <div class="row">
-      <div class="col s6">
+      <div class="col s12 center-buttons">
         <a
-          right-align
-          href="{{ url_for('delete_update', update_id=update._id) }}"
-          class="modal-close waves-effect waves-light btn"
-          >Delete</a
-        >
-      </div>
-      <div class="col s6">
-        <a
-          right-align
           href="{{ url_for('delete_update', update_id=update._id) }}"
           class="modal-close waves-effect waves-light btn"
           >Delete</a
