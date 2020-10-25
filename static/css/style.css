@@ -54,13 +54,12 @@ body {
 }
 
 .card {
-    border-radius: 3px;
+  border-radius: 3px;
   border: 1px solid black;
 }
 
 .login-card {
   margin-top: 5rem;
-  
 }
 
 .nav-wrapper,
@@ -74,7 +73,7 @@ body {
 
 .dropdown-content li > a,
 .sidenav li > a,
-.sidenav li>a>i.material-icons {
+.sidenav li > a > i.material-icons {
   color: rgb(211, 211, 211);
 }
 
@@ -218,8 +217,5 @@ body {
 .center-buttons,
 .modal .modal-footer,
 .center-title {
-    text-align: center;
+  text-align: center;
 }
-
-
-
