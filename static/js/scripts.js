@@ -19,15 +19,11 @@ $(document).ready(function () {
 });
 
 // random background image on page refresh
-$(function () {
-  var images = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg"];
-  $(".bg-img").css({
-    background:
-      "url(/static/images/" +
-      images[Math.floor(Math.random() * images.length)] +
-      ")",
-  });
-});
+
+$(function() {
+    var images = ["bg1.jpg", "bg2.jpg", "bg3.jpg", "bg4.jpg"];
+    $('body').css({'background-image': 'url(/static/images/' + images[Math.floor(Math.random() * images.length)] + ')'});
+   });
 
 // disables submit buttons on submit & stops multiple clicks and duplicate forms being created
 $("body").on("submit", "form", function () {
