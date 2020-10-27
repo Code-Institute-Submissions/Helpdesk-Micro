@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
@@ -117,8 +120,12 @@
               >
               <div class="collapsible-body">
                 <ul>
-                  <li><a href="{{ url_for('get_users') }}">All End users</a></li>
-          <li><a href="{{ url_for('add_end_user') }}">Add end user</a></li>
+                  <li>
+                    <a href="{{ url_for('get_users') }}">All End users</a>
+                  </li>
+                  <li>
+                    <a href="{{ url_for('add_end_user') }}">Add end user</a>
+                  </li>
                 </ul>
               </div>
             </li>
@@ -131,33 +138,45 @@
               <div class="collapsible-body">
                 <ul>
                   <li>
-            <a href="{{ url_for('get_admin_users') }}">All admin users</a>
-          </li>
-          <li><a href="{{ url_for('add_admin_user') }}">Add admin user</a></li>
+                    <a href="{{ url_for('get_admin_users') }}"
+                      >All admin users</a
+                    >
+                  </li>
+                  <li>
+                    <a href="{{ url_for('add_admin_user') }}">Add admin user</a>
+                  </li>
                 </ul>
               </div>
             </li>
           </ul>
           <ul>
-          <li><div class="divider"></div></li>
-                <li><a href="#!">About</a></li>
-                <li><a href="{{ url_for('logout') }}">Logout</a></li>
-              </ul>
+            <li><div class="divider"></div></li>
+            <li><a href="#!">About</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+          </ul>
         </li>
       </ul>
     </header>
 
-    <div class="container">
+    <main class="container">
       {% block content %} {% endblock %}
-    </div>
-     <footer class="page-footer">
+    </main>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="footer-copyright">
           <div class="container">
-<div class="footer-copyright">
-            <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
+            © 2020 pengols
+            <a target="_blank" class="right" href="https://github.com/pengols"
+              ><img
+                src="{{ url_for('static', filename='/images/gh-icon.png') }}"
+                width="30px"
+                height="30px"
+                alt="Github logo"
+            /></a>
           </div>
+        </div>
+      </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
