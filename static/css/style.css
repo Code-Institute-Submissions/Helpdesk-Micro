@@ -2,7 +2,7 @@
 
 body {
   position: relative;
-  /* min-height: 100vh; */
+  min-height: 100vh;
   background-image: url("/static/images/bg2.jpg");
   font-size: 1rem;
   width: 100%;
@@ -11,9 +11,9 @@ body {
 }
 
 main {
-    min-height: 94vh;
   flex: 1 0 auto;
 }
+
 
 .bold {
   font-weight: 700;
