@@ -214,6 +214,7 @@ main {
 .btn:hover {
   background-color: #01346e;
 }
+
 .btn:focus{ 
   background-color: #01346e;
 }
@@ -223,9 +224,17 @@ main {
 }
 
 .center-buttons,
-.modal .modal-footer,
+.modal .modal-footer {
+  text-align: center;
+}
+
 .center-title {
   text-align: center;
+  text-shadow:
+   -1px -1px 0 rgb(180, 180, 180),  
+    1px -1px 0 rgb(180, 180, 180),
+    -1px 1px 0 rgb(180, 180, 180),
+     1px 1px 0 rgb(180, 180, 180);
 }
 
 .page-footer {
