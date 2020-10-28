@@ -12,6 +12,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-blend-mode: 
 }
 
 main {
@@ -29,9 +30,6 @@ main {
   text-overflow: ellipsis;
 }
 
-.btn {
-  border-radius: 100px;
-}
 
 /* .bg-img {
   opacity: 0;
@@ -210,6 +208,7 @@ main {
 
 .btn {
   background-color: #0068df;
+  border-radius: 100px;
 }
 
 .btn:hover {
