@@ -26,7 +26,6 @@
   </head>
 
   <body>
-    <!-- <div class="bg-img"><div> -->
     <header>
       <nav>
         <div class="nav-wrapper">
@@ -80,16 +79,19 @@
                     value="{{request.form.admin_password}}"
                   />
                 </div>
+                <div>
+
                 {% if error %}
-                <p class="error">error: {{error}}</p>
-                {% endif %}
+                <p class="error center-align">{{error}}</p>
+                {% endif %}    
+                        
+                </div>
               </div>
             </div>
             <div class="card-action center-align">
               <button
                 class="btn waves-effect waves-light"
                 type="submit"
-                class="btn waves-effect waves-light"
               >
                 Login
               </button>
