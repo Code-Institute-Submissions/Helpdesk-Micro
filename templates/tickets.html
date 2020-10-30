@@ -29,12 +29,13 @@
         <div class="col s2">
           <span>#{{ticket._ticketid}} | </span>
         </div>
-        <div class="col s8 text-overflow">
+        <div class="col s7 text-overflow">
           <span>{{ticket.call_subject}}</span>
         </div>
-        <div class="col s2">
-          <span> | {{ticket.call_priority}}</span><br />
-          {{ticket.date_posted}}
+        <div class="col s3">
+          <span>Status: {{ticket.call_status}}</span><br>
+          <span>Priority: {{ticket.call_priority}}</span><br>
+          <span>Created: {{ticket.date_posted}}</span><br>
         </div>
       </div>
     </div>

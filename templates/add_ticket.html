@@ -63,7 +63,7 @@
         <select id="end_user" name="end_user">
           <option value="" disabled selected>Raised by</option>
           {% for user in end_users %}
-          <option value="{{user._id}}">{{user.end_user}}</option>
+          <option value="{{user.end_user}}">{{user.end_user}}</option>
           {% endfor %}
         </select>
       </div>
@@ -73,7 +73,7 @@
         <select id="eu_email" name="eu_email">
           <option value="" disabled selected>Contact email</option>
           {% for user in eu_email %}
-          <option value="{{user.eu_email}}">{{user.eu_email}}</option>
+          <option value="{{user.eu_email}}">{{user._id}}</option>
           {% endfor %}
         </select>
       </div>
