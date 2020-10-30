@@ -73,21 +73,24 @@ def get_tickets():
 @app.route('/open_tickets')
 @login_required
 def open_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'Open'}).sort('date_posted', -1)
+    tickets = mongo.db.tickets.find(
+        {'call_status': 'Open'}).sort('date_posted', -1)
     return render_template('open_tickets.html', tickets=tickets)
 
 
 @app.route('/held_tickets')
 @login_required
 def held_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'On Hold'}).sort('date_posted', -1)
+    tickets = mongo.db.tickets.find(
+        {'call_status': 'On Hold'}).sort('date_posted', -1)
     return render_template('held_tickets.html', tickets=tickets)
 
 
 @app.route('/closed_tickets')
 @login_required
 def closed_tickets():
-    tickets = mongo.db.tickets.find({'call_status': 'Closed'}).sort('date_posted', -1)
+    tickets = mongo.db.tickets.find(
+        {'call_status': 'Closed'}).sort('date_posted', -1)
     return render_template('closed_tickets.html', tickets=tickets)
 
 # FULL TICKET VIEW INC COMMENTS
@@ -97,7 +100,8 @@ def closed_tickets():
 @login_required
 def ticket_full_detail(ticket_id):
     ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
-    updates = mongo.db.ticket_updates.find({'ticket_id': str(ticket_id)}).sort('date_posted', -1)
+    updates = mongo.db.ticket_updates.find(
+        {'ticket_id': str(ticket_id)}).sort('date_posted', -1)
     return render_template('full_ticket.html', ticket=ticket, updates=updates)
 
 # ADD NEW TICKET
@@ -106,11 +110,16 @@ def ticket_full_detail(ticket_id):
 @app.route('/add_ticket')
 @login_required
 def add_ticket():
+    end_users = mongo.db.end_user.find()
+    call_type = mongo.db.call_type.find()
+    call_priority = mongo.db.call_priority.find()
+    call_status = mongo.db.call_status.find()
     eu_email = mongo.db.end_user.find()
-    return render_template('add_ticket.html',   call_type=mongo.db.call_type.find(),
-                           end_users=mongo.db.end_user.find(),
-                           call_priority=mongo.db.call_priority.find(),
-                           call_status=mongo.db.call_status.find(),
+    return render_template('add_ticket.html',
+                           call_type=call_type,
+                           end_users=end_users,
+                           call_priority=call_priority,
+                           call_status=call_status,
                            eu_email=eu_email)
 
 

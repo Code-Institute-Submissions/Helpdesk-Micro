@@ -1,6 +1,6 @@
-<h1 align="center">Project Title</h1>
+<h1 align="center">Helpdesk-Micro</h1>
 
-[View the live project here.](https://##)
+[View the live project here.](https://http://helpdesk-pengols.herokuapp.com/)
 
 This is the website for my third Code Institute project focusing on Python, Flask and MongoDB.  The site is designed to be responsive and contains an IT Helpdesk ticketing system. Users will be able to create, edit, read and delete Helpdesk tickets. It is styled to provide end users with ease of readability.
 
