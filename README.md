@@ -2,7 +2,7 @@
 
 [View the live project here.](http://helpdesk-pengols.herokuapp.com/)
 
-This is the website for my third Code Institute project focusing on Python, Flask and MongoDB.  The site is designed to be responsive and contains an IT Helpdesk ticketing system. Users will be able to create, edit, read and delete Helpdesk tickets. It is styled to provide end users with ease of readability.
+A primarily desktop focussed website, Helpdesk-Micro is designed for small internal IT teams to be able to log and manage Helpdesk tickets for their organisation.  Users are able to create tickets and add and delete updates.  They will also be able to add, edit and delete both end users and administrative users. The website is inaccessible without a login.
 
 <h2 align="center"><img src="https://##"></h2>
 
@@ -26,7 +26,9 @@ This is the website for my third Code Institute project focusing on Python, Flas
 
 -   ### Design
     -   #### Colour Scheme
-        -   A number of 80's style colours are used to evoke a nostalgic feeling. Primarily the site uses a neon pink #F117F1  and purple pallette #8519EA. There are accents of green #00FF66 for which the colour mimics old green screen monitors from the decade and yellow #FFFB00 that matches the collectable coins of a famous video game plumber.
+        - ##### Navbar and buttons
+            - The site uses two primary, contrasting colours to help keep buttons and navbar defined and easily distinguishable.  
+
     -   #### Typography
         -   There are two primary fonts for the website - Press Start P2 & VT323. Sans Serif is used as the fallback font, in case for any reason, the fonts aren't being imported into the site correctly. Both Press Start P2 and VT323 are evocative of the fonts used in video games throughout the decade.  I have used Press Start P2 for buttons and titles and VT323 for larger pieces of text as it is easier to read.
     -   #### Imagery
