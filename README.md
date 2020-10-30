@@ -27,13 +27,16 @@ A primarily desktop focussed website, Helpdesk-Micro is designed for small inter
 -   ### Design
     -   #### Colour Scheme
         - ##### Navbar and buttons
-            The site uses two primary, contrasting colours to help keep buttons and navbar defined and easily distinguishable.  
-![Color](documentation/images/primary-color.png)
+            The site uses two primary, contrasting colours to help keep buttons(#0068DF) and navbar(#3C3C3C) defined and easily distinguishable. A third darker blue(#01346E), is used for buttons when active or hovered.
+![](documentation/images/primary-color.png)
 
+        - ##### Call priority status
+            Each call can be created or edited to have one of four levels of importance - High(#), Medium(#), Low(#) and Information(#).  This status is reflected on the right side of each call's information bar to allow users to determine the ticket's importance at a glance.
+![](documentation/images/##.png)
+        - ##### Background
+            Random backgrounds are applied on each page refresh.  A selection of images taken from nature are used.  As the site is relatively text based this adds visual interest to the site without detracting from it's primary purpose. 
     -   #### Typography
-        -   There are two primary fonts for the website - Press Start P2 & VT323. Sans Serif is used as the fallback font, in case for any reason, the fonts aren't being imported into the site correctly. Both Press Start P2 and VT323 are evocative of the fonts used in video games throughout the decade.  I have used Press Start P2 for buttons and titles and VT323 for larger pieces of text as it is easier to read.
-    -   #### Imagery
-        -   The background image is designed to be evocative of vector designs from the era. It has a nostalgic aesthetic and uses neon pink and purple from which the site takes design cues. The card images are chosen to reflect pop culture and technology from the decade.
+        -   There is one primary font for the website - Kumbh Sans. Sans Serif is used as the fallback font, in case for        any reason, the fonts aren't being imported into the site correctly. Kumbh Sans is a Geometric Sans Serif           multi-purpose font which should 
 
    ### Wireframes
 
