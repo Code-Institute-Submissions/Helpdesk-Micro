@@ -28,7 +28,7 @@ A primarily desktop focussed website, Helpdesk-Micro is designed for small inter
     -   #### Colour Scheme
         - ##### Navbar and buttons
             The site uses two primary, contrasting colours to help keep buttons and navbar defined and easily distinguishable.  
-            ![Color](documentation/images/primary-color.PNG)
+![Color](documentation/images/primary-color.png)
 
     -   #### Typography
         -   There are two primary fonts for the website - Press Start P2 & VT323. Sans Serif is used as the fallback font, in case for any reason, the fonts aren't being imported into the site correctly. Both Press Start P2 and VT323 are evocative of the fonts used in video games throughout the decade.  I have used Press Start P2 for buttons and titles and VT323 for larger pieces of text as it is easier to read.
