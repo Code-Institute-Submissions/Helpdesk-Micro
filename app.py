@@ -110,11 +110,11 @@ def ticket_full_detail(ticket_id):
 @app.route('/add_ticket')
 @login_required
 def add_ticket():
-    end_users = mongo.db.end_user.find()
+    end_users = mongo.db.end_user.find().sort('end_user', 1)
     call_type = mongo.db.call_type.find()
     call_priority = mongo.db.call_priority.find()
     call_status = mongo.db.call_status.find()
-    eu_email = mongo.db.end_user.find()
+    eu_email = mongo.db.end_user.find().sort('eu_email', 1)
     return render_template('add_ticket.html',
                            call_type=call_type,
                            end_users=end_users,
