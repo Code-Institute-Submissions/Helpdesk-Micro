@@ -79,6 +79,8 @@ main {
   margin-left: 8px;
 }
 
+/* gradients for call priority colours */
+
 .priority-high {
   background: rgb(255, 255, 255);
   background: linear-gradient(
