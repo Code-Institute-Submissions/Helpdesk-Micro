@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 body {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
   position: relative;
   height: 100vh;
   font-size: 1rem;
@@ -12,7 +12,7 @@ body {
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-attachment: fixed; 
+  background-attachment: fixed;
 }
 
 main {
@@ -41,7 +41,7 @@ main {
 }
 
 .error {
-    color: red;
+  color: red;
 }
 
 .nav-wrapper,
@@ -131,6 +131,8 @@ main {
 
 .collapsible-body {
   background-color: #ffffff;
+  border: 1px solid black;
+  border-radius: 3px;
 }
 
 .full-body-row {
@@ -193,7 +195,7 @@ main {
   background-color: #01346e;
 }
 
-.btn:focus{ 
+.btn:focus {
   background-color: #01346e;
 }
 
@@ -208,11 +210,8 @@ main {
 
 .center-title {
   text-align: center;
-  text-shadow:
-   -1px -1px 0 rgb(180, 180, 180),  
-    1px -1px 0 rgb(180, 180, 180),
-    -1px 1px 0 rgb(180, 180, 180),
-     1px 1px 0 rgb(180, 180, 180);
+  text-shadow: -1px -1px 0 rgb(180, 180, 180), 1px -1px 0 rgb(180, 180, 180),
+    -1px 1px 0 rgb(180, 180, 180), 1px 1px 0 rgb(180, 180, 180);
 }
 
 .page-footer {
