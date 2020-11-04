@@ -188,12 +188,17 @@ main {
   text-align: left;
 }
 
+.view-button {
+      display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5px;
+}
+
 .btn {
   background-color: #0068df;
   border-radius: 100px;
-  display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
 
 .btn:hover {
