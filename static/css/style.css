@@ -191,6 +191,9 @@ main {
 .btn {
   background-color: #0068df;
   border-radius: 100px;
+  display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .btn:hover {
