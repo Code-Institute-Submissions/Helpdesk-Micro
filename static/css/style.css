@@ -219,9 +219,10 @@ main {
 }
 
 .center-title {
+    color: #fff;
   text-align: center;
-  text-shadow: -1px -1px 0 rgb(180, 180, 180), 1px -1px 0 rgb(180, 180, 180),
-    -1px 1px 0 rgb(180, 180, 180), 1px 1px 0 rgb(180, 180, 180);
+  text-shadow: -1px -1px 0 rgb(8, 8, 8), 1px -1px 0 rgb(12, 12, 12),
+    -1px 1px 0 rgb(19, 18, 18), 1px 1px 0 rgb(14, 13, 13);
 }
 
 .page-footer {
