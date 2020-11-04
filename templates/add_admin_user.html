@@ -14,7 +14,8 @@
       <div class="col s12 m6">
         <div class="input-field input-box">
           <i class="material-icons prefix">vpn_key</i>
-          <input id="admin_password" name="admin_password" type="password" class="validate" required=""/>
+          <input id="admin_password" name="admin_password" type="password" class="validate" required="" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="at least one number and one uppercase and lowercase letter, and at least 8 or more characters"/>
           <label for="icon_prefix">Password</label>
         </div>
       </div>
