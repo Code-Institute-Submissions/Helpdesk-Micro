@@ -1,5 +1,7 @@
 import os
-from flask import Flask, render_template, redirect, request, url_for, session, flash
+from flask import (
+    Flask, render_template, redirect,
+    request, url_for, session, flash)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from datetime import datetime
@@ -40,7 +42,9 @@ def login():
             {"admin_username": request.form.get("admin_username").lower()})
 
         if admin_user:
-            if check_password_hash(admin_user["admin_password"], request.form.get("admin_password")):
+            if check_password_hash(
+                admin_user["admin_password"], request.form.get
+                    ("admin_password")):
                 session['logged_in'] = True
                 session['admin_username'] = request.form["admin_username"]
                 return redirect(url_for('open_tickets'))
@@ -127,7 +131,8 @@ def add_ticket():
 @login_required
 def insert_ticket():
     tickets = mongo.db.tickets
-    new_ticket = {'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+    new_ticket = {'date_posted': datetime.utcnow()
+                  .strftime('%d/%m/%y @ %H:%M:%S'),
                   'call_subject': request.form.get('call_subject'),
                   'call_details': request.form.get('call_details'),
                   'call_type': request.form.get('call_type'),
@@ -297,7 +302,8 @@ def update_admin_user(admin_user_id):
     admin_user.update({'_id': ObjectId(admin_user_id)},
                       {
         'admin_username': request.form.get('admin_username'),
-        "admin_password": generate_password_hash(request.form.get("admin_password"))
+        "admin_password": generate_password_hash(
+            request.form.get("admin_password"))
     })
     return redirect(url_for('get_admin_users'))
 
@@ -307,7 +313,8 @@ def update_admin_user(admin_user_id):
 def insert_admin_user():
     new_admin = {
         "admin_username": request.form.get("admin_username"),
-        "admin_password": generate_password_hash(request.form.get("admin_password"))}
+        "admin_password": generate_password_hash(
+            request.form.get("admin_password"))}
     mongo.db.admin_users.insert_one(new_admin)
     return redirect(url_for('get_admin_users'))
 
