@@ -245,4 +245,10 @@ main {
   .brand-logo > img{
           height: 45px;
   }
+
+  .view-button {
+      margin-top: 10px;
+      
+
+  }
 }
