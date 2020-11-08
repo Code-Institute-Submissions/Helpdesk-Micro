@@ -69,16 +69,19 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 -   Responsive on all device sizes: Although designed primarily for desktop users, the site can be used and viewed on smaller screens, so an Administrative user can view, add, delete and update in all areas of the site if they are working away from their desktop at a users desk for example.
 -   Tickets by view: Administrative users are able to view tickets by status of 'Open', 'On hold', 'Closed' and 'All'.  Tickets are set to show by date order in all instances, with the newest tickets showing at the top.
--   
--   Secure login: All parts of the site, aside from the initial login page are only accessible to Administrative users that have been provided a login.  This is due to the fact that the helpdesk tickets will contain company sensitive information such as email addresses, contact names and contact telephone numbers which should not be visible to anyone outside of the organisation.
--   
+-   Secure login: All parts of the site, aside from the initial login page are only accessible to Administrative users that have been provided a login.  This is due to the fact that the helpdesk tickets will contain company sensitive information such as email addresses, contact names and contact telephone numbers which should not be visible to anyone outside of the organisation. 
 
 -   ### Future Features
 
 -   Dashboard
 -   Export as .csv
 -   End users can email to raise update tickets
--   
+
+-   ### Defensive Design
+
+-   password/login
+-   delete admin user
+-   delete everyones comments
 
 ## Technologies Used
 
