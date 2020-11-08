@@ -123,6 +123,10 @@ main {
   );
 }
 
+.closed-ticket {
+    color: lightblue;
+}
+
 .collapsible-header {
   display: block;
   font-weight: 700;

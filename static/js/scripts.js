@@ -15,6 +15,7 @@ $(document).ready(function () {
   $(".collapsible-header:contains('Medium')").addClass("priority-med");
   $(".collapsible-header:contains('Low')").addClass("priority-low");
   $(".collapsible-header:contains('Info')").addClass("priority-info");
+  $(".collapsible-header:contains('Status: Closed')").addClass("closed-ticket");
   $(".dropdown-trigger").dropdown(); /* navbar dropdowns */
 });
 
