@@ -8,7 +8,7 @@ body {
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-image: url("/static/images/bg2.jpg");
+  background-image: url("/static/images/bg2.jpg"); 
   background-position: center;
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -31,6 +31,7 @@ main {
   text-overflow: ellipsis;
 }
 
+/* end_user and admin_user cards */
 .card {
   border-radius: 3px;
   border: 1px solid black;
@@ -40,6 +41,7 @@ main {
   margin-top: 5rem;
 }
 
+/* credential error flas message */
 .error {
   color: red;
 }
@@ -137,6 +139,7 @@ main {
   border-radius: 3px;
 }
 
+/* full ticket view main ticket info */
 .full-body-row {
   background-color: #ffffff;
   padding: 20px;
@@ -144,6 +147,7 @@ main {
   border: 1px solid;
 }
 
+/* ticket updates in full ticket view */
 .update-row {
   background-color: #ffffff;
   border-radius: 3px;
@@ -151,10 +155,12 @@ main {
   padding: 20px 20px 0 20px;
 }
 
+/* call subject and call details container */
 .c-body-details {
   word-wrap: break-word;
 }
 
+/* call information list on right side of ticket */
 .c-body-info {
   border: 1px solid black;
   border-radius: 5px;
@@ -174,6 +180,7 @@ main {
   margin-top: 15px;
 }
 
+/* all input boxes */
 .input-box {
   background-color: #ffffff;
   padding: 5px;
@@ -188,6 +195,7 @@ main {
   text-align: left;
 }
 
+/* buttons for ticket views */
 .view-button {
       display: flex;
     align-items: center;
@@ -218,6 +226,7 @@ main {
   text-align: center;
 }
 
+/* page titles */
 .center-title {
     color: #fff;
   text-align: center;
