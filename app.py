@@ -195,6 +195,7 @@ def update_ticket(ticket_id):
         'call_status': request.form.get('call_status'),
         'end_user': request.form.get('end_user'),
         'eu_email': request.form.get('eu_email'),
+        'tel_no': request.form.get('tel_no'),
         '_ticketid': request.form.get('_ticketid'),
         'date_posted': request.form.get('date_posted'),
         'admin_username': request.form.get('admin_username')
