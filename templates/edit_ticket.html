@@ -45,7 +45,7 @@
               {{-type.call_type-}}</option
             >
             {% else %}
-            <option value="{{type.call_type}}"> {{type.call_type}}</option>
+            <option value="{{type.call_type}}"> {{-type.call_type-}}</option>
             {% endif %} {% endfor %}
           </select>
           <label>Call type</label>
@@ -62,7 +62,7 @@
             >
             {% else %}
             <option value="{{priority.call_priority}}">
-              {{priority.call_priority}}</option
+              {{-priority.call_priority-}}</option
             >
             {% endif %} {% endfor %}
           </select>
@@ -80,7 +80,7 @@
             >
             {% else %}
             <option value="{{status.call_status}}">
-              {{status.call_status}}</option
+              {{-status.call_status-}}</option
             >
             {% endif %} {% endfor %}
           </select>
@@ -98,7 +98,7 @@
               {{-user.end_user-}}</option
             >
             {% else %}
-            <option value="{{user.end_user}}"> {{user.end_user}}</option>
+            <option value="{{user.end_user}}"> {{-user.end_user-}}</option>
             {% endif %} {% endfor %}
           </select>
           <label>End user</label>
