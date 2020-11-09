@@ -119,12 +119,14 @@ def add_ticket():
     call_priority = mongo.db.call_priority.find()
     call_status = mongo.db.call_status.find()
     eu_email = mongo.db.end_user.find().sort('eu_email', 1)
+    eu_tel = mongo.db.end_user.find().sort('tel_no', 1)
     return render_template('add_ticket.html',
                            call_type=call_type,
                            end_users=end_users,
                            call_priority=call_priority,
                            call_status=call_status,
-                           eu_email=eu_email)
+                           eu_email=eu_email,
+                           eu_tel=eu_tel)
 
 
 @app.route('/insert_ticket', methods=['POST', 'GET'])
