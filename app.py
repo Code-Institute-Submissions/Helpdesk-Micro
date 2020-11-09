@@ -220,6 +220,22 @@ def delete_update(update_id):
     mongo.db.ticket_updates.remove({'_id': ObjectId(update_id)})
     return redirect(request.referrer)
 
+
+@app.route('/close_ticket/<ticket_id>')
+@login_required
+def close_ticket(ticket_id):
+    """
+    Updates application to the database
+    Closes a application, set status on closed
+    """
+    ticket = mongo.db.tickets
+    ticket.update_one(
+        {'_id': ObjectId(ticket_id)},
+        {'$set': {
+            'call_status': 'Closed'
+        }})
+    return redirect(request.referrer)
+
 # END USERS
 
 
