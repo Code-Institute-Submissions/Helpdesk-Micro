@@ -169,7 +169,7 @@ def edit_ticket(ticket_id):
     call_type = mongo.db.call_type.find()
     call_priority = mongo.db.call_priority.find()
     call_status = mongo.db.call_status.find()
-    eu_email = mongo.db.eu_email.find()
+    eu_email = mongo.db.end_user.find().sort('eu_email', 1)
     return render_template('edit_ticket.html', ticket=edit_ticket,
                            end_user=end_user,
                            call_type=call_type,
