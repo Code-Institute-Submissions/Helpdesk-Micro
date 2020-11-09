@@ -1,4 +1,3 @@
-<h4>Add update</h4>
 <form hidden class="quick-comment-form" action="{{ url_for('new_update') }}" method="POST">
   <input type="hidden" value="{{ ticket._id }}" name="ticket_id" />
   <input type="hidden" value="{{session.admin_username}}" name="admin_username" />
