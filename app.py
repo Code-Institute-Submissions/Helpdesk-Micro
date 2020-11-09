@@ -171,13 +171,15 @@ def edit_ticket(ticket_id):
     call_type = mongo.db.call_type.find()
     call_priority = mongo.db.call_priority.find()
     call_status = mongo.db.call_status.find()
-    eu_email = mongo.db.end_user.find().sort('eu_email', 1)
+    eu_email = mongo.db.end_user.find().sort('eu_email', 1),
+    eu_tel = mongo.db.end_user.find().sort('tel_no', 1)
     return render_template('edit_ticket.html', ticket=edit_ticket,
                            end_user=end_user,
                            call_type=call_type,
                            call_priority=call_priority,
                            call_status=call_status,
-                           eu_email=eu_email)
+                           eu_email=eu_email,
+                           eu_tel=eu_tel)
 
 
 @app.route('/update_ticket/<ticket_id>', methods=['POST', 'GET'])

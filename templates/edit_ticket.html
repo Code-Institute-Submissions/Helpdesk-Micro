@@ -118,6 +118,20 @@
           </select>
         </div>
       </div>
+      <div class="col s12 m4">
+        <div class="input-field input-box">
+          <select id="tel_no" name="tel_no">
+            <option value="" disabled selected>Email</option>
+            {% for tel in eu_tel %} {% if tel.tel_no == ticket.tel_no %}
+            <option value="{{tel.tel_no}}" selected>
+              {{-tel.tel_no-}}</option
+            >
+            {% else %}
+            <option value="{{tel.tel_no}}"> {{-tel.tel_no-}}</option>
+            {% endif %} {% endfor %}
+          </select>
+        </div>
+      </div>
     </div>
     <div class="row">
       <div class="col s12">
