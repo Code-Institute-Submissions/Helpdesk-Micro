@@ -42,7 +42,7 @@
             {% for type in call_type %} {% if type.call_type == ticket.call_type
             %}
             <option value="{{type.call_type}}" selected>
-              {{type.call_type}}</option
+              {{-type.call_type-}}</option
             >
             {% else %}
             <option value="{{type.call_type}}"> {{type.call_type}}</option>
@@ -58,7 +58,7 @@
             {% for priority in call_priority %} {% if priority.call_priority ==
             ticket.call_priority %}
             <option value="{{priority.call_priority}}" selected>
-              {{priority.call_priority}}</option
+              {{-priority.call_priority-}}</option
             >
             {% else %}
             <option value="{{priority.call_priority}}">
@@ -76,7 +76,7 @@
             {% for status in call_status %} {% if status.call_status ==
             ticket.call_status %}
             <option value="{{status.call_status}}" selected>
-              {{status.call_status}}</option
+              {{-status.call_status-}}</option
             >
             {% else %}
             <option value="{{status.call_status}}">
@@ -95,7 +95,7 @@
             <option value="" disabled selected>End user</option>
             {% for user in end_user %} {% if user.end_user == ticket.end_user %}
             <option value="{{user.end_user}}" selected>
-              {{user.end_user}}</option
+              {{-user.end_user-}}</option
             >
             {% else %}
             <option value="{{user.end_user}}"> {{user.end_user}}</option>
