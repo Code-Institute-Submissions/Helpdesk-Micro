@@ -225,8 +225,7 @@ def delete_update(update_id):
 @login_required
 def close_ticket(ticket_id):
     """
-    Updates application to the database
-    Closes a application, set status on closed
+    Closes ticket, sets call_status to closed
     """
     ticket = mongo.db.tickets
     ticket.update_one(
