@@ -36,19 +36,23 @@
       <span class="bold">Email:</span
       ><a href="mailto:{{ticket.eu_email}}"> {{ticket.eu_email}}</a>
     </p>
+    <p><span class="bold">Tel no:</span> {{ticket.tel_no}}</p>
     <a
       class="waves-effect waves-light btn call-edit-btn"
       href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}"
       >Edit</a
     >
   </div>
-
+  <div class="row">
   <div class="col s12 center-align full-ticket-button-col">
     <button class="waves-effect waves-light btn quick-comment">
       New Update
     </button>
   </div>
 </div>
+</div>
+
+  
 
 {% include 'add_quick_update.html' %} {% for update in updates %}
 <div class="row update-row">
