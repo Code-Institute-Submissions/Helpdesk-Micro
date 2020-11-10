@@ -133,7 +133,7 @@ def add_ticket():
 @login_required
 def insert_ticket():
     tickets = mongo.db.tickets
-    new_ticket = {'date_posted': datetime.utcnow()
+    new_ticket = {'date_posted': datetime.now()
                   .strftime('%d/%m/%y @ %H:%M:%S'),
                   'call_subject': request.form.get('call_subject'),
                   'call_details': request.form.get('call_details'),
@@ -210,7 +210,7 @@ def update_ticket(ticket_id):
 def new_update():
     updates = mongo.db.ticket_updates
     update = {
-        'date_posted': datetime.utcnow().strftime('%d/%m/%y @ %H:%M:%S'),
+        'date_posted': datetime.now().strftime('%d/%m/%y @ %H:%M:%S'),
         'add_update': request.form.get('add_update'),
         'ticket_id': request.form.get('ticket_id'),
         'admin_username': request.form.get('admin_username')
