@@ -105,7 +105,7 @@ def closed_tickets():
 def ticket_full_detail(ticket_id):
     ticket = mongo.db.tickets.find_one({'_id': ObjectId(ticket_id)})
     updates = mongo.db.ticket_updates.find(
-        {'ticket_id': str(ticket_id)}).sort('date_posted', -1)
+        {'ticket_id': str(ticket_id)}).sort('_id', -1)
     return render_template('full_ticket.html', ticket=ticket, updates=updates)
 
 # ADD NEW TICKET
