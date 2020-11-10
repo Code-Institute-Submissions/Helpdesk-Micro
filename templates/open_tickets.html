@@ -26,15 +26,15 @@
     <div class="collapsible-header hoverable">
       <div class="row">
         <div class="col s12 m1">
-          <span>#{{ticket._ticketid}}</span>
+          <span class="bold">#{{ticket._ticketid}}</span>
         </div>
         <div class="col s12 m7 text-overflow">
           <span>{{ticket.call_subject}}</span>
         </div>
         <div class="col s12 m4">
-          <span>Status: {{ticket.call_status}}</span><br>
-          <span>Priority: {{ticket.call_priority}}</span><br>
-          <span>Created: {{ticket.date_posted}}</span><br>
+          <span class="bold">Status:</span> {{ticket.call_status}}<br>
+          <span class="bold">Priority:</span> {{ticket.call_priority}}<br>
+          <span class="bold">Created:</span> {{ticket.date_posted}}<br>
         </div>
       </div>
     </div>
@@ -44,10 +44,7 @@
           <span>{{ticket.call_details}}</span>
         </div>
         <div class="col s12 m4 right c-body-info">
-          <p><span class="bold">Created:</span> {{ticket.date_posted}}</p>
           <p><span class="bold">Created by:</span> {{ticket.admin_username}}</p>
-          <p><span class="bold">Priority:</span> {{ticket.call_priority}}</p>
-          <p><span class="bold">Status:</span> {{ticket.call_status}}</p>
           <p><span class="bold">Call type:</span> {{ticket.call_type}}</p>
           <p><span class="bold">End user:</span> {{ticket.end_user}}</p>
           <p>
