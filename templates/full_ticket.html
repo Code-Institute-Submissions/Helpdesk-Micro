@@ -3,20 +3,20 @@
 <h3 class="center-title">Ticket #{{ticket._ticketid}} - {{ticket.call_status}}</h3>
 <div class="row center-align">
   <div class="col s12 m3">
-    <a class="waves-effect waves-light btn" href="/add_ticket">Add ticket</a>
+    <a class="waves-effect waves-light btn view-button" href="/add_ticket">Add ticket</a>
   </div>
   <div class="col s12 m3">
-    <a class="waves-effect waves-light btn" href="/open_tickets"
+    <a class="waves-effect waves-light btn view-button" href="/open_tickets"
       >Open tickets</a
     >
   </div>
   <div class="col s12 m3">
-    <a class="waves-effect waves-light btn" href="/held_tickets"
+    <a class="waves-effect waves-light btn view-button" href="/held_tickets"
       >Tickets on hold</a
     >
   </div>
   <div class="col s12 m3">
-    <a class="waves-effect waves-light btn" href="/get_tickets">All tickets</a>
+    <a class="waves-effect waves-light btn view-button" href="/get_tickets">All tickets</a>
   </div>
 </div>
 <div hidden>{{ticket._id}}</div>
@@ -38,7 +38,7 @@
     </p>
     <p><span class="bold">Tel no:</span> {{ticket.tel_no}}</p>
     <a
-      class="waves-effect waves-light btn call-edit-btn"
+      class="waves-effect waves-light btn call-edit-btn view-button"
       href="{{ url_for('edit_ticket', ticket_id=ticket._id) }}"
       >Edit</a
     >
