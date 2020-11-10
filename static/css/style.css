@@ -140,6 +140,10 @@ main {
   padding-bottom: 0px;
 }
 
+.header-row {
+    margin-bottom: 7px;
+}
+
 .collapsible-body {
   background-color: #ffffff;
   border: 1px solid black;
