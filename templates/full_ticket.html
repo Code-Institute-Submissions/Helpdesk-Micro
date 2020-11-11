@@ -63,7 +63,9 @@
     <p>{{update.add_update}}</p>
     <div class="row">
       <div class="col s12 center-buttons">
+      {% if session.admin_username == update.admin_username %}
         <a data-target="modal-delete-update" class="btn modal-trigger">Delete</a>
+        {% endif %}
       </div>
     </div>
   </div>
