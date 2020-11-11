@@ -175,6 +175,7 @@ main {
   border: 1px solid black;
   border-radius: 5px;
   background-color: rgb(211, 211, 211);
+  padding: 50px;
 }
 
 .c-body-info p {
@@ -183,7 +184,6 @@ main {
 
 .call-edit-btn {
   margin-bottom: 12px;
-  margin-left: 5px;
 }
 
 .full-ticket-button-col {

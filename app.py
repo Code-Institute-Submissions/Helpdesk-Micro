@@ -205,7 +205,7 @@ def update_ticket(ticket_id):
 # QUICK UPDATE ROUTES
 
 
-@app.route('/open_tickets/add_quick_update', methods=['GET', 'POST'])
+@app.route('/tickets/add_quick_update', methods=['GET', 'POST'])
 @login_required
 def new_update():
     updates = mongo.db.ticket_updates
