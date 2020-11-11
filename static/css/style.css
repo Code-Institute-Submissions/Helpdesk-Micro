@@ -144,6 +144,7 @@ main {
     margin-bottom: 7px;
 }
 
+.full-body-row,
 .collapsible-body {
   background-color: #ffffff;
   border: 1px solid black;
@@ -153,11 +154,7 @@ main {
 
 /* full ticket view main ticket info */
 .full-body-row {
-  background-color: #ffffff;
   padding: 20px;
-  border-radius: 3px;
-  border: 1px solid;
-  padding-bottom: 0;
 }
 
 /* ticket updates in full ticket view */
