@@ -154,7 +154,7 @@ main {
 
 /* full ticket view main ticket info */
 .full-body-row {
-  padding: 20px;
+  padding: 20px 20px 0 20px;
 }
 
 /* ticket updates in full ticket view */
@@ -174,7 +174,7 @@ main {
 .c-body-info {
   border: 1px solid black;
   border-radius: 5px;
-  background-color: #93c0d9;
+  background-color: rgb(211, 211, 211);
 }
 
 .c-body-info p {
