@@ -29,7 +29,6 @@ def login_required(f):
         if 'logged_in' in session:
             return f(*args, **kwargs)
         else:
-            flash('You need to login first.')
             return redirect(url_for('login'))
     return wrap
 
@@ -46,7 +45,7 @@ def login():
                 admin_user["admin_password"], request.form.get
                     ("admin_password")):
                 session['logged_in'] = True
-                session['admin_username'] = request.form["admin_username"]
+                session['admin_username'] = request.form.get("admin_username").lower()
                 return redirect(url_for('open_tickets'))
         else:
             error = 'Invalid credentials, please try again'
@@ -269,7 +268,7 @@ def update_end_user(end_user_id):
     end_user = mongo.db.end_user
     end_user.update({'_id': ObjectId(end_user_id)},
                     {
-        'end_user': request.form.get('end_user'),
+        'end_user': request.form.get('end_user').lower(),
         'tel_no': request.form.get('tel_no'),
         'eu_email': request.form.get('eu_email'),
         'eu_department': request.form.get('eu_department'),
@@ -332,7 +331,7 @@ def update_admin_user(admin_user_id):
 @login_required
 def insert_admin_user():
     new_admin = {
-        "admin_username": request.form.get("admin_username"),
+        "admin_username": request.form.get("admin_username").lower(),
         "admin_password": generate_password_hash(
             request.form.get("admin_password"))}
     mongo.db.admin_users.insert_one(new_admin)
