@@ -1,43 +1,24 @@
 {% extends 'base.html' %} {% block content %}
 <h3 class="center-title">End Users</h3>
 <div class="row">
-  {% for end_user in end_users %}
-  <div class="col s12 m6">
-    <div class="card darken-1 hoverable">
-      <div class="card-content">
-        <span class="eu-card-title">{{end_user.end_user}}</span>
-        <p><span class="bold">Tel:</span> {{end_user.tel_no}}</p>
-        <p><span class="bold">Email:</span> {{end_user.eu_email}}</p>
-        <p><span class="bold">Dept:</span> {{end_user.eu_department}}</p>
-      </div>
-      <div class="card-action center-align">
-        <a
-          class="waves-effect waves-light btn"
-          href="{{ url_for('edit_end_user', end_user_id=end_user._id) }}"
-          >Edit</a
-        >
-        <a data-target="modal-delete-eu" class="btn modal-trigger">Delete</a>
-
-        <!-- Modal Structure -->
-        <div id="modal-delete-eu" class="modal">
-          <div class="modal-content">
-            <h4 class="center-align">Are you sure?</h4>
-          </div>
-          <div class="modal-footer center-buttons">
-            <a
-              href="{{ url_for('delete_end_user', end_user_id=end_user._id) }}"
-              class="modal-close waves-effect waves-light btn"
-              >Delete</a
-            >
-            <a href="#" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
+	{% for end_user in end_users %}
+	<div class="col s12 m6">
+		<div class="card darken-1 hoverable">
+			<div class="card-content">
+				<span class="eu-card-title">{{end_user.end_user}}</span>
+				<p><span class="bold">Tel:</span> {{end_user.tel_no}}</p>
+				<p><span class="bold">Email:</span> {{end_user.eu_email}}</p>
+				<p><span class="bold">Dept:</span> {{end_user.eu_department}}</p>
+			</div>
+			<div class="card-action center-align">
+				<a class="waves-effect waves-light btn"
+					href="{{ url_for('edit_end_user', end_user_id=end_user._id) }}">Edit</a>
+				<a href="{{ url_for('delete_end_user', end_user_id=end_user._id) }}"
+					class="modal-close waves-effect waves-light btn">Delete</a>
+			</div>
+		</div>
+	</div>
+	{% endfor %}
 </div>
 
 {% endblock %}
