@@ -165,6 +165,7 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 ### Known Bugs & Resolutions if Applicable
 
 -   Incrementing ticketid was not repopulating from edit ticket submit.  Resolved by a disabled hidden text input in edit_ticket.html with _ticketid fields.
+-   modal for delete end users and admins was causing the first in the list to be deleted rather than the chosen object.  removed confirmation modal for these.  no fix as yet.
 
 
 ## Deployment
