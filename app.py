@@ -96,6 +96,14 @@ def closed_tickets():
         {'call_status': 'Closed'}).sort("_id", -1)
     return render_template('closed_tickets.html', tickets=tickets)
 
+
+@app.route("/search", methods=["GET", "POST"])
+@login_required
+def search():
+    query = request.form.get("query")
+    tickets = list(mongo.db.tickets.find({"$text": {"$search": query}}))
+    return render_template('tickets.html', tickets=tickets)
+
 # FULL TICKET VIEW INC COMMENTS
 
 
