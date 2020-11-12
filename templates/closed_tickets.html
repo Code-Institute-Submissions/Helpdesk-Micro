@@ -69,12 +69,14 @@
             Quick comment
           </a>
         </div>
+        {% if ticket.call_status != "Closed" %}
         <div class="col s12 m4">
           <a
               href="{{ url_for('close_ticket', ticket_id=ticket._id) }}"
               class="modal-close waves-effect waves-light btn view-button"
               >Close</a
             >
+            {% endif %}
         </div>
       </div>
       {% include 'add_quick_update.html' %}
