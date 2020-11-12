@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %}
-<h3 class="center-title">All Tickets</h3>
+<h3 class="center-title">Search results</h3>
 <div class="row center-align">
   <div class="col s12 m3">
     <a class="waves-effect waves-light btn view-button" href="/add_ticket">Add ticket</a>
@@ -20,6 +20,7 @@
     >
   </div>
 </div>
+{% if tickets|length > 0 %}
 <ul class="collapsible popout">
   {% for ticket in tickets %}
   <li>
@@ -86,7 +87,18 @@
   </li>
   {% endfor %}
 </ul>
-
-
+{% else %}
+<div class="row update-row error-row">
+  <div class="col s12 center-align">
+      <h3>No results found</h3>
+      <p>There is nothing here. The button below will take you home</p>
+    <div class="row">
+      <div class="col s12 center-buttons">
+        <a class="waves-effect waves-light btn view-button" href="{{ url_for('open_tickets') }}">go back</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 
 {% endblock %}

@@ -108,12 +108,12 @@
         <div class="input-field input-box">
           <select id="eu_email" name="eu_email">
             <option value="" disabled selected>Email</option>
-            {% for user in eu_email %} {% if user.eu_email == ticket.eu_email %}
-            <option value="{{user.eu_email}}" selected>
-              {{-user.eu_email-}}</option
+            {% for email in eu_email %} {% if email.eu_email == ticket.eu_email %}
+            <option value="{{email.eu_email}}" selected>
+              {{-email.eu_email-}}</option
             >
             {% else %}
-            <option value="{{user.eu_email}}"> {{-user.eu_email-}}</option>
+            <option value="{{email.eu_email}}"> {{-email.eu_email-}}</option>
             {% endif %} {% endfor %}
           </select>
         </div>
@@ -161,7 +161,7 @@
         </button>
         <a
           class="waves-effect waves-light btn"
-          href="{{ url_for('get_tickets') }}"
+          href="{{ url_for('open_tickets') }}"
           >Cancel</a
         >
       </div>

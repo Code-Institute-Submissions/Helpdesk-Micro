@@ -102,7 +102,7 @@ def closed_tickets():
 def search():
     query = request.form.get("query")
     tickets = list(mongo.db.tickets.find({"$text": {"$search": query}}))
-    return render_template('tickets.html', tickets=tickets)
+    return render_template('search.html', tickets=tickets)
 
 # FULL TICKET VIEW INC COMMENTS
 
