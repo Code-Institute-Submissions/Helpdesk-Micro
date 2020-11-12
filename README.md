@@ -223,11 +223,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 -   [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp): For guidance on creating JavaScript modals. Code was modified to better fit my needs.
 
--   [Bootstrap4](https://getbootstrap.com/docs/4.4/getting-started/introduction/): Bootstrap Library used throughout the project mainly to make site responsive using the Bootstrap Grid System.
-
--   [PortEXE Spooky Card Match Game](https://www.youtube.com/watch?v=3uuQ3g92oPQ) : For guidance on the logic of matching cards and the [Fisher-Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle). Code was modified to better fit my needs.
-
--   [Marina Ferreira Memory Game](https://marina-ferreira.github.io/tutorials/js/memory-game/) : For guidance on creating new classes on card flip. Code was modified to better fit my needs.
+-   Tim at Code Institute Task Manager mini project for guidance on search functionality.
 
 ### Content
 
