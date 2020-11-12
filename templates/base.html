@@ -59,16 +59,12 @@
             >
             <ul class="right hide-on-med-and-down">
             <li>    
-                       <div class="center row">
+                       <div class="center row nav-search">
                           <div class="col s12" >
                             <div class="row" id="topbarsearch">
-                            <form action="{{ url_for('search') }}" method="POST">
-                              <div class="input-field col s6 s12">
-                                <i class="material-icons prefix">search</i>
-                                <input type="text" id="query" name="query">
-                                <label for="query">Search</label>
-                                </div>
-                            </form>
+                            <form action="{{ url_for('search') }}" method="POST" class="browser-default right">
+        <input id="query" placeholder="Search" type="text" name="query" autocomplete="off" aria-label="Search box">
+      </form>
                               </div>
                             </div>
                           </div>          

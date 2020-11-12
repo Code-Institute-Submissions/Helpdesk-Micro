@@ -46,11 +46,19 @@ main {
   color: red;
 }
 
+
+
 .nav-wrapper,
 .menu-dropdown,
 .sidenav,
 .sidenav .collapsible-body {
   background-color: #3c3c3c;
+}
+
+/* Navbar search */
+
+#query {
+    color: #ffffff;
 }
 
 /* navbar menu dropdowns */
