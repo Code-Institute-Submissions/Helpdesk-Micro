@@ -37,6 +37,10 @@ main {
   border: 1px solid black;
 }
 
+.eu-card-title {
+  font-size: 2rem;
+}
+
 .login-card {
   margin-top: 5rem;
 }
@@ -45,7 +49,6 @@ main {
 .error {
   color: red;
 }
-
 
 
 .nav-wrapper,
@@ -235,10 +238,6 @@ main {
   background-color: #01346e;
 }
 
-.eu-card-title {
-  font-size: 2rem;
-}
-
 .center-buttons,
 .modal .modal-footer {
   text-align: center;
@@ -257,6 +256,7 @@ main {
   background-color: #3c3c3c;
 }
 
+/* 404 & no search results dialogue box */
 .error-row {
     display: inline;
     margin: 0px;
