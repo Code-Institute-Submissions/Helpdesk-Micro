@@ -45,7 +45,8 @@ def login():
                 admin_user["admin_password"], request.form.get
                     ("admin_password")):
                 session['logged_in'] = True
-                session['admin_username'] = request.form.get("admin_username").lower()
+                session['admin_username'] = request.form.get(
+                    "admin_username").lower()
                 return redirect(url_for('open_tickets'))
         else:
             error = 'Invalid credentials, please try again'
