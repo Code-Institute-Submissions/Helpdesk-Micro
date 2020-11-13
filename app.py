@@ -70,7 +70,7 @@ def home():
 @app.route('/get_tickets')
 @login_required
 def get_tickets():
-    tickets = mongo.db.tickets.find().sort("_id", -1)   
+    tickets = mongo.db.tickets.find().sort("_id", -1)
     return render_template('tickets.html', tickets=tickets)
 
 
