@@ -1,52 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+      type="text/css"
+    />
+    <title>Helpdesk Micro</title>
+    <link
+      rel="shortcut icon"
+      type="image/png"
+      href="./static/images/favicon.png"
+    />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("user_PbF1bAAUP6aKMePFzi7gL");
+        emailjs.send("gmail", "template_p67sxbc", {
+          name: "Alex",
+          notes: "The project that I want is...",
+        });
+      })();
+    </script>
+  </head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" />
-	<title>Helpdesk Micro</title>
-	<link rel="shortcut icon" type="image/png" href="./static/images/favicon.png" />
-</head>
-
-<body>
-	<header>
-		<nav>
-			<div class="nav-wrapper">
-				<a href="/" class="brand-logo left"><img
+  <body>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="/" class="brand-logo left"
+            ><img
               src="{{ url_for('static', filename='/images/logo_nav.png') }}"
               width="auto"
               height="auto"
               alt="Helpdesk Micro Logo"
           /></a>
-					<a href="#" data-target="mobile-demo"
-						class="sidenav-trigger right"><i class="material-icons">menu</i></a>
-					<ul class="right hide-on-med-and-down">
-						<li><a data-target="modal-about" class="modal-trigger">About</a></li>
-					</ul>
-			</div>
-		</nav>
+          <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul class="right hide-on-med-and-down">
+            <li>
+              <a data-target="modal-about" class="modal-trigger">About</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
 
-		<ul class="sidenav" id="mobile-demo">
-			<li><a href="{{ url_for('add_ticket') }}">About</a></li>
-		</ul>
-	</header>
+      <ul class="sidenav" id="mobile-demo">
+        <li><a href="{{ url_for('add_ticket') }}">About</a></li>
+      </ul>
+    </header>
 
-	<main class="container">
-		<div class="valign-wrapper row login-box">
-			<div class="col card hoverable s10 pull-s1 m6 pull-m3 l6 pull-l3 login-card">
-				<div class="card-image">
-					<img src="./static/images/logo_login.png" alt="Helpdesk Micro Logo"/>
+    <main class="container">
+      <div class="valign-wrapper row login-box">
+        <div
+          class="col card hoverable s10 pull-s1 m6 pull-m3 l6 pull-l3 login-card"
+        >
+          <div class="card-image">
+            <img
+              src="./static/images/logo_login.png"
+              alt="Helpdesk Micro Logo"
+            />
           </div>
-					<form class="col s12" method="POST">
-						<div class="card-content">
-							<div class="row">
-								<div class="input-field col s12">
-									<label for="email">Login name</label>
-									<input
+          <form class="col s12" method="POST">
+            <div class="card-content">
+              <div class="row">
+                <div class="input-field col s12">
+                  <label for="email">Login name</label>
+                  <input
                     type="text"
                     class="validate"
                     id="admin_username"
@@ -54,9 +89,9 @@
                     value="{{request.form.admin_username}}"
                   />
                 </div>
-									<div class="input-field col s12">
-										<label for="password">Password </label>
-										<input
+                <div class="input-field col s12">
+                  <label for="password">Password </label>
+                  <input
                     type="password"
                     class="validate"
                     id="admin_password"
@@ -64,79 +99,129 @@
                     value="{{request.form.admin_password}}"
                   />
                 </div>
-										<div>
-
-											{% if error %}
-											<p class="error center-align">{{error}}</p>
-											{% endif %}
-
-										</div>
-									</div>
-								</div>
-								<div class="card-action center-align">
-									<button
-                class="btn waves-effect waves-light"
-                type="submit"
-              >
+                <div>
+                  {% if error %}
+                  <p class="error center-align">{{error}}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+            <div class="card-action center-align">
+              <button class="btn waves-effect waves-light" type="submit">
                 Login
               </button>
-								</div>
-					</form>
-				</div>
-			</div>
-	</main>
-	<div id="modal-about" class="modal">
-		<div class="row">
-			<div class="col s12">
-				<div class="modal-content">
-                <div class="row">
-                <div class="col s6">
-					<img class="img-about-modal " src="./static/images/logo_login.png" alt="Helpdesk Micro Logo"/>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+    <div id="modal-about" class="modal">
+      <div class="row">
+        <div class="col s12">
+          <div class="modal-content">
+            <div class="row center-align">
+              <div class="col s12">
+                <img
+                  class="img-about-modal"
+                  src="./static/images/logo_login.png"
+                  alt="Helpdesk Micro Logo"
+                />
+              </div>
+            </div>
+
+            <p>
+              Helpdesk Micro is a small, lightweight call logging system
+              designed to work for small internal IT teams.
+            </p>
+
+            <h5>What can it do?</h5>
+
+            <p>
+              With full CRUD functionality, users can add tickets, end users and
+              comment each ticket individually to keep each call up to date for
+              the team.
+            </p>
+
+            <h5>New member to the IT team?</h5>
+
+            <p>
+              An exsting Admin user can add that member to the team with a
+              secure hashed password. Once logged in the new user can reset
+              their password.
+            </p>
+
+            <p>
+              If you are interested in puchasing Helpdesk Micro for your
+              organisation, or are an existing user with a support requirement,
+              or improvement/feature suggestion, please contact us:
+            </p>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col s12">
+                <div class="input-field input-box">
+                  <input
+                    id="contact_name"
+                    name="contact_name"
+                    type="text"
+                    class="validate"
+                    required=""
+                    maxlength="70"
+                  />
+                  <label for="contact_name">Your name</label>
                 </div>
+              </div>
+              <div class="col s12">
+                <div class="input-field input-box">
+                  <input
+                    id="contact_email"
+                    name="contact_email"
+                    type="email"
+                    class="validate"
+                    required=""
+                  />
+                  <label for="contact_email">Your email</label>
                 </div>
-
-					<p>Helpdesk Micro is a small, lightweight call logging system designed to work for small internal IT
-						teams.</p>
-
-
-					<h5>What can it do?</h5>
-
-					<p>With full CRUD functionality, users can add tickets, end users and comment each ticket
-						individually to keep each call up to date for the team.</p>
-
-					<h5>New member to the IT team?</h5>
-
-					<p>An exsting Admin user can add that member to the team with a secure hashed password. Once logged
-						in the new user can reset their password.</p>
-
-					<p>If you are interested in puchasing Helpdesk Micro for your organisation, or are an existing user
-						with a support requirement, or improvement/feature suggestion, please contact us:</p>
-
-				</div>
-			</div>
-		</div>
-	</div>
-		<footer class="page-footer">
-			<div class="container">
-				<div class="footer-copyright">
-					<div class="container">
-						© 2020 pengols
-						<a target="_blank" class="right" href="https://github.com/pengols"><img
+              </div>
+              <div class="col s12">
+                <div class="input-field input-box">
+                  <textarea
+                    id="contact_details"
+                    name="contact_details"
+                    class="materialize-textarea validate"
+                    required=""
+                  ></textarea>
+                  <label for="contact_details">Your text here</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="footer-copyright">
+          <div class="container">
+            © 2020 pengols
+            <a target="_blank" class="right" href="https://github.com/pengols"
+              ><img
                 src="{{ url_for('static', filename='/images/gh-icon.png') }}"
                 width="30px"
                 height="30px"
                 alt="Github logo"
             /></a>
-					</div>
-				</div>
-			</div>
-		</footer>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-			integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-			crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-		<script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
-</body>
-
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  </body>
 </html>
