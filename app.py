@@ -151,7 +151,8 @@ def insert_ticket():
                   'end_user': request.form.get('end_user'),
                   'eu_email': request.form.get('eu_email'),
                   'tel_no': request.form.get('tel_no'),
-                  '_ticketid': get_sequence('sequence'), # inserts the incremented ticketid from get_sequence function
+                  # inserts the incremented ticketid from get_sequence function
+                  '_ticketid': get_sequence('sequence'),
                   'admin_username': request.form.get('admin_username'),
                   }
 
