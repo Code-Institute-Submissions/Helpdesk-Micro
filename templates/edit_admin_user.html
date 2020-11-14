@@ -17,6 +17,8 @@
             type="text"
             class="validate"
             required=""
+            minlength="3"
+            maxlength="20"
             value="{{admin_user.admin_username}}"
           />
           <label for="icon_prefix">Name</label>
@@ -44,7 +46,9 @@
         Submit
         <i class="material-icons right">send</i>
       </button>
-      <a class="waves-effect waves-light btn" href="{{ url_for('get_admin_users') }}"
+      <a
+        class="waves-effect waves-light btn"
+        href="{{ url_for('get_admin_users') }}"
         >Cancel</a
       >
     </div>
