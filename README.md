@@ -15,7 +15,8 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
     -  [**Wireframes**](#wireframes)
 2. [**Features**](#features)
     -  [**Existing Features**](#existing-features)
-    -  [**Features To Add In The Future**](#features-to-add-in-the-future)
+    -  [**Future Features**](#future-features)
+    -  [**Defensive Design**](#defensive-design)
 3. [**Technologies Used**](#technologies-used)
     -  [**Languages Used**](#languages-used)
     -  [**Frameworks, Libraries and Programs Used**](#frameworks-libraries-and-programs-used)
@@ -66,19 +67,19 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 ## Features
 
--   ### Existing Features
+### Existing Features
 
 -   Responsive on all device sizes: Although designed primarily for desktop users, the site can be used and viewed on smaller screens, so an Administrative user can view, add, delete and update in all areas of the site if they are working away from their desktop at a users desk for example.
 -   Tickets by view: Administrative users are able to view tickets by status of 'Open', 'On hold', 'Closed' and 'All'.  Tickets are set to show by date order in all instances, with the newest tickets showing at the top.
  
 
--   ### Future Features
+### Future Features
 
 -   Dashboard to be able to view stats - current number of call open, closed today etc.
 -   Export data as .csv to enable Administrators to use for reporting.
 -   The ability for end users to be able to raise tickets by send email and the ability to send updates to end users.
 
--   ### Defensive Design
+### Defensive Design
 
 -   Secure login: All parts of the site, aside from the initial login page are only accessible to Administrative users that have been provided a login.  This is due to the fact that the helpdesk tickets will contain company sensitive information such as email addresses, contact names and contact telephone numbers which should not be visible to anyone outside of the organisation.
 -   Administrative users are unable to delete their own account.  This is to stop someone being able to login and delete all Administrative users and therefor blocking login to the site.
