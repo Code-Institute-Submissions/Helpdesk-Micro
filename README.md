@@ -25,6 +25,8 @@ Primarily designed desktop focused website, Helpdesk-Micro is also responsive on
 8. [**Testing**](#testing)
     - [**Tools**](#tools)
     - [**Testing User Stories**](#testing-user-stories)
+    - [**Further Testing**](#further-testing)
+    - [**Known Bugs and Resolutions if Applicable**](#known-bugs-and-resolutions-if-applicable)
 9. [**Deployment**](#deployment)
     - [**Forking the GitHub Repository**](#forking-the-github-repository)
     - [**Making a Local Clone**](#making-a-local-clone)
@@ -196,11 +198,12 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 - Friends and family members of ages ranging from 15 to 73, were asked to review the site and documentation to point out any bugs and/or user experience issues.
 - Google Lighthouse developer tool in Google Chrome dev tools was used to ensure pages meet best practice.
 
-### Known Bugs & Resolutions if Applicable
+### Known Bugs and Resolutions if Applicable
 
 - Incrementing ticketid was not repopulating from edit ticket submit. Resolved by a disabled hidden text input in edit_ticket.html with an added _ticketid field.
 - Modal for delete end users and admins was causing the first in item in the MongoDB collection to be deleted rather than the chosen object.  This was fixed by referencing the desired item's ObjectId in the data-target in the modal trigger, by giving the modal an id that references ObjectId and giving the modal h4 text the same ObjectId.
 - Backround image does not fill the whole screen when using select drop downs on iOS Safari. This remains unfixed.
+- If submit buttons were clicked multiple times as pages were loading, multiple instances of the forms would be added to MongoDB. Implemented jQuery to disable the button on the first click.
 
 ## Deployment
 
