@@ -64,11 +64,8 @@ Primarily designed desktop focused website, Helpdesk-Micro is also responsive on
 
 ### Wireframes
 
-    -   Ticket view Wireframe for Desktop & Mobile - [View](https://##)
-
-    -    - [View](https://##)
-
-    -    - [View](https://##)
+- [Desktop ticket and contact view](https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/wireframes/desktop-view.jpg)
+- [Mobile ticket view](https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/wireframes/mobile-view.jpg)
 
 ## Features
 
