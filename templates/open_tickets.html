@@ -32,9 +32,9 @@
           <span>{{ticket.call_subject}}</span>
         </div>
         <div class="col s12 m4">
-          <span class="bold">Status:</span> {{ticket.call_status}}<br>
-          <span class="bold">Priority:</span> {{ticket.call_priority}}<br>
-          <span class="bold">Created:</span> {{ticket.date_posted}}<br>
+          <span class="bold">Status:</span> {{ticket.call_status}}<br />
+          <span class="bold">Priority:</span> {{ticket.call_priority}}<br />
+          <span class="bold">Created:</span> {{ticket.date_posted}}<br />
         </div>
       </div>
     </div>
@@ -74,28 +74,28 @@
         </div>
         <div class="col s12 m4">
           <a
-          data-target="modal-ticket-close{{ticket._id}}"
-          class="btn modal-trigger view-button"
-          >Close</a
-        >
-            <!-- Modal Structure -->
-        <div id="modal-ticket-close{{ticket._id}}" class="modal">
-          <div class="modal-content">
-            <h4 class="center-align" id="title{{ticket._id}}">
-              Close ticket #{{ticket._ticketid}}. Are you sure?
-            </h4>
+            data-target="modal-ticket-close{{ticket._id}}"
+            class="btn modal-trigger view-button"
+            >Close</a
+          >
+          <!-- Modal Structure -->
+          <div id="modal-ticket-close{{ticket._id}}" class="modal">
+            <div class="modal-content">
+              <h4 class="center-align" id="title{{ticket._id}}">
+                Close ticket #{{ticket._ticketid}}. Are you sure?
+              </h4>
+            </div>
+            <div class="modal-footer center-buttons">
+              <a
+                href="{{ url_for('close_ticket', ticket_id=ticket._id) }}"
+                class="modal-close waves-effect waves-light btn"
+                >Close</a
+              >
+              <a href="#" class="modal-close waves-effect waves-light btn"
+                >Cancel</a
+              >
+            </div>
           </div>
-          <div class="modal-footer center-buttons">
-            <a
-              href="{{ url_for('close_ticket', ticket_id=ticket._id) }}"
-              class="modal-close waves-effect waves-light btn"
-              >Close</a
-            >
-            <a href="#" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
-          </div>
-        </div>
         </div>
       </div>
       {% include 'add_quick_update.html' %}
