@@ -248,9 +248,9 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Code
 
-- http://polyglot.ninja/auto-incrementing-ids-for-mongodb/ - increment _ticketid on each new inserted ticket
+-   [Polyglot.Ninja()](http://polyglot.ninja/auto-incrementing-ids-for-mongodb/) - Auto incrementing IDs for MongoDB.  Code was modified to better fit my needs.
 
--   [w3schools.com](https://www.w3schools.com/howto/howto_css_modals.asp): For guidance on creating JavaScript modals. Code was modified to better fit my needs.
+-   [pythonprogramming.net](https://pythonprogramming.net/decorator-wrappers-flask-tutorial-login-required/): For guidance on creating protected pages.
 
 -   Tim at Code Institute Task Manager mini project for guidance on search functionality.
 
@@ -260,7 +260,7 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 
 ### Media
 
--   [Background Image](https://pixabay.com/users/iywbr-11282422/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3941721) by iywbr.
+-   All background images taken from [Pexels.com](https://www.pexels.com/)
 
 
 ### Acknowledgements
