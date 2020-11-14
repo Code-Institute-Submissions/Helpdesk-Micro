@@ -118,6 +118,8 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 ## Schema Design
 
+<h2 align="center"><img src="https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/schema/schema.PNG"></h2>
+
 ## Testing
 
 ### Tools
