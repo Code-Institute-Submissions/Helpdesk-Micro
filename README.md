@@ -4,7 +4,7 @@
 
 Using HTML, CSS, JavaScript, Python, Flask and MongoDB, Helpdesk-Micro is designed for small internal IT teams to be able to log and manage Helpdesk tickets for their organisation. 
 
-Primarily designed desktop focussed website, Heldesk-Micro is also responsive on smaller screens.  Users are able to create tickets and add and delete updates to those tickets.  Users will also be able to add, edit and delete both end users and administrative users. The website is inaccessible without a login.
+Primarily designed desktop focussed website, Heldesk-Micro is also responsive on smaller screens.  Users are able to create Helpdesk tickets, add and delete updates to those tickets.  Users will also be able to add, edit and delete both end users and administrative users. The website is inaccessible without a login.
 
 <h2 align="center"><img src="https://##"></h2>
 
@@ -21,10 +21,11 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
     -  [**Frameworks, Libraries and Programs Used**](#frameworks-libraries-and-programs-used)
 5. [**Schema Design**](#schema-design)
 8. [**Testing**](#testing)
-    -  [**User Story Testing**](#user-stories-testing)
+    -  [**Tools**](#tools)
+    -  [**Testing User Stories**](#testing-user-stories)
 9. [**Deployment**](#deployment)
     -  [**Deploying to Heroku**](#deploying-website-to-heroku)
-    -  [**Clone & Run Locally**](#to-create-a-clone-of-the-meatblog-repository-and-run-locally)
+    -  [**Clone & Run Locally**](#)
 10. [**Secret Key & Key Variables**](#secret-key-&-key-variables)
 11. [**Design**](#design)
 12. [**Credits**](#credits)
@@ -48,12 +49,12 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 ![](documentation/images/primary-color.png)
 
         - ##### Call priority status
-            Each call can be created or edited to have one of four levels of importance - High(#), Medium(#), Low(#) and Information(#).  This status is reflected on the right side of each call's information bar to allow users to determine the ticket's importance at a glance.
+            Each call can be created or edited to have one of four levels of importance - High(#), Medium(#), Low(#) and Information(#).  This status is reflected in each ticket's collapsible header to allow users to determine the ticket's importance at a glance.
 ![](documentation/images/##.png)
         - ##### Background
             Random backgrounds are applied on each page refresh.  A selection of images taken from nature are used.  As the site is relatively text based this adds visual interest to the site without detracting from it's primary purpose. 
     -   #### Typography
-        -   There is one primary font for the website - Kumbh Sans. Sans Serif is used as the fallback font, in case for        any reason, the fonts aren't being imported into the site correctly. Kumbh Sans is a Geometric Sans Serif           multi-purpose font which remains legible for large amounts of text and renders well on smaller screens. 
+        -   There is one primary font for the website - Kumbh Sans. Sans Serif is used as the fallback font, in case for any reason, the fonts aren't being imported into the site correctly. Kumbh Sans is a Geometric Sans Serif multi-purpose font which remains legible for large amounts of text and renders well on smaller screens. 
 
    ### Wireframes
 
@@ -117,7 +118,7 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 ## Testing
 
-### tools
+### Tools
 
 The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML and CSS of the project to ensure there were no syntax errors.
 
@@ -138,26 +139,47 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 
 -   [Lighthouse](https://developers.google.com/web/tools/lighthouse)
 
-### Testing User Stories from User Experience (UX) Section
+### Testing User Stories
 
 -   #### User Goals
 
     1. As a First Time Visitor, I want easily manage, create and complete IT Helpdesk calls for my organisation.
 
-        1. Upon entering the site, after login, users are greeted with a clean and easily readable navigation bar and a list of all existing helpdesk tickets.
+        -   Upon entering the site, after login, users are greeted with a clean and easily readable navigation bar and a list of all open helpdesk tickets.
 
-    2. As a First Time Visitor, I want to reminisce about the 80's.
+    2. As a user of the website, I want to be able to update helpdesk tickets with additional information and view all previous updates.
 
-        1. The site is deliberately styled with a retro feel to invoke nostalgic feelings for the user.
-        2. The game cards contain images from the decade which should invoke those same nostalgic feelings.
+        -   There are two methods to add an update to an existing ticket.  There is a 'quick update' button accessible once a ticket has been expanded in any of the four main views - all open, all held, all closed and all tickets.  The second method of adding an update is the 'new update' button that is visible after clicking the 'all updates' button in the expanded ticket view. The 'all updates' button also allows a user to see all previous updates that ave been added to that ticket. 
 
+    3. As a user of the website, I want to be able to add, view, update and delete members of the organisation's staff.
 
+        -   All exsting staff members are visble once a user has navigated to the 'All end users' page from the navigation bar.  This page shows a card for each end user and contains important information such as end user name, mail address, telephone number and department. The card also has edit button should an end users information require amending. The delete button, also available on the user card allows deletion of that user should they no longer be required.
+
+        -   Also availble from the navigation menu is 'add end user'. This page contains a form with fields for name, email address, telephone number and department. Submitting this form creates a new end user record. 
+
+    4. As a user of the website, I also want to be able to add, view, update (including login details) and delete members of the Administrators team who have access to this site and are able to perform all of the above actions.
+
+        -   All exsting Admin members are visble once a user has navigated to the 'All admin users' page from the navigation bar. This page shows a card for each Admin user.  The card also has edit button should an Admin users name or password require amending.  The delete button, also available on the Admin user card allows deletion of that user should they no longer be required. An Admin user is unable to delete their own card as the delete button is removed for the logged in user.
 
 ### Further Testing
 
--   The Website was tested on Google Chrome, Internet Explorer, Microsoft Edge and Mozilla Firefox browsers for desktop.
--   The website was tested on Google Chrome, Safari, Samsung Internet and Amazon Silk on mobile devices.
--   The website was viewed on a variety of devices such as Windows Desktop, Windows Laptop, Samsung S8, Samsung S9, Samsung S3 tablet, Motorola G4, Amazon Fire, iPhone7, iPhone 8.
+-   The website was tested on Google Chrome, Internet Explorer, old Microsoft Edge, new Microsoft Edge and Mozilla Firefox browsers for desktop. In each of the browsers, the following were tested to ensure functionality:
+
+    -   Login & logout
+    -   Create and edit tickets
+    -   Create, edit and delete end users
+    -   Create, edit and delete Admin users
+    -   Create and delete ticket updates
+
+-   The website was tested on Google Chrome, Safari, Samsung Internet and Amazon Silk on mobile devices. In each of the browsers, the following were tested to ensure functionality:
+
+    -   Login & logout
+    -   Create and edit tickets
+    -   Create, edit and delete end users
+    -   Create, edit and delete Admin users
+    -   Create and delete ticket updates   
+
+-   The website was viewed on a variety of devices such as Windows Desktop, Windows Laptop, Samsung S8, Samsung S20, Samsung S3 tablet, Motorola G4, Amazon Fire, iPhone7, iPhone 8.
 -   Frequent tests were undertaken after major code changes to ensure cross-browser and cross-device compatibility.
 -   Friends and family members of ages ranging from 3 to 73, were asked to review the site and documentation to point out any bugs and/or user experience issues.
 -   Google Lighthouse devloper tool in Google Chrome dev tools was used to ensure pages meet best practice.
@@ -165,7 +187,7 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 ### Known Bugs & Resolutions if Applicable
 
 -   Incrementing ticketid was not repopulating from edit ticket submit.  Resolved by a disabled hidden text input in edit_ticket.html with _ticketid fields.
--   modal for delete end users and admins was causing the first in the list to be deleted rather than the chosen object.  removed confirmation modal for these.  no fix as yet.
+-   modal for delete end users and admins was causing the first in the list to be deleted rather than the chosen object.  This was fixed by referencing the desired item's ObjectId in the data-target in the modal trigger, by giving the modal an id that references ObjectId and giving the modal h4 text the same ObjectId.
 
 
 ## Deployment
