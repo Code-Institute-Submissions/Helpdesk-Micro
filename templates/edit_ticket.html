@@ -28,6 +28,7 @@
             type="text"
             class="validate"
             required=""
+            maxlength="150"
             value="{{ticket.call_subject}}"
           />
           <label for="call_subject">Ticket Subject</label>
@@ -142,7 +143,7 @@
             class="materialize-textarea validate"
             required=""
             aria-required="true"
-            maxlength="1500"
+            maxlength="5000"
           >
 {{ticket.call_details}}</textarea
           >
