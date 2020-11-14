@@ -1,6 +1,15 @@
-<form hidden class="quick-comment-form" action="{{ url_for('new_update') }}" method="POST">
+<form
+  hidden
+  class="quick-comment-form"
+  action="{{ url_for('new_update') }}"
+  method="POST"
+>
   <input type="hidden" value="{{ ticket._id }}" name="ticket_id" />
-  <input type="hidden" value="{{session.admin_username}}" name="admin_username" />
+  <input
+    type="hidden"
+    value="{{session.admin_username}}"
+    name="admin_username"
+  />
   <div class="row">
     <div class="input-field input-box col s12">
       <input
@@ -10,33 +19,30 @@
         class="validate"
         required=""
         aria-required="true"
+        maxlength="500"
       />
       <label for="add_update">add update</label>
     </div>
   </div>
   <div class="row center-buttons">
-    
-      <a data-target="modal-qu" class="btn modal-trigger">add update</a>
+    <a data-target="modal-qu" class="btn modal-trigger">add update</a>
     <button class="btn waves-effect waves-light quick-comment-cancel">
-        Cancel
-      </button>
+      Cancel
+    </button>
   </div>
   <!-- Modal Structure -->
-        <div id="modal-qu" class="modal">
-          <div class="modal-content">
-            <h4 class="center-align">Add update to ticket #{{ ticket._ticketid }}?</h4>
-          </div>
-          <div class="modal-footer center-buttons">
-          <button class="btn waves-effect waves-light" type="submit" name="action">
+  <div id="modal-qu" class="modal">
+    <div class="modal-content">
+      <h4 class="center-align">
+        Add update to ticket #{{ ticket._ticketid }}?
+      </h4>
+    </div>
+    <div class="modal-footer center-buttons">
+      <button class="btn waves-effect waves-light" type="submit" name="action">
         Add
         <i class="material-icons right">send</i>
       </button>
-            <a href="#!" class="modal-close waves-effect waves-light btn"
-              >Cancel</a
-            >
-          </div>
-        </div>
-        </div>
+      <a href="#!" class="modal-close waves-effect waves-light btn">Cancel</a>
+    </div>
+  </div>
 </form>
-
-
