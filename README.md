@@ -184,8 +184,9 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 -   For the creation and edit of Admin passwords the pattern and length requirements were tested by attempting to create a password with one required type missing and length not being met. In each instance, browser tooltips were presented with the correct response and the form could not be completed.
 -   For login, an incorrect username and incorrect password were supplied to the login form.  The expected 'invalid credential' flash message was shown on each incorrect attempt.
 -   The search function located in the navigation bar was tested with single characters, special characters and paragraphs of text.  The expected response was returned each time.  If results were available they would be returned, if there were no results the correct warning would be presented to the user.
+-   The contact form located in the 'about' modal has been tested to ensure that emails are sent through emailJS.  There is currently no confirmation to the end user that email has been sent and the modal closes on form submit. This requires further investigation for a solution.
 -   Frequent tests were undertaken after major code changes to ensure cross-browser and cross-device compatibility.
--   Friends and family members of ages ranging from 3 to 73, were asked to review the site and documentation to point out any bugs and/or user experience issues.
+-   Friends and family members of ages ranging from 15 to 73, were asked to review the site and documentation to point out any bugs and/or user experience issues.
 -   Google Lighthouse devloper tool in Google Chrome dev tools was used to ensure pages meet best practice.
 
 ### Known Bugs & Resolutions if Applicable

@@ -41,8 +41,8 @@
           <a href="/" class="brand-logo left"
             ><img
               src="{{ url_for('static', filename='/images/logo_nav.png') }}"
-              width="auto"
-              height="auto"
+              width="90"
+              height="50"
               alt="Helpdesk Micro Logo"
           /></a>
           <a href="#" data-target="mobile-demo" class="sidenav-trigger right"
@@ -76,7 +76,7 @@
             <div class="card-content">
               <div class="row">
                 <div class="input-field col s12">
-                  <label for="email">Login name</label>
+                  <label for="admin_username">Login name</label>
                   <input
                     type="text"
                     class="validate"
@@ -85,8 +85,8 @@
                     value="{{request.form.admin_username}}"
                   />
                 </div>
-                <div class="input-field col s12">
-                  <label for="password">Password </label>
+                <div class="input-field col s12" id="password">
+                  <label for="admin_password">Password</label>
                   <input
                     type="password"
                     class="validate"
@@ -165,7 +165,7 @@
                       required=""
                       maxlength="70"
                     />
-                    <label for="contact_name">Your name</label>
+                    <label for="from_name">Your name</label>
                   </div>
                 </div>
                 <div class="col s12">
@@ -177,7 +177,7 @@
                       class="validate"
                       required=""
                     />
-                    <label for="contact_email">Your email</label>
+                    <label for="reply_to">Your email</label>
                   </div>
                 </div>
                 <div class="col s12">
@@ -188,7 +188,7 @@
                       class="materialize-textarea validate"
                       required=""
                     ></textarea>
-                    <label for="contact_details">Your text here</label>
+                    <label for="message">Your text here</label>
                   </div>
                 </div>
                 <div class="row center-buttons">
@@ -211,8 +211,8 @@
             <a target="_blank" class="right" href="https://github.com/pengols"
               ><img
                 src="{{ url_for('static', filename='/images/gh-icon.png') }}"
-                width="30px"
-                height="30px"
+                width="30"
+                height="30"
                 alt="Github logo"
             /></a>
           </div>
