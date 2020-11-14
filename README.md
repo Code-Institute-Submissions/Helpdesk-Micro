@@ -56,7 +56,9 @@ Primarily designed desktop focused website, Helpdesk-Micro is also responsive on
 
         - ##### Call priority status
             Each call can be created or edited to have one of four levels of importance - High(#f05953), Medium(#f9ff8f), Low(#6be297) and Information(#0068df).  This status is reflected in each ticket's collapsible header to allow users to determine the ticket's importance at a glance.
-![](documentation/images/priority-color.png)
+
+        ![](documentation/images/priority-color.png)
+        
         - ##### Background
             Random backgrounds are applied on each page refresh.  A selection of images taken from nature are used.  As the site is relatively text based this adds visual interest to the site without detracting from it's primary purpose.
     -   #### Typography
