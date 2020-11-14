@@ -74,15 +74,16 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 -   ### Future Features
 
--   Dashboard
--   Export as .csv
--   End users can email to raise update tickets
+-   Dashboard to be able to view stats - current number of call open, closed today etc.
+-   Export data as .csv to enable Administrators to use for reporting.
+-   The ability for end users to be able to raise tickets by send email and the ability to send updates to end users.
 
 -   ### Defensive Design
 
 -   Secure login: All parts of the site, aside from the initial login page are only accessible to Administrative users that have been provided a login.  This is due to the fact that the helpdesk tickets will contain company sensitive information such as email addresses, contact names and contact telephone numbers which should not be visible to anyone outside of the organisation.
--   delete admin user
--   delete everyones comments
+-   Administrative users are unable to delete their own account.  This is to stop someone being able to login and delete all Administrative users and therefor blocking login to the site.
+-   Administrative users are only able to delete their own updates on tickets.
+-   All delete actions are prefaced by a confirmation modal to stop accidental deletion.
 
 ## Technologies Used
 
@@ -120,17 +121,17 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
 ### Tools
 
-The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML and CSS of the project to ensure there were no syntax errors.
+The W3C Markup Validator and W3C CSS Validator Services were used to validate the HTML and CSS of the project. No errors were found.
 
 -   [W3C Markup Validator](https://validator.w3.org/#validate_by_input)
 -   [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 
-The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaScript of the project.
+The Esprima JavaScript Syntax Validator & JSHint were used to validate the JavaScript of the project. No errors were found.
 
 -   [Esprima JavaScript Syntax Validator](https://esprima.org/demo/validate.html)
 -   [JSHint](https://jshint.com/)
 
-The PEP8 Online & ExtendsClass Python Syntax Checker were used to validate the Python of the project.
+The PEP8 Online & ExtendsClass Python Syntax Checker were used to validate the Python of the project. No errors were found.
 
 -   [ExtendsClass Python Syntax Checker](https://extendsclass.com/python-tester.html)
 -   [PEP8 online](http://pep8online.com/)
