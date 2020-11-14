@@ -6,7 +6,7 @@ Using HTML, CSS, JavaScript, Python, Flask and MongoDB, Helpdesk-Micro is design
 
 Primarily designed desktop focussed website, Heldesk-Micro is also responsive on smaller screens.  Users are able to create Helpdesk tickets, add and delete updates to those tickets.  Users will also be able to add, edit and delete both end users and administrative users. The website is inaccessible without a login.
 
-<h2 align="center"><img src="https://##"></h2>
+<h2 align="center"><img src="https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/images/screens.PNG"></h2>
 
 ## Contents
 1. [**UX**](#UX)
