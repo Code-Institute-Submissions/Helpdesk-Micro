@@ -25,8 +25,9 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
     -  [**Tools**](#tools)
     -  [**Testing User Stories**](#testing-user-stories)
 9. [**Deployment**](#deployment)
-    -  [**Deploying to Heroku**](#deploying-website-to-heroku)
-    -  [**Clone & Run Locally**](#)
+    -  [**Forking the GitHub Repository**](#forking-the-github-repository)
+    -  [**Making a Local Clone**](#making-a-local-clone)
+    -  [**Deploying to Heroku**](#deploying-to-heroku)
 10. [**Secret Key & Key Variables**](#secret-key-&-key-variables)
 11. [**Design**](#design)
 12. [**Credits**](#credits)
@@ -202,28 +203,17 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 
 ## Deployment
 
-### GitHub Pages
-
-The project was deployed to GitHub Pages using the following steps:
-
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/pengols/HeeeyYooouGuuuys)
-2. At the top of the Repository (not top of page), locate the "Settings" Button on the menu.
-3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-4. Under "Source", click the dropdown called "None" and select "Master Branch".
-5. The page will automatically refresh.
-6. Scroll back down through the page to locate the now published site [link](https://pengols.github.io/HeeeyYooouGuuuys/index.html) in the "GitHub Pages" section.
-
 ### Forking the GitHub Repository
 
 Forking the GitHub Repository allows a copy of the original repository in GitHub to be created.  The forked repository can be viewed or be changed without affecting the original repository, by using the following steps:
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/pengols/HeeeyYooouGuuuys)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/pengols/Helpdesk-Micro)
 2. At the top of the Repository (not top of page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
 ### Making a Local Clone
 
-1. Log in to GitHub and locate the [GitHub Repository](https://github.com/pengols/HeeeyYooouGuuuys)
+1. Log in to GitHub and locate the [GitHub Repository](https://github.com/pengols/Helpdesk-Micro)
 2. Under the repository name, click "Clone or download".
 3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
 4. Open Git Bash
@@ -246,6 +236,8 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 ```
 
 Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+### Deploying to Heroku
 
 ## Credits
 
