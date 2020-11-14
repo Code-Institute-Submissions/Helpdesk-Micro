@@ -50,6 +50,10 @@ main {
   height: 30%;
 }
 
+.contact-send {
+    margin-top: 15px;
+}
+
 /* credential error flash message */
 .error {
   color: red;
