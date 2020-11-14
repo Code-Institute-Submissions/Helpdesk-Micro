@@ -1,22 +1,28 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h3 class="center-title">Closed tickets</h3>
 <div class="row center-align">
-<div class="col s12 m3">
-<a class="waves-effect waves-light btn view-button" href="/add_ticket">Add ticket</a>
+  <div class="col s12 m3">
+    <a class="waves-effect waves-light btn view-button" href="/add_ticket"
+      >Add ticket</a
+    >
+  </div>
+  <div class="col s12 m3">
+    <a class="waves-effect waves-light btn view-button" href="/open_tickets"
+      >All open</a
+    >
+  </div>
+  <div class="col s12 m3">
+    <a class="waves-effect waves-light btn view-button" href="/held_tickets"
+      >All held</a
+    >
+  </div>
+  <div class="col s12 m3">
+    <a class="waves-effect waves-light btn view-button" href="/get_tickets"
+      >All tickets</a
+    >
+  </div>
 </div>
-<div class="col s12 m3">
-<a class="waves-effect waves-light btn view-button" href="/open_tickets">All open</a>
-</div>
-<div class="col s12 m3">
-<a class="waves-effect waves-light btn view-button" href="/held_tickets">All held</a>
-</div>
-<div class="col s12 m3">
-<a class="waves-effect waves-light btn view-button" href="/get_tickets">All tickets</a>
-</div>
-</div>
-  <ul class="collapsible popout">
+<ul class="collapsible popout">
   {% for ticket in tickets %}
   <li>
     <div hidden>{{ticket._id}}</div>
@@ -29,9 +35,9 @@
           <span>{{ticket.call_subject}}</span>
         </div>
         <div class="col s12 m4">
-          <span class="bold">Status:</span> {{ticket.call_status}}<br>
-          <span class="bold">Priority:</span> {{ticket.call_priority}}<br>
-          <span class="bold">Created:</span> {{ticket.date_posted}}<br>
+          <span class="bold">Status:</span> {{ticket.call_status}}<br />
+          <span class="bold">Priority:</span> {{ticket.call_priority}}<br />
+          <span class="bold">Created:</span> {{ticket.date_posted}}<br />
         </div>
       </div>
     </div>
@@ -72,11 +78,11 @@
         {% if ticket.call_status != "Closed" %}
         <div class="col s12 m4">
           <a
-              href="{{ url_for('close_ticket', ticket_id=ticket._id) }}"
-              class="modal-close waves-effect waves-light btn view-button"
-              >Close</a
-            >
-            {% endif %}
+            href="{{ url_for('close_ticket', ticket_id=ticket._id) }}"
+            class="modal-close waves-effect waves-light btn view-button"
+            >Close</a
+          >
+          {% endif %}
         </div>
       </div>
       {% include 'add_quick_update.html' %}
