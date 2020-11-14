@@ -181,19 +181,19 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
     -   Create and delete ticket updates   
 
 -   The website was viewed on a variety of devices such as Windows Desktop, Windows Laptop, Samsung S8, Samsung S20, Samsung S3 tablet, Motorola G4, Amazon Fire, iPhone7, iPhone 8.
--   All text input fields were tested with no text, quantities of text that did not meet minimum length requirements and quantities of text exceeded the max length requirements.  For fields labelled as required, the correct response was returned by the browser. For minimum and maximum requirements the expected tooltip response was retunrned by the browser.
+-   All text input fields were tested with no text, quantities of text that did not meet minimum length requirements and quantities of text exceeding the maximum length requirements.  For fields labelled as required, the correct response was returned by the browser. For minimum and maximum requirements the expected tooltip response was returned by the browser.
 -   For the creation and edit of Admin passwords the pattern and length requirements were tested by attempting to create a password with one required type missing and length not being met. In each instance, browser tooltips were presented with the correct response and the form could not be completed.
 -   For login, an incorrect username and incorrect password were supplied to the login form.  The expected 'invalid credential' flash message was shown on each incorrect attempt.
 -   The search function located in the navigation bar was tested with single characters, special characters and paragraphs of text.  The expected response was returned each time.  If results were available they would be returned, if there were no results the correct warning would be presented to the user.
 -   The contact form located in the 'about' modal has been tested to ensure that emails are sent through emailJS.  There is currently no confirmation to the end user that email has been sent and the modal closes on form submit. This requires further investigation for a solution.
 -   Frequent tests were undertaken after major code changes to ensure cross-browser and cross-device compatibility.
 -   Friends and family members of ages ranging from 15 to 73, were asked to review the site and documentation to point out any bugs and/or user experience issues.
--   Google Lighthouse devloper tool in Google Chrome dev tools was used to ensure pages meet best practice.
+-   Google Lighthouse developer tool in Google Chrome dev tools was used to ensure pages meet best practice.
 
 ### Known Bugs & Resolutions if Applicable
 
 -   Incrementing ticketid was not repopulating from edit ticket submit.  Resolved by a disabled hidden text input in edit_ticket.html with _ticketid fields.
--   modal for delete end users and admins was causing the first in the list to be deleted rather than the chosen object.  This was fixed by referencing the desired item's ObjectId in the data-target in the modal trigger, by giving the modal an id that references ObjectId and giving the modal h4 text the same ObjectId.
+-   modal for delete end users and admins was causing the first in item in the MongoDB collection to be deleted rather than the chosen object.  This was fixed by referencing the desired item's ObjectId in the data-target in the modal trigger, by giving the modal an id that references ObjectId and giving the modal h4 text the same ObjectId.
 -   Backround image does not fill the whole screen when using select drop downs on iOS Safari. This remains unfixed.
 
 
@@ -257,11 +257,6 @@ Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-re
 ### Content
 
 -   All content was written by the developer.
-
-### Content considered for future addition
-
--   Implement a scoreboard so users can track their best scores.
--   Implement a difficulty system with easy, medium and hard difficulty levels which increase number of cards on the board.
 
 ### Media
 
