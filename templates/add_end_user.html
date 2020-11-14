@@ -7,7 +7,14 @@
       <div class="col s12 m6">
         <div class="input-field input-box">
           <i class="material-icons prefix">account_circle</i>
-          <input id="end_user" name="end_user" type="text" class="validate" minlength="3" maxlength="20" />
+          <input
+            id="end_user"
+            name="end_user"
+            type="text"
+            class="validate"
+            minlength="3"
+            maxlength="20"
+          />
           <label for="end_user">Name</label>
         </div>
       </div>
@@ -45,7 +52,11 @@
         Submit
         <i class="material-icons right">send</i>
       </button>
-      <a href="{{ url_for('get_users') }}" class="modal-close waves-effect waves-light btn">Cancel</a>
+      <a
+        href="{{ url_for('get_users') }}"
+        class="modal-close waves-effect waves-light btn"
+        >Cancel</a
+      >
     </div>
   </form>
 </div>
