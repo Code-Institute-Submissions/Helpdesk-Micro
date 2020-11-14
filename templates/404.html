@@ -1,17 +1,19 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <div class="row update-row error-row">
   <div class="col s12 center-align">
-      <h3>Page not found</h3>
-      <p>There is nothing here. The button below will take you home</p>
+    <h3>Page not found</h3>
+    <p>There is nothing here. The button below will take you home</p>
     <div class="row">
       <div class="col s12 center-buttons">
-        <a class="waves-effect waves-light btn view-button" href="{{ url_for('open_tickets') }}">go back</a>
+        <a
+          class="waves-effect waves-light btn view-button"
+          href="{{ url_for('open_tickets') }}"
+          >go back</a
+        >
       </div>
     </div>
   </div>
 </div>
-
 
 {% endblock %}
