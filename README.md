@@ -1,12 +1,12 @@
 <h1 align="center">Helpdesk-Micro</h1>
 
+<h2 align="center"><img src="https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/images/screens.PNG"></h2>
+
 [View the live project here.](http://helpdesk-micro.herokuapp.com/)
 
 Using HTML, CSS, JavaScript, Python, Flask and MongoDB, Helpdesk-Micro is designed for small internal IT teams to be able to log and manage Helpdesk tickets for their organisation. 
 
 Primarily designed desktop focussed website, Heldesk-Micro is also responsive on smaller screens.  Users are able to create Helpdesk tickets, add and delete updates to those tickets.  Users will also be able to add, edit and delete both end users and administrative users. The website is inaccessible without a login.
-
-<h2 align="center"><img src="https://github.com/pengols/Helpdesk-Micro/blob/master/documentation/images/screens.PNG"></h2>
 
 ## Contents
 1. [**UX**](#UX)
