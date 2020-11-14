@@ -38,7 +38,7 @@ Primarily designed desktop focused website, Helpdesk-Micro is also responsive on
 
 - ### User stories
 
-- #### User Goals
+    -   #### User Goals
 
         1. As a user of the website, I want easily manage, create and complete IT Helpdesk calls for my organisation.
         2. As a user of the website, I want to be able to update helpdesk tickets with additional information and view all previous updates.
@@ -47,12 +47,12 @@ Primarily designed desktop focused website, Helpdesk-Micro is also responsive on
 
 - ### Design
 
-- #### Colour Scheme
+    - #### Colour Scheme
 
-        - ##### Navbar and buttons
+        -   ##### Navbar and buttons
             The site uses two primary, contrasting colours to help keep buttons(#0068DF) and navbar(#3C3C3C) defined and easily distinguishable. A third darker blue(#01346E), is used for buttons when active or hovered.
 
-![](documentation/images/primary-color.png)
+            ![](documentation/images/primary-color.png)
 
         - ##### Call priority status
             Each call can be created or edited to have one of four levels of importance - High(#f05953), Medium(#f9ff8f), Low(#6be297) and Information(#0068df).  This status is reflected in each ticket's collapsible header to allow users to determine the ticket's importance at a glance.
