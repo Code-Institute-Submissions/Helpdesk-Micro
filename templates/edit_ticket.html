@@ -109,7 +109,8 @@
         <div class="input-field input-box">
           <select id="eu_email" name="eu_email">
             <option value="" disabled selected>Email</option>
-            {% for email in eu_email %} {% if email.eu_email == ticket.eu_email %}
+            {% for email in eu_email %} {% if email.eu_email == ticket.eu_email
+            %}
             <option value="{{email.eu_email}}" selected>
               {{-email.eu_email-}}</option
             >
@@ -124,9 +125,7 @@
           <select id="tel_no" name="tel_no">
             <option value="" disabled selected>Tel no</option>
             {% for tel in eu_tel %} {% if tel.tel_no == ticket.tel_no %}
-            <option value="{{tel.tel_no}}" selected>
-              {{-tel.tel_no-}}</option
-            >
+            <option value="{{tel.tel_no}}" selected> {{-tel.tel_no-}}</option>
             {% else %}
             <option value="{{tel.tel_no}}"> {{-tel.tel_no-}}</option>
             {% endif %} {% endfor %}
