@@ -37,8 +37,8 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 
     -   #### User Goals
 
-        1. As a user of the website, I want easily view all current, held and closed IT Helpdesk calls for my organisation.
-        2. As a user of the website, I want to be able to update helpdesk tickets with additional information.
+        1. As a user of the website, I want easily manage, create and complete IT Helpdesk calls for my organisation.
+        2. As a user of the website, I want to be able to update helpdesk tickets with additional information and view all previous updates.
         3. As a user of the website, I want to be able to add, view, update and delete members of the organisation's staff.
         4. As a user of the website, I also want to be able to add, view, update (including login details) and delete members of the Administrators team who have access to this site and are able to perform all of the above actions.
 
@@ -49,8 +49,8 @@ Primarily designed desktop focussed website, Heldesk-Micro is also responsive on
 ![](documentation/images/primary-color.png)
 
         - ##### Call priority status
-            Each call can be created or edited to have one of four levels of importance - High(#), Medium(#), Low(#) and Information(#).  This status is reflected in each ticket's collapsible header to allow users to determine the ticket's importance at a glance.
-![](documentation/images/##.png)
+            Each call can be created or edited to have one of four levels of importance - High(#f05953), Medium(#f9ff8f), Low(#6be297) and Information(#0068df).  This status is reflected in each ticket's collapsible header to allow users to determine the ticket's importance at a glance.
+![](documentation/images/priority-color.png)
         - ##### Background
             Random backgrounds are applied on each page refresh.  A selection of images taken from nature are used.  As the site is relatively text based this adds visual interest to the site without detracting from it's primary purpose. 
     -   #### Typography
@@ -143,7 +143,7 @@ Lighthouse in Chrome Devtools was used to test website performance, bestpractice
 
 -   #### User Goals
 
-    1. As a First Time Visitor, I want easily manage, create and complete IT Helpdesk calls for my organisation.
+    1. As a user of the website, I want easily manage, create and complete IT Helpdesk calls for my organisation.
 
         -   Upon entering the site, after login, users are greeted with a clean and easily readable navigation bar and a list of all open helpdesk tickets.
 
