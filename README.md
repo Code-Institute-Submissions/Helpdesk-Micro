@@ -1,6 +1,6 @@
 <h1 align="center">Helpdesk-Micro</h1>
 
-[View the live project here.](http://helpdesk-pengols.herokuapp.com/)
+[View the live project here.](http://helpdesk-micro.herokuapp.com/)
 
 Using HTML, CSS, JavaScript, Python, Flask and MongoDB, Helpdesk-Micro is designed for small internal IT teams to be able to log and manage Helpdesk tickets for their organisation. 
 
